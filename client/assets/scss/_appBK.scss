@@ -1,0 +1,3345 @@
+@charset "utf-8";
+
+@import "settings";
+@import "foundation";
+@import "fonts";
+@import "colors";
+@import "loading";
+@import "checkbox";
+
+/* Clearfix */
+.clear:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+.clear {
+    display: block;
+    position: relative;
+}
+html, body, form, fieldset, p, div,
+h1, h2, h3, h4, h5,h6 {
+    -webkit-text-size-adjust: none;
+}
+/* Checkbox fix for android */
+body {
+    -webkit-animation: bugfix infinite 1s;
+}
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+@-webkit-keyframes bugfix {
+    from {
+        padding: 0;
+    }
+    to {
+        padding: 0;
+    }
+}
+.RohanIT.ir {
+    display: block;
+    visibility: visible;
+    /* UI/UX: RohanIT.ir */
+    /* طراحی رابط و تجربه کاربری فن آوری اطلاعات روهان */
+}
+html {
+    font-size: $fontSize;
+    direction: rtl;
+}
+body {
+    width: 100%;
+    height: auto;
+    color: $fontColorApp;
+    background-color: $backgroundColor;
+    background-image: url();
+    background-repeat: repeat;
+    font: $fontSize*1 $fontApp;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.bkWrap:before {
+	width: 100%;
+    height: 100%;
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	
+	background-image: url($bkUrlDefault);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	
+	-webkit-filter: blur(1px) grayscale(100%);
+	-moz-filter: blur(1px) grayscale(100%);
+	-o-filter: blur(1px) grayscale(100%);
+	-ms-filter: blur(1px) grayscale(100%);
+	filter: blur(1px) grayscale(100%);
+	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)";
+	filter: alpha(opacity=5);
+	-moz-opacity: 0.05;
+	-khtml-opacity: 0.05;
+	opacity: 0.05;
+	z-index: -1;
+}
+h1 {
+    font: $fontSize*1.2 $fontApp;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font: $fontSize*1.1 $fontApp;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:link, a:visited {
+    transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    &:hover {
+        
+    }
+}
+
+
+
+
+.placeForm {
+    width: 100%;
+    height: auto;
+//	background-color: rgba(255,255,255,0.85);
+    background-color: $colorWhite;
+    
+//    border: 1px #9FD561 solid;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	margin: 4px auto;
+	padding: 0px;
+    overflow: hidden;
+	&:hover {
+	}
+}
+.placeFormGuide {
+    border-bottom: 1px $color1 dotted;
+}
+.placeFormAdd {
+//    border-color: $colorSuccess;
+//    border-bottom: 2px #E6E9ED dotted;
+    border-bottom: 2px $color1 dotted;
+}
+.placeFormPanel {
+	@extend .placeForm;
+	padding: rem-calc(10);
+}
+.placeContent {
+	background-color: rgba(255,255,255,0.85);
+    
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	margin: 8px 0;
+	padding: 4px 0 0 0;
+	&:hover {
+	}
+}
+.expand {
+	@extend .placeLogin:hover;
+}
+.placeLoginImg {
+	height: rem-calc(0);
+	min-height: rem-calc(0);
+	max-height: rem-calc(0);
+	background-color: rgba(255,255,255,0.85);
+	background-image: url(../images/bkLogin.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	border-radius: $borderRadius $borderRadius 0 0;
+	-webkit-border-radius: $borderRadius $borderRadius 0 0;
+	-moz-border-radius: $borderRadius $borderRadius 0 0;
+	opacity: 0.35;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+	filter: alpha(opacity=35);
+	-moz-opacity: 0.35;
+	-khtml-opacity: 0.35;
+	/*transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;*/
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+    -moz-transition: all 0.55s ease-in-out;
+    -o-transition: all 0.55s ease-in-out;
+	&:hover {
+	}
+}
+.placeLoginFrm {
+	background-color: rgba(255,255,255,0.85);
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+	padding: rem-calc(15);
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	&:hover {
+	}
+}
+.placeHeader {
+	background-color: rgba(255,255,255,0.85);
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+	padding: rem-calc(5);
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+    
+    .title {
+        height: rem-calc(33);
+        line-height: rem-calc(27);
+        vertical-align: middle;
+        color: $colorWhite;
+        font: $fontSize*1 $fontApp;
+        font-weight: 600;
+        text-align: right;
+    }
+    
+	&:hover {
+	}
+}
+.pageTitle {
+    background-color: $colorWhiteBK1;
+    color: $fontColor1;
+    font: $fontSize*1 $fontYekan;
+    font-weight: 600;
+    border-bottom: 2px $color1 solid;
+    margin: 0;
+    padding: 10px;
+}
+.title {
+    height: rem-calc(33);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    color: $color1;
+    font: $fontSize*1 $fontApp;
+    font-weight: 600;
+    text-align: right;
+	.pageDesc {
+        color: rgba(0,0,0,0.25);
+        font: $fontSize*1.15 $fontApp;
+        font-weight: 600;
+    }
+	.pageTxt {
+		color: rgba(0,0,0,0.45);
+        font: $fontSize*0.8 $fontYekan;
+        font-weight: 600;
+		margin: 0;
+		padding: 0;
+	}
+	p {
+		color: rgba(0,0,0,0.65);
+        font: $fontSize*0.8 $fontYekan;
+        font-weight: 600;
+	}
+}
+
+
+
+
+
+.checkboxDefault {
+    @extend .squaredThree;
+    color: $fontColor1;
+    z-index: 99;
+}
+
+
+
+
+.pageGuide {
+    color: $color1;
+    font: $fontSize*0.95 $fontYekan;
+    font-weight: 600;
+    margin: rem-calc(5) 0;
+    padding: 0;
+}
+
+.pageSection {
+    color: $colorSuccess;
+    font: $fontSize*0.95 $fontYekan;
+    font-weight: 600;
+    margin: rem-calc(5) 0;
+    padding: 0;
+}
+
+
+.panelDescTitle {
+	color: rgba(0,0,0,0.45);
+	font: $fontSize*0.8 $fontYekan;
+	font-weight: 600;
+	margin: 0;
+	padding: rem-calc(10) 0;
+}
+
+.placePanelImg {
+    display: block;
+    position: relative;
+    width: 100%;
+	height: rem-calc(75);
+	min-height: rem-calc(75);
+	max-height: rem-calc(75);
+	background-color: rgba(255,255,255,0.75);
+	background-image: url(../images/bkPanel.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+	margin-top: rem-calc(8);
+	opacity: 1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+    
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+    -moz-transition: all 0.55s ease-in-out;
+    -o-transition: all 0.55s ease-in-out;
+	&:hover {
+	}
+}
+.placePanelImgStore {
+    @extend .placePanelImg;
+	background-image: url(../images/bkPanelStore.jpg);
+}
+.placePanelImgGroup {
+	@extend .placePanelImg;
+	background-image: url(../images/bkPanelStore.jpg);
+}
+.placePanelImgProduct {
+	@extend .placePanelImg;
+	background-image: url(../images/bkPanelStore.jpg);
+}
+.placePanelImgAccess {
+	@extend .placePanelImg;
+	background-image: url(../images/bkPanelUser.jpg);
+}
+.placePanelImgRule {
+	@extend .placePanelImg;
+	background-image: url(../images/bkPanelUser.jpg);
+}
+.placePanelImgUser {
+	@extend .placePanelImg;
+	background-image: url(../images/bkPanelUser.jpg);
+}
+
+.placeMenu {
+	a.blockMenuIcon {
+		display: block;
+		position: relative;
+		/*height: rem-calc(45);*/
+		/*background-color: $colorDark;*/
+		color: darken($white, 8);
+		font: $fontSize*0.75 $fontYekan;
+        font-weight: 600;
+		text-align: center;
+		border: rem-calc(4) $backgroundColor solid;
+		border-radius: $borderRadius;
+		-webkit-border-radius: $borderRadius;
+		-moz-border-radius: $borderRadius;
+		padding: rem-calc(4);
+	
+		background-color: rgba(0,0,0,0.45);
+		border-radius: $borderRadius;
+		-webkit-border-radius: $borderRadius;
+		-moz-border-radius: $borderRadius;
+		padding: rem-calc(4);
+		transition: all 0.2s ease-in;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+		.icon {
+			font: $fontSize*2.3 $fontIcon;
+			padding-bottom: rem-calc(4);
+		}
+		&:hover {
+			background-color: #2C3037;
+			color: $colorWhite;
+			
+			transform: scale(1.1);
+			-moz-transform: scale(1.1);
+			-webkit-transform: scale(1.1);
+			-o-transform: scale(1.1);
+			-ms-transform: scale(1.1);
+			z-index: 99;
+			cursor: pointer;
+		
+			transition: all 0.15s ease-in-out;
+			-webkit-transition: all 0.15s ease-in-out;
+			-moz-transition: all 0.15s ease-in-out;
+			-o-transition: all 0.15s ease-in-out;
+			cursor: pointer;
+		}
+	}
+	
+}
+
+#panelTop {
+    @extend %panel-base;
+    @include panel-layout( $position: top, $size: rem-calc(155), $shadow: 0 4px 10px #999999);
+    @include panel-style( $padding: 1rem, $background: #FAFAFA);
+    &.fixed {
+        position: fixed;
+    }
+}
+.menuBarTopGroup {
+    /*@extend %menu-group;*/
+    background-color: #434A54;
+    color: #E4E5E4;
+    direction: ltr;
+}
+.menuBarTop {
+    @extend %menu-bar;
+    @include menu-bar-layout( $orientation: horizontal, $stretch: false);
+    @include menu-bar-style( $background: #434A54, $background-hover: #2C3037, $background-active: #656D78, $color: #E4E5E4, $color-hover: #FFF, $color-active: #FFF, $autocolor: true);
+    @include menu-bar-icons( $position: right, $size: 20px);
+}
+.barTop {
+    li {
+        height: rem-calc(29);
+		line-height: rem-calc(29);
+		vertical-align: middle;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+        a {
+			height: rem-calc(29);
+			line-height: rem-calc(29);
+			vertical-align: middle;
+            color: #E4E5E4;
+            font: $fontSize*0.7 $fontYekan;
+            font-weight: 600;
+			padding: rem-calc(4);
+            .icon {
+                font: $fontSize*1.4 $fontIcon;
+            }
+			&:hover {
+				background-color: #2C3037;
+			}
+        }
+		&:hover {
+			background-color: #2C3037;
+		}
+    }
+    li.barTopDate,
+    li.barTopDate:hover,
+    li.barTopDate:visited {
+        height: rem-calc(29);
+        line-height: rem-calc(29);
+        vertical-align: middle;
+        color: #E4E5E4;
+        font: $fontSize*0.7 $fontYekan;
+		padding: rem-calc(8) rem-calc(4) 0;
+        font-weight: 400;
+        .icon {
+            font: $fontSize*1.4 $fontIcon;
+        }
+    }
+	li.barTopUser,
+    li.barTopUser:hover,
+    li.barTopUser:visited {
+        height: rem-calc(29);
+        line-height: rem-calc(29);
+        vertical-align: middle;
+        color: #E4E5E4;
+        font: $fontSize*0.7 $fontYekan;
+        font-weight: 600;
+		padding: rem-calc(8) rem-calc(4) 0;
+        .icon {
+            font: $fontSize*1.4 $fontIcon;
+        }
+    }
+	li.barTopSelect {
+		a {
+			background-color: $color1;
+			color: $color1Bk;
+			font: $fontSize*0.7 $fontYekan;
+        	font-weight: 600;
+			.icon {
+				font: $fontSize*1.4 $fontIcon;
+			}
+		}
+	}
+	li.barTopPin {
+		a, a:visited {
+			background-color: transparent;
+			color: $colorWhite;
+			font: $fontSize*0.8 $fontYekan;
+			font-weight: 400;
+			&:hover {
+				background-color: $colorAlert;
+				color: $fontColorApp;
+			}
+			.icon {
+				font: $fontSize*1.4 $fontIcon;
+			}
+		}
+	}
+	li.barTopPinSelect {
+		a, a:visited, a:hover {
+			background-color: $colorAlert;
+			color: $fontColorApp;
+			font: $fontSize*0.8 $fontYekan;
+			font-weight: 400;
+			.icon {
+				font: $fontSize*1.4 $fontIcon;
+			}
+		}
+	}
+}
+.containerCenter {
+    @include grid-container( $width: 600px, $align: center);
+}
+.containerCenterNew {
+    @include grid-layout(6);
+}
+.blockCustomMain {
+    @include grid-layout(1);
+    @include grid-orient(horizontal);
+    /*horizontal / vertical*/
+}
+.blockCustomCenterV {
+    @include grid-layout(1);
+    /*@include grid-orient(horizontal);*/
+    /*horizontal / vertical*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.blockCustom {
+    @include grid-layout(1);
+    /*@include breakpoint(medium) {
+		@include grid-layout(2);
+	}
+	@include breakpoint(large) {
+		@include grid-layout(3);
+	}*/
+}
+form.blockCustom {
+    @include grid-layout(1);
+    margin: 0;
+    padding: 0;
+}
+.blockCustomBtnRow {
+    @include grid-block;
+    width: 100%;
+    height: rem-calc(40);
+    line-height: rem-calc(40);
+    vertical-align: middle;
+    background-color: transparent;
+    border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    margin: rem-calc(4) auto;
+    padding: 0;
+	overflow: hidden;
+    a, a:link, a:visited {
+    }
+}
+.blockCustom50 {
+    @include grid-layout(1);
+    width: 50%;
+    margin: 0 auto;
+}
+.blockTableScroll {
+    /*@include grid-layout(1);*/
+    @include grid-content($size: expand, $offset: 0, $order: 0);
+    /*background-color: #F2F2F2;
+	border-top: 2px $color1 solid;*/
+    margin: rem-calc(5);
+    padding: rem-calc(5);
+}
+
+.blockPlace {
+	margin: rem-calc(4) 0;
+}
+.blockSpace {
+    height: 1px;
+    max-height: 1px;
+    min-height: 1px;
+    border-bottom: 1px #999999 dotted;
+}
+.blockPre {
+	display: block;
+	position: relative;
+	height: rem-calc(75);
+	background-color: $colorDark;
+	border: rem-calc(4) $backgroundColor solid;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+	padding: rem-calc(4);
+	transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+	.blockPreTitle {
+		display: inline-block;
+		position: relative;
+		font: $fontSize*1 $fontApp;
+		font-weight: 600;
+		float: right;
+	}
+	.blockPreDesc {
+		display: inline-block;
+		position: relative;
+		font: $fontSize*2.15 $fontApp;
+		font-weight: 600;
+		letter-spacing: 4px;
+		padding: rem-calc(4);
+		float: left;
+		.icon {
+			display: inline-block;
+			height: rem-calc(37);
+			line-height: rem-calc(37);
+			vertical-align: middle;
+			float: left;
+		}
+		.blockPreDescTxt {
+			display: inline-block;
+			height: rem-calc(37);
+			line-height: rem-calc(37);
+			vertical-align: middle;
+			padding-top: rem-calc(8);
+		}
+	}
+	.blockPreRef {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		bottom: rem-calc(4);
+		font: $fontSize*0.6 $fontYekan;
+		font-weight: 600;
+		text-align: center;
+		float: none;
+		clear: both;
+		overflow: hidden;
+		z-index: 96;
+		
+		opacity: 0;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		-moz-opacity: 0;
+		-khtml-opacity: 0;
+		
+//		transition: all 0.15s ease-in-out;
+//		-webkit-transition: all 0.15s ease-in-out;
+//		-moz-transition: all 0.15s ease-in-out;
+//		-o-transition: all 0.15s ease-in-out;
+		.icon {
+			display: inline-block;
+			height: rem-calc(17);
+			line-height: rem-calc(17);
+			vertical-align: middle;
+			font: $fontSize*1.3 $fontIcon;
+		}
+		.blockPreRefTxt {
+			display: inline-block;
+			height: rem-calc(17);
+			line-height: rem-calc(17);
+			vertical-align: middle;
+			padding-top: rem-calc(-8);
+		}
+	}
+	&:hover {
+		transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+		-o-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		z-index: 99;
+		cursor: pointer;
+		.blockPreRef {
+			opacity: 1;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			filter: alpha(opacity=100);
+			-moz-opacity: 1;
+			-khtml-opacity: 1;
+			.icon {
+				opacity: 0.65;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+				filter: alpha(opacity=65);
+				-moz-opacity: 0.65;
+				-khtml-opacity: 0.65;
+			}
+			.blockPreRefTxt {
+				opacity: 0.65;
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+				filter: alpha(opacity=65);
+				-moz-opacity: 0.65;
+				-khtml-opacity: 0.65;
+			}
+		}
+	}
+}
+.blockA {
+	@extend .blockPre;
+	background-color: #2083F7;
+	color: $white;
+	.blockPreRef {
+		background-color: darken(#2083F7, 8);
+	}
+}
+.blockB {
+	@extend .blockPre;
+	background-color: #00CCA0;
+	color: $white;
+	.blockPreRef {
+		background-color: darken(#00CCA0, 8);
+	}
+}
+.blockC {
+	@extend .blockPre;
+	background-color: #F5A623;
+	color: $white;
+	.blockPreRef {
+		background-color: darken(#F5A623, 8);
+	}
+}
+.blockD {
+	@extend .blockPre;
+	background-color: #F4606F;
+	color: $white;
+	.blockPreRef {
+		background-color: darken(#F4606F, 8);
+	}
+}
+
+.placeRightPanel {
+	background-color: #434A54;
+	color: rgba(241,241,241,1.00);
+	border-radius: 0 0 $borderRadius $borderRadius;
+	-webkit-border-radius: 0 0 $borderRadius $borderRadius;
+	-moz-border-radius: 0 0 $borderRadius $borderRadius;
+}
+.placeLogo {
+	width: 100%;
+	height: rem-calc(64);
+	min-height: rem-calc(64);
+	max-height: rem-calc(64);
+	background-color: transparent !important;
+	background-image: url(../images/logoClipto.png);
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center center;
+	margin: rem-calc(15) auto;
+}
+.placeUserBlock {
+	background-color: #2C3037;
+	padding: rem-calc(10) 0;
+}
+.placeUserPic {
+	width: rem-calc(84);
+	height: rem-calc(84);
+	min-height: rem-calc(84);
+	max-height: rem-calc(84);
+	background-color: transparent !important;
+	background-image: url(../images/userProfilePic.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	border: 1px $colorWhite solid;
+	border-radius: rem-calc(42);
+	-webkit-border-radius: rem-calc(42);
+	-moz-border-radius: rem-calc(42);
+	margin: rem-calc(5) auto;
+}
+.placeUserName {
+	width: 100%;
+	text-wrap: none;
+	overflow: hidden;
+	color: $colorWhite;
+	font: $fontSize*0.85 $fontYekan;
+	font-weight: 600;
+	margin: 0;
+	padding: rem-calc(5);
+	padding-right: rem-calc(38);
+}
+.placeUserGroup {
+	width: 100%;
+	text-wrap: none;
+	overflow: hidden;
+	color: $colorGrayDark;
+	font: $fontSize*0.85 $fontYekan;
+	font-weight: 400;
+	margin: 0;
+	padding: rem-calc(5);
+	padding-right: rem-calc(38);
+}
+.placeLineSep {
+	height: rem-calc(2);
+	max-height: rem-calc(2);
+	border-top: 1px rgba(0,0,0,0.35) solid;
+	border-bottom: 1px rgba(115,115,115,0.65) solid;
+}
+.placeMenuRight {
+}
+.placeMenuRightLine {
+}
+.placeMenuRightItem {
+	ul {
+		display: block;
+		position: relative;
+		list-style: none;
+		width: 100%;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		li {
+			width: 100%;
+            height: rem-calc(37);
+            line-height: rem-calc(37);
+            vertical-align: middle;
+			text-wrap: none;
+			overflow: hidden;
+			color: $colorWhite;
+			font: $fontSize*0.85 $fontYekan;
+			font-weight: 600;
+			margin: 0;
+			padding: rem-calc(10);
+            
+            transition: all 0.2s ease-in;
+            -webkit-transition: all 0.2s ease-in;
+            -moz-transition: all 0.2s ease-in;
+            -o-transition: all 0.2s ease-in;
+			.icon {
+                height: rem-calc(43);
+                line-height: rem-calc(43);
+                vertical-align: middle;
+				font: $fontSize*1.45 $fontIcon;
+				padding-left: rem-calc(10);
+                padding-top: rem-calc(4);
+			}
+			a, a:link, a:visited, a:hover {
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+				color: $colorWhite;
+			}
+			&:hover {
+				background-color: $color1;
+				color: $color1Bk;
+				cursor: pointer;
+			}
+		}
+		li.placeMenuRightItemTitle, li.placeMenuRightItemTitle:hover {
+            display: inline-block;
+            position: relative;
+            height: rem-calc(33);
+            line-height: rem-calc(33);
+            vertical-align: middle;
+			background-color: #2C3037;
+			color: darken($colorGrayDark, 4);
+//			padding-right: rem-calc(38);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            .icon {
+                display: inline-block;
+                position: relative;
+                top: rem-calc(6);
+            }
+			a, a:link, a:visited, a:hover {
+				background-color: transparent;
+				color: $colorGrayDark;
+			}
+		}
+		li.placeLineSep, li.placeLineSep:hover {
+			height: rem-calc(2) !important;
+			max-height: rem-calc(2) !important;
+			background-color: transparent;
+			color: $colorGrayDark;
+			border-top: 1px rgba(0,0,0,0.35) solid;
+			border-bottom: 1px rgba(115,115,115,0.65) solid;
+			a, a:link, a:visited, a:hover {
+				height: rem-calc(2);
+				max-height: rem-calc(2);
+				background-color: transparent;
+				color: $colorGrayDark;
+				border-top: 1px rgba(0,0,0,0.35) solid;
+				border-bottom: 1px rgba(115,115,115,0.65) solid;
+			}
+		}
+		
+	}
+}
+.ui-view-content {
+	padding: rem-calc(10) rem-calc(15) rem-calc(10) 0;
+	overflow-x: hidden;
+}
+
+
+
+
+
+
+
+.blockLoginHeader {
+	background-color: rgba(64,74,84,0.75);
+	color: $colorWhite;
+	font: $fontSize*1 $fontApp;
+	font-weight: 400;
+	line-height: 1.3;
+    margin: rem-calc(12) 0 0 0;
+	padding: rem-calc(6);
+	border-radius: $borderRadius $borderRadius 0 0;
+    -webkit-border-radius: $borderRadius $borderRadius 0 0;
+    -moz-border-radius: $borderRadius $borderRadius 0 0;
+}
+.blockLoginForm {
+	background-color: rgba(64,74,84,0.35);
+	padding: rem-calc(8) rem-calc(4) rem-calc(4) rem-calc(4);
+	border-radius: 0 0 $borderRadius $borderRadius;
+    -webkit-border-radius: 0 0 $borderRadius $borderRadius;
+    -moz-border-radius: 0 0 $borderRadius $borderRadius;
+}
+.blockBtnPlace {
+	margin: rem-calc(8) 0 0 0;
+}
+.blockPageForm {
+//	background-color: rgba(255,255,255,1);
+    background-color: lighten($colorSuccess, 30);
+    border-top: 2px $colorSuccess solid;
+	border-bottom: 2px $color1 solid;
+	margin: 0;
+    padding: rem-calc(4);
+	border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+.blockPageHeader {
+	background-color: rgba(255,255,255,1);
+	border-top: 2px $color1 solid;
+	border-bottom: 2px $color1 solid;
+	margin: rem-calc(10) 0 0 0;
+    padding: rem-calc(4);
+	border-radius: $borderRadius $borderRadius 0 0;
+    -webkit-border-radius: $borderRadius $borderRadius 0 0;
+    -moz-border-radius: $borderRadius $borderRadius 0 0;
+}
+.blockPageFooter {
+    background-color: rgba(255,255,255,1);
+    border-top: 2px $colorGray solid;
+    border-bottom: 0px $color1 solid;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    margin: 0 0 rem-calc(10) 0;
+	padding: rem-calc(10) rem-calc(5);
+}
+
+
+
+
+.blockGrayTopLvl {
+	@include grid-layout(1);
+	background-color: rgba(255,255,255,0.55);
+	/* border-top: 2px $colorGrayLight solid; */
+	border-bottom: 2px $colorWhite solid;
+	padding: rem-calc(5) 0;
+}
+.blockGrayTop {
+	@include grid-layout(1);
+	background-color: rgba(64,74,84,0.35);
+	color: $colorWhite;
+	border-top: 2px $color1 solid;
+	margin: rem-calc(5) 0;
+	padding: rem-calc(5) 0;
+}
+.blockGrayBot {
+	background-color: rgba(64,74,84,0.35);
+	border-top: 2px $color1 solid;
+	padding: rem-calc(10) rem-calc(5);
+}
+.blockWhiteBot {
+	background-color: rgba(255,255,255,0.55);
+	border-top: 2px $color1 solid;
+	padding: rem-calc(10) rem-calc(5);
+}
+.blockGrayTopBlank {
+	@include grid-layout(1);
+	/*@include grid-content($size: shrink, $offset: 0, $order: 0);*/
+	background-color: rgba(255,255,255,0.55);
+	border-top: 2px $color1 solid;
+	margin: rem-calc(5);
+	padding: rem-calc(5);
+}
+
+
+
+
+.blockCardPlace {
+	margin: rem-calc(6) 0;
+}
+
+
+
+
+.formInlineLabel {
+    /*@include grid-layout(1);*/
+    /*@include grid-block(12);*/
+    direction: ltr;
+    margin: 0;
+    padding: 0;
+}
+.labelFormDropDown {
+    width: rem-calc(80);
+    height: rem-calc(27);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    font: $fontSize*0.8 $fontApp;
+    direction: ltr;
+    margin: 0;
+    padding: 0 rem-calc(8) 0 0;
+    background-color: $colorGray;
+    color: #666;
+    border: none;
+    border-color: $colorGray;
+    outline: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    cursor: pointer;
+    .txt {
+        display: inline-block;
+        height: rem-calc(34);
+        line-height: rem-calc(30);
+        vertical-align: middle;
+        color: #666;
+        font: $fontSize*0.7 $fontApp;
+        font-weight: 400;
+        padding: 0 rem-calc(5) 0 0;
+    }
+}
+ul.formInlineLabelCheckbox {
+    height: rem-calc(37);
+    line-height: rem-calc(37);
+    vertical-align: middle;
+    background-color: #F7F7F7;
+    display: block;
+    list-style: none;
+    direction: ltr;
+    border: 1px $color1 solid;
+    margin: rem-calc(6) 0 0 0;
+    padding: 0;
+    li {
+        display: inline-block;
+        float: right;
+        text-align: right;
+        margin: 0 rem-calc(14) 0 0;
+        padding: 0;
+        .title {
+            display: inline-block;
+            position: relative;
+            font: $fontSize*1.1 $fontNassim;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: rem-calc(6) 0 0 0;
+        }
+        .item {
+            display: inline-block;
+            position: relative;
+            font: $fontSize*1 $fontNassim;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: rem-calc(6) 0 0 0;
+            .txt {
+                display: inline-block;
+                position: relative;
+                margin: rem-calc(-12) 0 0 0;
+            }
+        }
+    }
+}
+.inline-label {
+    /*@include grid-block;*/
+    /*@include grid-size(shrink);*/
+    /*expand / shrink*/
+    height: rem-calc(40);
+    line-height: rem-calc(40);
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+.inline-label > .form-label {
+    @include grid-block(4);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    background-color: $colorGray;
+    color: #444444;
+    text-align: center;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    border-radius: 0 $borderRadius $borderRadius 0;
+	-webkit-border-radius: 0 $borderRadius $borderRadius 0;
+	-moz-border-radius: 0 $borderRadius $borderRadius 0;
+}
+.inline-label > .form-label.formLabelDefaultDesc {
+    @include grid-block(2);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    background-color: $colorGray;
+    color: #444444;
+    text-align: center;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+.inline-label > .form-label.formLabelFix1 {
+    /*@include grid-block(2);*/
+    width: rem-calc(160);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    background-color: $colorGray;
+    color: #888888;
+    text-align: center;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+.formLabel {
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 400;
+    direction: rtl;
+    text-align: right;
+}
+.formLabelDefault {
+    @extend .formInput;
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: #444444;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: 0 $borderRadius $borderRadius 0;
+	-webkit-border-radius: 0 $borderRadius $borderRadius 0;
+	-moz-border-radius: 0 $borderRadius $borderRadius 0;
+}
+.formLabelDefaultDesc {
+    @extend .formInput;
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: #444444;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: 0 $borderRadius $borderRadius 0;
+-webkit-border-radius: 0 $borderRadius $borderRadius 0;
+-moz-border-radius: 0 $borderRadius $borderRadius 0;
+}
+.inline-label > .form-label.icon {
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: #444444;
+    text-align: center;
+    margin: rem-calc(0);
+    padding: rem-calc(7) rem-calc(9) 0 0;
+    overflow: hidden;
+}
+.inline-label > .form-label .icon {
+    margin: rem-calc(0);
+    padding: rem-calc(2) rem-calc(4) 0 rem-calc(8);
+    overflow: hidden;
+}
+.formLabelDefault.icon {
+    color: #444444;
+}
+.formInput {
+    direction: rtl;
+    text-align: right;
+}
+.formInputDefault {
+    @extend .formInput;
+    @include grid-block(8);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    background-color: $colorGrayLight;
+    color: $fontColorApp;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: $borderRadius 0 0 $borderRadius;
+	-webkit-border-radius: $borderRadius 0 0 $borderRadius;
+	-moz-border-radius: $borderRadius 0 0 $borderRadius;
+    box-shadow: inset 2px 2px 2px #ddd;
+    -webkit-box-shadow: inset 2px 2px 2px #ddd;
+    -moz-box-shadow: inset 2px 2px 2px #ddd;
+}
+input.formUsername:focus ~ .placeLogin,
+input.formPassword:focus ~ .placeLogin {
+	margin-top: 20vh;
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	.placeLoginImg {
+		height: rem-calc(115);
+		min-height: rem-calc(115);
+		max-height: rem-calc(115);
+		background-color: rgba(255,255,255,0.15);
+		opacity: 1;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: alpha(opacity=100);
+		-moz-opacity: 1;
+		-khtml-opacity: 1;
+		transition: all 0.55s ease-in-out;
+		-webkit-transition: all 0.55s ease-in-out;
+		-moz-transition: all 0.55s ease-in-out;
+		-o-transition: all 0.55s ease-in-out;
+	}
+	.placeLoginFrm {
+		background-color: rgba(255,255,255,0.15);
+		border-radius: 0 0 $borderRadius $borderRadius;
+		-webkit-border-radius: 0 0 $borderRadius $borderRadius;
+		-moz-border-radius: 0 0 $borderRadius $borderRadius;
+		transition: all 0.55s ease-in-out;
+		-webkit-transition: all 0.55s ease-in-out;
+		-moz-transition: all 0.55s ease-in-out;
+		-o-transition: all 0.55s ease-in-out;
+	}
+}
+.formInputDefaultDesc {
+    @extend .formInput;
+    @include grid-block(10);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    background-color: $colorGrayLight;
+    color: $fontColorApp;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: $borderRadius 0 0 $borderRadius;
+	-webkit-border-radius: $borderRadius 0 0 $borderRadius;
+	-moz-border-radius: $borderRadius 0 0 $borderRadius;
+    box-shadow: inset 2px 2px 2px #ddd;
+    -webkit-box-shadow: inset 2px 2px 2px #ddd;
+    -moz-box-shadow: inset 2px 2px 2px #ddd;
+}
+
+.formInputSearch {
+    height: rem-calc(31) !important;
+    line-height: rem-calc(31);
+    font: $fontSize*0.8 $fontYekan !important;
+    font-weight: 400;
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+    padding: rem-calc(0);
+}
+.formSelect {
+    direction: rtl;
+    text-align: right;
+}
+.formInputDefault::-webkit-input-placeholder,
+.formInputDefaultDesc::-webkit-input-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+}
+.formInputDefault::-moz-placeholder,
+.formInputDefaultDesc::-moz-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+}
+
+.formInputDefault::-ms-input-placeholder,
+.formInputDefaultDesc::-ms-input-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+}
+input[type="text"].formInputDefault {
+    @extend .formInputDefault;
+}
+
+input[type="text"].formInputDate {
+    @extend .formInputDefault;
+    text-align: left;
+    direction: ltr;
+    padding: 0 rem-calc(12);
+}
+
+input[type="password"].formInputDefault {
+    @extend .formInputDefault;
+}
+
+input[type="text"].formInputDefaultDesc {
+    @extend .formInputDefaultDesc;
+}
+
+input[type="password"].formInputDefaultDesc {
+    @extend .formInputDefaultDesc;
+}
+.inputSelectDefault {
+	@include grid-block(8);
+    height: rem-calc(34);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    background-color: $colorGrayLight;
+    color: $fontColorApp;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+	text-align: right;
+	direction: rtl;
+    border: none;
+    outline: none;
+	border-radius: $borderRadius 0 0 $borderRadius;
+	-webkit-border-radius: $borderRadius 0 0 $borderRadius;
+	-moz-border-radius: $borderRadius 0 0 $borderRadius;
+    box-shadow: inset 2px 2px 2px #ddd;
+    -webkit-box-shadow: inset 2px 2px 2px #ddd;
+    -moz-box-shadow: inset 2px 2px 2px #ddd;
+}
+select.inputSelectDefault {
+	@extend .inputSelectDefault;
+}
+.btnDefaultEmpty {
+    @extend %button;
+    @include button-size ( $size: medium, $expand: true);
+    @include button-style ( $background: $color3, $background-hover: auto, $color: #FFF, $style: solid);
+    font: $fontSize*0.8 $fontYekan;
+    font-weight: 600;
+    text-align: center;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    margin: 0;
+    padding: 0;
+    &.custom-disabled {
+        @include button-disabled;
+    }
+    .icon {
+        display: inline-block;
+        font: $fontSize*1.5 $fontYekan;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+    }
+}
+.btnDefaultEmpty.icon {
+    display: inline-block;
+    font: $fontSize*1.5 $fontYekan;
+    margin: 0;
+    padding: 0;
+}
+.btnDefault {
+    @extend %button;
+    @include button-size ( $size: medium, $expand: true);
+    @include button-style ( $background: $color3, $background-hover: auto, $color: #FFF, $style: solid);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    font: $fontSize*0.8 $fontYekan;
+    font-weight: 600;
+    text-align: center;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    margin: 0;
+    padding: rem-calc(10) rem-calc(10) rem-calc(4) rem-calc(10);
+	&:hover {
+		box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px -2px rgba(0, 0, 0, 0.2);
+    	-webkit-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px -2px rgba(0, 0, 0, 0.2);
+    	-moz-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px -2px rgba(0, 0, 0, 0.2);
+		transition: all 0.15s ease;
+		-webkit-transition: all 0.15s ease;
+		-moz-transition: all 0.15s ease;
+		-o-transition: all 0.15s ease;
+		cursor: pointer;
+	}
+    &.custom-disabled {
+        @include button-disabled;
+    }
+    .icon {
+        display: inline-block;
+        font: $fontSize*1.5 $fontYekan;
+        height: rem-calc(34);
+        line-height: rem-calc(17);
+        vertical-align: middle;
+        margin: 0;
+        margin-top: rem-calc(-4);
+        padding: 0;
+        float: right;
+    }
+}
+.btnDefault.icon {
+    display: inline-block;
+    font: $fontSize*1.5 $fontYekan;
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    padding-top: rem-calc(8);
+    float: right;
+}
+span.btnDefaultIconPlace {
+    position: relative;
+}
+span.btnDefaultIconPlace:after {
+}
+input[type="submit"].btnDefault {
+    margin: 0;
+    padding: 0;
+    padding-right: 0;
+}
+.btnAlarm {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorAlert, $background-hover: auto, $color: #555, $style: solid);
+    width: rem-calc(30);
+    height: rem-calc(30);
+    line-height: rem-calc(30);
+    margin: rem-calc(6);
+    padding: rem-calc(9) rem-calc(6) 0 0;
+    overflow: hidden;
+}
+.btnAlarm.icon {
+    margin: 0;
+    padding: 0;
+}
+.btnAlarmExtend {
+    @extend .btnDefault;
+    @include button-style ($background: $colorAlert, $background-hover: auto, $color: #555, $style: solid);
+	text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	.icon {
+		margin: 0px auto;
+		padding: rem-calc(6) 0 0 0;
+		float: none;
+	}
+}
+.btnAlarmExtend.icon {
+    margin: 0;
+    padding: 0;
+}
+.btnUnLock {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnUnLockIcon:after {
+    display: inline-block;
+    position: absolute;
+    top: rem-calc(4);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e1cb";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+.btnLock {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorWarning, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnLockIcon:after {
+    display: inline-block;
+    position: absolute;
+    top: rem-calc(4);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e1cb";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+.btnBackPlace {
+    padding-top: rem-calc(14);
+}
+.hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* Component styles */
+a.btnEffect {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3), 0 3px 3px rgba(0, 0, 0, 0.15), 0 3px 2px -2px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    color: $white;
+    font-size: 1.25em;
+    text-shadow: 0 -0.5px 1px rgba(0, 0, 0, 0.15);
+}
+.btnEffect {
+    padding: 1.5em 3em;
+    margin: 0;
+    position: relative;
+    min-width: 250px;
+    display: inline-block;
+}
+.btnEffect.styl-material {
+	transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	-moz-transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	-o-transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    background: #E91E63;
+}
+.btnEffect.styl-material:hover,
+.btnEffect.styl-material:focus {
+    outline: none;
+    background: #EC407A;
+}
+.ripple-obj {
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    /*fill: #AD1457;*/
+    fill: #AD1457;
+}
+.ripple-obj use {
+    opacity: 0;
+}
+.btnOk {
+    @extend .btnDefault;
+    @include button-style ( $background: #41A85F, $background-hover: auto, $color: #FFF, $style: solid);
+}
+.btnRe {
+    @extend .btnDefault;
+    @include button-style ( $background: $color1, $background-hover: auto, $color: #FFF, $style: solid);
+}
+.btnCancel {
+    @extend .btnDefault;
+    /*border: 1px #CCCCCC solid;*/
+    @include button-style ( $background: $color3, $background-hover: auto, $color: #999, $style: solid);
+}
+.btnEnter {
+    @extend .btnDefault;
+    @include button-style ( $background: $color1, $background-hover: auto, $color: #FFF, $style: solid);
+}
+.btnAdd {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+}
+.btnReturn {
+    @extend .btnDefault;
+    @include button-style ( $background: #E6E9ED, $background-hover: auto, $color: #888888, $style: solid);
+}
+.btnFormUp {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorGray, $background-hover: auto, $color: #888888, $style: solid);
+}
+span.btnEnterIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e052";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+span.btnAddIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e05b";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+span.btnReturnIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: #888888;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e00b";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+.btnSearchForm {
+    @extend .btnDefault;
+    @include button-style ( $background: $color1, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnSearchFormIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.1 $fontYekan;
+    font-weight: 400;
+    content: "\e0b7";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+    overflow: hidden;
+}
+.btnSearchFormG {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnSearchFormGIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.1 $fontYekan;
+    font-weight: 400;
+    content: "\e0b7";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+    overflow: hidden;
+}
+.btnUnLock {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnUnLockIcon:after {
+    display: inline-block;
+    position: absolute;
+    top: rem-calc(4);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e1cb";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+    overflow: hidden;
+}
+.btnLock {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorWarning, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnLockIcon:after {
+    display: inline-block;
+    position: absolute;
+    top: rem-calc(4);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e1cb";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+    overflow: hidden;
+}
+.btnBackPlace {
+    padding-top: rem-calc(14);
+}
+.btnSearch {
+    @extend .btnDefault;
+    @include button-size ( $size: medium, $expand: false);
+    width: rem-calc(31);
+    height: rem-calc(31);
+    line-height: rem-calc(31);
+    @include button-style ( $background: $color1, $background-hover: auto, /*$color: #FFF,*/
+    $style: solid);
+    .icon {
+        display: inline-block;
+        font: $fontSize*1.1 $fontDefault;
+        line-height: rem-calc(25);
+        vertical-align: central;
+        margin: 0;
+        padding: 0;
+        margin-top: rem-calc(0);
+        float: right;
+    }
+}
+.btnUploadPic {
+    @extend .btnDefault;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.btnDefaultFile {
+    @extend .btnUploadPic;
+}
+form input[type="file"].btnDefaultFile,
+input[type="file"].btnDefaultFile {
+    @extend .btnUploadPic;
+    /* font: $fontSize*0.6 $fontDefault;
+	padding: rem-calc(6);
+	padding-top: rem-calc(12); */
+    cursor: pointer;
+}
+.txtError {
+    color: $colorWarning;
+    font: $fontSize*0.85 $fontYekan;
+}
+.txtErr {
+    height: rem-calc(34);
+    line-height: rem-calc(17);
+    vertical-align: middle;
+    color: $colorWarning;
+    font: $fontSize*0.8 $fontYekan;
+    text-align: right;
+    letter-spacing: 0px;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+	margin: rem-calc(8) 0px;
+    padding: rem-calc(8);
+}
+
+.txtErrInner {
+    height: rem-calc(34);
+    line-height: rem-calc(17);
+    vertical-align: middle;
+    color: $colorWarning;
+    font: $fontSize*0.8 $fontYekan;
+    text-align: center;
+    letter-spacing: 0px;
+    padding: rem-calc(10);
+}
+.txtErrIcon {
+    color: $colorWarning;
+    font: $fontSize*1.1 $fontDefault;
+    line-height: rem-calc(18);
+    vertical-align: middle;
+    padding-top: rem-calc(4);
+}
+.blockGrayTopLvl {
+    @include grid-layout(1);
+    background-color: #F2F2F2;
+    border-top: 2px $color1 solid;
+    border-bottom: 2px #FFF solid;
+    padding: rem-calc(5) 0;
+}
+.blockGrayTop {
+    @include grid-layout(1);
+    background-color: #F2F2F2;
+    border-top: 2px $color1 solid;
+    margin: rem-calc(5) 0;
+    padding: rem-calc(5) 0;
+}
+.blockGrayTopNew {
+    background-color: #F7F7F7;
+    border-top: 2px $color1 solid;
+	border-radius: $borderRadius $borderRadius 0 0;
+	-webkit-border-radius: $borderRadius $borderRadius 0 0;
+	-moz-border-radius: $borderRadius $borderRadius 0 0;
+    margin: rem-calc(10) 0;
+    padding: rem-calc(10);
+}
+.blockGrayTopNewInner {
+    background-color: #F7F7F7;
+    color: $color1;
+    text-align: center;
+    border-bottom: 2px $color1 solid;
+    margin: rem-calc(15);
+    padding: rem-calc(15);
+    .titleInner {
+        color: $color1;
+        font: $fontSize*1 $fontApp;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.5;
+    }
+    .icon {
+        line-height: rem-calc(21);
+        vertical-align: middle;
+        color: $color1;
+        font: $fontSize*1.3 $fontDefault;
+        padding-top: rem-calc(-8);
+        padding-left: rem-calc(10);
+    }
+}
+
+#dialogAlarm {
+	.modal, .modalDetails {
+		/*background-color: rgba(0,0,0,0.75);*/
+	}
+}
+.dialogAlarm {
+}
+.blockAlarm {
+    background-color: $colorAlert;
+    color: #555;
+    text-align: center;
+    border-bottom: 2px $colorAlert solid;
+    margin: rem-calc(15);
+    padding: rem-calc(15);
+	border-radius: $borderRadius $borderRadius 0 0;
+	-webkit-border-radius: $borderRadius $borderRadius 0 0;
+	-moz-border-radius: $borderRadius $borderRadius 0 0;
+    .titleInner {
+        color: #555;
+        font: $fontSize*1 $fontApp;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.5;
+    }
+    .icon {
+        line-height: rem-calc(21);
+        vertical-align: middle;
+        color: #555;
+        font: $fontSize*1.3 $fontDefault;
+        padding-top: rem-calc(-8);
+        padding-left: rem-calc(10);
+    }
+}
+.blockAlarmContent {
+	color: $white;
+    font: $fontSize*1 $fontApp;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+    padding: rem-calc(5);
+    padding-top: rem-calc(14);
+}
+.blockGrayTopNewDetails {
+    /*@include grid-layout(1);*/
+    background-color: #F7F7F7;
+    margin: rem-calc(5) 0;
+    padding: rem-calc(5) 0;
+}
+.rowLabelFormPlace {
+    /*@include grid-block(12);*/
+    margin-bottom: rem-calc(4);
+}
+.blockGrayTopBlank {
+    @include grid-layout(1);
+    /*@include grid-content($size: shrink, $offset: 0, $order: 0);*/
+    background-color: #F2F2F2;
+    border-top: 2px $color1 solid;
+    margin: rem-calc(5);
+    padding: rem-calc(5);
+}
+.blockGrayBot {
+    background-color: $colorGrayLight;
+    border-top: 2px $color1 solid;
+    padding: rem-calc(10) rem-calc(5);
+	border-radius: $borderRadius $borderRadius 0 0;
+	-webkit-border-radius: $borderRadius $borderRadius 0 0;
+	-moz-border-radius: $borderRadius $borderRadius 0 0;
+    margin: rem-calc(8) 0;
+}
+.blockTitle {
+    color: #888;
+    font: $fontSize*1.2 $fontApp;
+    font-weight: 400;
+    border-bottom: 2px $color1 solid;
+    padding: rem-calc(15) 0 rem-calc(5) 0;
+}
+.blockTitleSection {
+    background-color: $color1;
+    color: $white;
+    font: $fontSize*1.1 $fontApp;
+    font-weight: 600;
+    text-align: center;
+    /*background-image: url(../images/bkSlash01.png);
+	background-repeat: repeat;
+	background-position: left top;*/
+    border-bottom: 2px $color1 solid;
+	border-radius: $borderRadius $borderRadius 0 0;
+	-webkit-border-radius: $borderRadius $borderRadius 0 0;
+	-moz-border-radius: $borderRadius $borderRadius 0 0;
+    padding: rem-calc(4);
+}
+.blockTitleModal {
+    /*background-color: $color1;*/
+    color: $white;
+    font: $fontSize*1.1 $fontApp;
+    font-weight: 600;
+    text-align: center;
+    /*background-image: url(../images/bkSlash01.png);
+	background-repeat: repeat;
+	background-position: left top;*/
+	border-bottom: 2px $color1 solid;
+	border-radius: $borderRadius $borderRadius 0 0;
+	-webkit-border-radius: $borderRadius $borderRadius 0 0;
+	-moz-border-radius: $borderRadius $borderRadius 0 0;
+	margin: rem-calc(12);
+    padding: rem-calc(8);
+}
+.blockDefault {
+    padding: rem-calc(10) 0;
+}
+table.gridSearchCustom {
+    table-layout: fixed;
+    width: 100%;
+    height: rem-calc(37);
+    line-height: rem-calc(17);
+    vertical-align: middle;
+    background-color: $white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    tbody {
+        tr {}
+    }
+    th {
+        margin: 0;
+        padding: 0;
+    }
+    td {
+        margin: 0;
+        padding: 0;
+    }
+    input[type="text"].txtInputSearch {
+        width: 100%;
+        height: rem-calc(24);
+        font-size: rem-calc(12);
+        background-color: #F7F7F7;
+        padding: 0;
+        margin: 0;
+        padding-right: 20px;
+        border: 1px #FFF solid;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+    }
+    .checkPlace {
+        width: rem-calc(26);
+    }
+    .rowNo {
+        width: rem-calc(26);
+        min-width: rem-calc(26);
+        max-width: rem-calc(26);
+        padding: 0 rem-calc(4);
+    }
+    .col10 {
+        width: 10%;
+        max-width: 10%;
+    }
+    .col20 {
+        width: 20%;
+        max-width: 20%;
+    }
+    .col25 {
+        width: 25%;
+        max-width: 25%;
+    }
+    .col30 {
+        width: 30%;
+        max-width: 30%;
+    }
+    .col40 {
+        width: 40%;
+        max-width: 40%;
+    }
+    .col50 {
+        width: 50%;
+        max-width: 50%;
+    }
+    .col70 {
+        width: 70%;
+        max-width: 70%;
+    }
+    .col100 {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .colBtn {
+        width: rem-calc(46);
+        min-width: rem-calc(46);
+        max-width: rem-calc(46);
+    }
+}
+table.gridSearch {
+    @extend .gridSearchCustom;
+    width: auto;
+}
+table.gridSearchCustomGray {
+    @extend .gridSearchCustom;
+    a {
+        color: #666;
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            /*color: rgba(255,255,255,0.5);*/
+            color: #666;
+            cursor: pointer;
+        }
+    }
+}
+table.gridCustom {
+    width: 100%;
+    table-layout: fixed;
+    white-space: nowrap;
+    line-height: rem-calc(21);
+    vertical-align: middle;
+    background-color: $white;
+    font: $fontSize*1 $fontApp;
+    font-weight: 400;
+    thead tr th,
+    thead tr td {
+        background-color: $color1;
+        color: $white;
+        white-space: nowrap;
+        overflow: hidden;
+        height: rem-calc(33);
+        line-height: rem-calc(33);
+        vertical-align: middle;
+        font: $fontSize*1 $fontYekan;
+        font-weight: 600;
+        text-align: right;
+        text-overflow: ellipsis;
+        border: 1px #FFFFFF solid;
+        margin: 0;
+        padding: rem-calc(2) rem-calc(4);
+        .icon {
+            line-height: rem-calc(21);
+            vertical-align: middle;
+            color: rgba(255, 255, 255, 0.5);
+            font: $fontSize*1.1 $fontDefault;
+            padding-top: rem-calc(-8);
+            text-align: left;
+            float: left;
+        }
+        a {
+            color: $white;
+            &:hover,
+            &:focus {
+                background-color: $color1;
+                color: rgba(255, 255, 255, 0.5);
+                cursor: pointer;
+            }
+        }
+    }
+    tbody tr {
+        height: rem-calc(21);
+        line-height: rem-calc(21);
+        vertical-align: middle;
+        font: $fontSize*0.85 $fontMirza;
+        &:nth-child(odd) {
+            background-color: #F7F7F7;
+            color: $fontColorApp;
+			transition: all 0.001s ease-in;
+			-webkit-transition: all 0.001s ease-in;
+			-moz-transition: all 0.001s ease-in;
+			-o-transition: all 0.001s ease-in;
+        }
+        &:nth-child(even) {
+            background-color: $white;
+            color: $fontColorApp;
+			transition: all 0.001s ease-in;
+			-webkit-transition: all 0.001s ease-in;
+			-moz-transition: all 0.001s ease-in;
+			-o-transition: all 0.001s ease-in;
+        }
+        &:hover,
+        &:focus {
+            background-color: $colorGray;
+            cursor: pointer;
+            a {
+                background-color: transparent;
+                &:hover,
+                &:focus {
+                    background-color: $color1;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .select {
+        width: 100%;
+        height: 100%;
+        background-color: darken($color1, 14);
+        color: $white;
+        cursor: pointer;
+        a,
+        a:hover,
+        a:visited,
+        a:focus {
+            background-color: darken($color1, 14);
+            color: $white;
+        }
+		.rowPlus {
+			background-color: #FFFFFF !important;
+			color: #888888 !important;
+		}
+		.rowPlus td {
+			background-color: #FFFFFF !important;
+			color: #888888 !important;
+		}
+		.rowPlus td.colPlus {
+			background-color: #FFFFFF !important;
+			color: #888888 !important;
+		}
+        td {
+            background-color: darken($color1, 14);
+            color: $white;
+        }
+        &:hover {
+            background-color: darken($color1, 14);
+            a,
+            a:hover,
+            a:visited,
+            a:focus {
+                background-color: darken($color1, 14);
+                color: $white;
+            }
+        }
+        .btnGridAction {
+            .icon {
+                color: $white;
+            }
+        }
+        .btnNoAction {
+            .icon {
+                color: $white;
+            }
+        }
+        .icon {
+            color: $white;
+        }
+        .colPlus .labelFormView {
+            /*color: $white;*/
+			color: $fontColorApp !important;
+        }
+        .colPlus .labelFormOut {
+            /*background-color: rgba(255, 255, 255, 0.2);
+            color: $white;*/
+			color: $fontColorApp !important;
+        }
+    }
+    tbody tr th,
+    tbody tr td {
+        color: $fontColorApp;
+        height: rem-calc(21);
+        line-height: rem-calc(21);
+        vertical-align: middle;
+        font: $fontSize*0.9 $fontApp;
+        font-weight: 600;
+        white-space: nowrap;
+        border: 1px #FFF solid;
+        padding: rem-calc(2);
+        overflow: hidden;
+        .icon {
+            line-height: rem-calc(21);
+            vertical-align: middle;
+            font: $fontSize*1.3 $fontDefault;
+            padding-top: rem-calc(-8);
+            text-align: center;
+        }
+        a {
+            color: #666666;
+            &:hover,
+            &:focus {
+                color: $white;
+                cursor: pointer;
+            }
+        }
+    }
+    .txtInputSearch {
+        width: 100%;
+        height: rem-calc(24);
+        font-size: rem-calc(12);
+        background-color: #F3F3F3;
+        padding: 0;
+        margin: rem-calc(2);
+        border-color: #F6F6F6;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+    }
+    input[type="text"].txtInput {
+        @extend .txtInputSearch;
+    }
+    .iconType {
+        font: $fontSize*1.5 $fontDefault;
+    }
+    .checkPlace {
+        width: rem-calc(26);
+        min-width: rem-calc(26);
+        max-width: rem-calc(26);
+    }
+    .rowNo {
+        width: rem-calc(26);
+        min-width: rem-calc(26);
+        max-width: rem-calc(26);
+    }
+    .col10 {
+        width: 10%;
+        max-width: 10%;
+    }
+    .col20 {
+        width: 20%;
+        max-width: 20%;
+    }
+    .col25 {
+        width: 25%;
+        max-width: 25%;
+    }
+    .col30 {
+        width: 30%;
+        max-width: 30%;
+    }
+    .col40 {
+        width: 40%;
+        max-width: 40%;
+    }
+    .col50 {
+        width: 50%;
+        max-width: 50%;
+    }
+    .col70 {
+        width: 70%;
+        max-width: 70%;
+    }
+    .col100 {
+        width: 100%;
+        max-width: 100%;
+    }
+    .colBtn {
+        width: rem-calc(46);
+        min-width: rem-calc(46);
+        max-width: rem-calc(46);
+    }
+    .fix70 {
+        width: rem-calc(70);
+        min-width: rem-calc(70);
+    }
+    .fix100 {
+        width: rem-calc(100);
+        min-width: rem-calc(100);
+    }
+    .fix140 {
+        width: rem-calc(140);
+        min-width: rem-calc(140);
+    }
+    .fix190 {
+        width: rem-calc(190);
+        min-width: rem-calc(190);
+    }
+}
+
+table.gridScroll {
+    @extend .gridCustom;
+    width: auto;
+}
+
+table.gridCustomGray {
+    @extend .gridCustom;
+    font: $fontSize*1 $fontApp;
+    thead tr th,
+    thead tr td {
+        background-color: $colorGray;
+        color: #B8B8B8;
+        .icon {
+            /*color: rgba(255,255,255,0.5);*/
+            color: #B8B8B8;
+        }
+        a {
+            color: #B8B8B8;
+            &:hover,
+            &:focus {
+                background-color: $colorGray;
+                /*color: rgba(255,255,255,0.5);*/
+                color: #B8B8B8;
+                cursor: pointer;
+            }
+        }
+    }
+    .select {
+        background-color: $colorGray;
+        color: $fontColorApp;
+        cursor: pointer;
+        a,
+        a:hover,
+        a:visited,
+        a:focus {
+            background-color: $colorGray;
+            color: $fontColorApp;
+        }
+        td {
+            background-color: $colorGray;
+            color: $fontColorApp;
+        }
+        &:hover {
+            background-color: $colorGray;
+            color: $fontColorApp;
+            a,
+            a:hover,
+            a:visited,
+            a:focus {
+                background-color: $colorGray;
+                color: $fontColorApp;
+            }
+        }
+        .btnGridAction {
+            .icon {
+                color: $fontColorApp;
+            }
+        }
+        .btnNoAction {
+            .icon {
+                color: $fontColorApp;
+            }
+        }
+        .icon {
+            color: $fontColorApp;
+        }
+    }
+}
+
+.btnGridAction {
+    @extend .btnDefaultEmpty;
+    @include button-style ( $background: transparent, $background-hover: $color1, $color: #FFF, $style: solid);
+    text-align: center;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    margin: 0;
+    padding: 0;
+    padding-top: rem-calc(2);
+    height: rem-calc(21);
+    line-height: rem-calc(21);
+    vertical-align: middle;
+    .icon {
+        display: inline-block;
+        font: $fontSize*1.2 $fontYekan;
+        height: rem-calc(21);
+        line-height: rem-calc(21);
+        vertical-align: middle;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        box-shadow: 0;
+        -webkit-box-shadow: 0;
+        -moz-box-shadow: 0;
+    }
+}
+
+a.btnGridAction {
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+}
+
+
+
+
+.paginationCustom {
+    display: block;
+    list-style: none;
+    > li {
+        color: #999999;
+        font: $fontSize*0.9 $fontApp;
+        float: right;
+        a {
+            color: #999999;
+            padding: rem-calc(6) rem-calc(8);
+            &:hover,
+            &:focus {
+                background-color: $colorGray;
+                color: #222;
+                cursor: pointer;
+            }
+        }
+        .select {}
+    }
+    > li.select {
+        background-color: $color1;
+        color: $white;
+        a {
+            color: $white;
+            padding: rem-calc(6) rem-calc(8);
+            &:hover,
+            &:focus {
+                background-color: $color1;
+                color: $white;
+            }
+        }
+    }
+    > li.current {
+        background-color: $color1;
+        color: $white;
+        a {
+            color: $white;
+            padding: rem-calc(6) rem-calc(8);
+            &:hover,
+            &:focus {
+                background-color: $color1;
+                color: $white;
+            }
+        }
+    }
+}
+
+.paginstionFormInlineLabel {
+    @extend .formInlineLabel;
+    direction: ltr;
+    margin: 0;
+    padding: 0;
+}
+.inline-label > .form-label.paginstionFormLabelDefault {
+    @include grid-block(4);
+    height: rem-calc(27);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    background-color: $colorGray;
+    color: #888888;
+    text-align: center;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+.paginstionFormLabelDefault {
+    @extend .formInput;
+    height: rem-calc(27);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    font: $fontSize*0.8 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+.paginstionFormInputDefault {
+    @extend .formInput;
+    @include grid-block(8);
+    height: rem-calc(27);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    background-color: #F7F7F7;
+    color: $fontColorApp;
+    font: $fontSize*0.8 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+}
+.paginstionFormInputDefault::-webkit-input-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.8 $fontApp;
+    font-weight: 600;
+}
+.paginstionFormInputDefault::-moz-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.8 $fontApp;
+    font-weight: 600;
+}
+.paginstionNum {
+    color: #999999;
+    font: $fontSize*0.8 $fontApp;
+    float: left;
+    direction: rtl;
+    padding-top: rem-calc(6);
+}
+.paginstionTxtRow {
+    color: #999999;
+    font: $fontSize*0.8 $fontApp;
+    direction: rtl;
+    padding-top: rem-calc(6);
+}
+.paginstionTxtRowTotal {
+    color: #999999;
+    font: $fontSize*0.8 $fontApp;
+    direction: rtl;
+    padding-top: 0;
+}
+tabsDefaultContent .paginstionTxtRowTotal {
+    font-size: $fontSize*1.1;
+}
+tabsDefaultContent .paginstionFormLabelDefault {
+    font-size: $fontSize*1.1;
+}
+tabsDefaultContent .paginstionTxtRow {
+    font-size: $fontSize*1.1;
+}
+.sliderPlace {
+    li img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.myinput[type="checkbox"]:before {
+    position: relative;
+    display: block;
+    width: 11px;
+    height: 11px;
+    border: 1px solid #808080;
+    content: "";
+    background: $white;
+}
+.myinput[type="checkbox"]:after {
+    position: relative;
+    display: block;
+    left: 0;
+    top: -11px;
+    width: 7px;
+    height: 7px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #B3B3B3 #dcddde #dcddde #B3B3B3;
+    content: "";
+    background-image: linear-gradient(135deg, #B1B6BE 0%, #FFF 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.myinput[type="checkbox"]:checked:after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB2SURBVHjaAGkAlv8A3QDyAP0A/QD+Dam3W+kCAAD8APYAAgTVZaZCGwwA5wr0AvcA+Dh+7UX/x24AqK3Wg/8nt6w4/5q71wAAVP9g/7rTXf9n/+9N+AAAtpJa/zf/S//DhP8H/wAA4gzWj2P4lsf0JP0A/wADAHB0Ngka6UmKAAAAAElFTkSuQmCC'), linear-gradient(135deg, #B1B6BE 0%, #FFF 100%);
+}
+.myinput[type="checkbox"]:disabled:after {
+    -webkit-filter: opacity(0.4);
+}
+.myinput[type="checkbox"]:not(:disabled):checked:hover:after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAQAAABuW59YAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAB2SURBVHjaAGkAlv8A3QDyAP0A/QD+Dam3W+kCAAD8APYAAgTVZaZCGwwA5wr0AvcA+Dh+7UX/x24AqK3Wg/8nt6w4/5q71wAAVP9g/7rTXf9n/+9N+AAAtpJa/zf/S//DhP8H/wAA4gzWj2P4lsf0JP0A/wADAHB0Ngka6UmKAAAAAElFTkSuQmCC'), linear-gradient(135deg, #8BB0C2 0%, #FFF 100%);
+}
+.myinput[type="checkbox"]:not(:disabled):hover:after {
+    background-image: linear-gradient(135deg, #8BB0C2 0%, #FFF 100%);
+    border-color: #85A9BB #92C2DA #92C2DA #85A9BB;
+}
+.myinput[type="checkbox"]:not(:disabled):hover:before {
+    border-color: #3D7591;
+}
+
+/* Large checkboxes */
+
+.myinput.large {
+    height: 17px;
+    width: 17px;
+    margin: 0;
+    margin-top: 6px;
+    padding: 4px 0px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.myinput.large[type="checkbox"]:before {
+    width: 15px;
+    height: 15px;
+}
+
+.myinput.large[type="checkbox"]:after {
+    top: -17px;
+    width: 17px;
+    height: 17px;
+}
+
+.notificationsDefault {
+    @extend %notification;
+    @include notification-layout( $x: left, $y: top, $size: 240px, $offset: 35px);
+    .close-button {
+        display: inline-block;
+        position: relative;
+        direction: rtl;
+        right: 365px;
+    }
+}
+
+.notificationsDefault .close-button {}
+
+.labelFormView {
+    @include grid-content($size: 4);
+    height: rem-calc(29);
+    line-height: rem-calc(29);
+    vertical-align: middle;
+    font: $fontSize*1 $fontApp;
+    color: #B9B9B9;
+    .txt {
+        display: inline-block;
+        height: rem-calc(29);
+        line-height: rem-calc(29);
+        vertical-align: middle;
+        color: #B9B9B9;
+        font: $fontSize*0.9 $fontApp;
+        font-weight: 600;
+    }
+}
+
+.colPlus .labelFormView {
+    @include grid-content($size: 1);
+    height: rem-calc(21);
+    line-height: rem-calc(21);
+    vertical-align: middle;
+    font: $fontSize*1 $fontApp;
+    color: #888888;
+    .txt {
+        display: block;
+        height: rem-calc(21);
+        line-height: rem-calc(21);
+        vertical-align: middle;
+        color: #888888;
+        font: $fontSize*0.9 $fontApp;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+    }
+    .icon {
+        font: $fontSize*1.2 $fontIcon;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.tabs {
+    margin: 0;
+    padding-bottom: 0px !important;
+}
+.tabsDefault {
+    @include tabstrip($orientation: horizontal, $background: #fff);
+    @include grid-layout(1);
+    .tab-item {
+        width: rem-calc(140);
+        background-color: transparent;
+        font: $fontSize*0.9 $fontApp;
+        font-weight: 600;
+        line-height: 1.5;
+        text-align: center;
+        /*border-bottom: 2px $color1 solid;*/
+        margin: 0;
+        padding: rem-calc(4);
+		border-radius: $borderRadius $borderRadius 0 0;
+		-webkit-border-radius: $borderRadius $borderRadius 0 0;
+		-moz-border-radius: $borderRadius $borderRadius 0 0;
+        &:hover {
+            color: $fontColorApp;
+        }
+    }
+    .active {
+        background-color: $color1;
+        color: $white;
+    }
+    .tab-contents {
+        font: $fontSize*1 $fontApp;
+        font-weight: 400;
+        border-top: 2px $color1 solid;
+    }
+}
+.tabsDefaultContent {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: rem-calc(4) 0;
+    /*@include tab-content($padding: rem-calc(5));*/
+    /*@include grid-layout(1);*/
+    /*@include grid-block;*/
+    .img {
+        text-align: center;
+        margin: 0px auto;
+    }
+}
+
+.filterSelection {
+    font: $fontSize*1 $fontApp;
+    font-weight: 600;
+}
+
+/*label {
+    width: 100%;
+    color: #888;
+    font: $fontSize*1 $fontApp;
+    font-weight: 600;
+    border: 1px solid #F1F1F1;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+}*/
+
+.labelFormEnd {
+    width: 100%;
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    direction: rtl;
+    margin: 0;
+    padding: 0 rem-calc(38) 0 0;
+    background-color: $colorGray;
+    color: #666;
+    border: none;
+	border-radius: $borderRadius 0 0 $borderRadius;
+	-webkit-border-radius: $borderRadius 0 0 $borderRadius;
+	-moz-border-radius: $borderRadius 0 0 $borderRadius;
+    cursor: pointer;
+    .txt {
+        display: inline-block;
+        height: rem-calc(34);
+        line-height: rem-calc(30);
+        vertical-align: middle;
+        color: #666;
+        font: $fontSize*0.7 $fontApp;
+        font-weight: 400;
+        padding: 0 rem-calc(5) 0 0;
+    }
+}
+
+.blockBlank {
+    display: block;
+    height: rem-calc(35);
+    min-height: rem-calc(35);
+    max-height: rem-calc(35);
+}
+::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+/*
+$breakpoint-wide: rem-calc(1440);
+@media (min-width: $breakpoint-wide) {
+    body {
+        font: $fontSize*1.15 $fontApp;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+}
+*/
+
+/*
+ * Table styles
+ */
+label {
+	color: $fontColorApp;
+	border: none;
+}
+table.dataTable {
+	width: 100%;
+	margin: 0 auto;
+	clear: both;
+	border-collapse: separate;
+	border-spacing: 0;
+    
+    border-radius: $borderRadius;
+    -webkit-border-radius: $borderRadius;
+    -moz-border-radius: $borderRadius;
+    
+    padding: 0px;
+}
+table.dataTable thead th,
+table.dataTable tfoot th {
+	font: $fontSize*1 $fontApp;
+    font-weight: 600;
+}
+table.dataTable thead th,
+table.dataTable thead td {
+	background-color: #434A54;
+	color: $white;
+	padding: 8px;
+	border-left: 1px $backgroundColor solid;
+	border-bottom: 1px $backgroundColor solid;
+}
+table.dataTable thead th:active,
+table.dataTable thead td:active {
+	outline: none;
+}
+table.dataTable tfoot th,
+table.dataTable tfoot td {
+	padding: 8px;
+	border-top: 1px solid #111;
+}
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+	cursor: pointer;
+	*cursor: hand;
+}
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+table.dataTable thead .sorting {
+	background-image: url("../images/sort_both.png");
+}
+table.dataTable thead .sorting_asc {
+	background-image: url("../images/sort_asc.png");
+}
+table.dataTable thead .sorting_desc {
+	background-image: url("../images/sort_desc.png");
+}
+table.dataTable thead .sorting_asc_disabled {
+	background-image: url("../images/sort_asc_disabled.png");
+}
+table.dataTable thead .sorting_desc_disabled {
+	background-image: url("../images/sort_desc_disabled.png");
+}
+table.dataTable tbody tr {
+	background-color: rgba(255,255,255,0.15);
+}
+table.dataTable tbody tr.selected {
+	background-color: #CCD1D9;
+}
+table.dataTable tbody th,
+table.dataTable tbody td {
+	font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+	padding: 8px 10px;
+}
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td {
+	border-top: 1px solid #CCD1D9;
+}
+table.dataTable.row-border tbody tr:first-child th,
+table.dataTable.row-border tbody tr:first-child td, table.dataTable.display tbody tr:first-child th,
+table.dataTable.display tbody tr:first-child td {
+	border-top: none;
+}
+table.dataTable.cell-border tbody th, table.dataTable.cell-border tbody td {
+	border-top: 1px solid #CCD1D9;
+	border-right: 1px solid #CCD1D9;
+}
+table.dataTable.cell-border tbody tr th:first-child,
+table.dataTable.cell-border tbody tr td:first-child {
+	border-left: 1px solid #CCD1D9;
+}
+table.dataTable.cell-border tbody tr:first-child th,
+table.dataTable.cell-border tbody tr:first-child td {
+	border-top: none;
+}
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+	background-color: #E6E9ED;
+}
+table.dataTable.stripe tbody tr.odd.selected, table.dataTable.display tbody tr.odd.selected {
+	background-color: #E6E9ED;
+}
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
+	background-color: #CCD1D9;
+    cursor: pointer;
+}
+table.dataTable.hover tbody tr:hover.selected, table.dataTable.display tbody tr:hover.selected {
+	background-color: #CCD1D9;
+    cursor: pointer;
+}
+table.dataTable.order-column tbody tr > .sorting_1,
+table.dataTable.order-column tbody tr > .sorting_2,
+table.dataTable.order-column tbody tr > .sorting_3, table.dataTable.display tbody tr > .sorting_1,
+table.dataTable.display tbody tr > .sorting_2,
+table.dataTable.display tbody tr > .sorting_3 {
+	background-color: #CCD1D9;
+    border-color: #FFFFFF;
+}
+table.dataTable.order-column tbody tr.selected > .sorting_1,
+table.dataTable.order-column tbody tr.selected > .sorting_2,
+table.dataTable.order-column tbody tr.selected > .sorting_3, table.dataTable.display tbody tr.selected > .sorting_1,
+table.dataTable.display tbody tr.selected > .sorting_2,
+table.dataTable.display tbody tr.selected > .sorting_3 {
+	background-color: #CCD1D9;
+    border-color: #FFFFFF;
+}
+table.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.odd > .sorting_2, table.dataTable.order-column.stripe tbody tr.odd > .sorting_2 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.odd > .sorting_3, table.dataTable.order-column.stripe tbody tr.odd > .sorting_3 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.odd.selected > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_1 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.odd.selected > .sorting_2, table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_2 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.odd.selected > .sorting_3, table.dataTable.order-column.stripe tbody tr.odd.selected > .sorting_3 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.even > .sorting_2, table.dataTable.order-column.stripe tbody tr.even > .sorting_2 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.even > .sorting_3, table.dataTable.order-column.stripe tbody tr.even > .sorting_3 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.even.selected > .sorting_1, table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_1 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.even.selected > .sorting_2, table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_2 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr.even.selected > .sorting_3, table.dataTable.order-column.stripe tbody tr.even.selected > .sorting_3 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr:hover > .sorting_1, table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr:hover > .sorting_2, table.dataTable.order-column.hover tbody tr:hover > .sorting_2 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr:hover > .sorting_3, table.dataTable.order-column.hover tbody tr:hover > .sorting_3 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr:hover.selected > .sorting_1, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_1 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr:hover.selected > .sorting_2, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_2 {
+	background-color: #CCD1D9;
+}
+table.dataTable.display tbody tr:hover.selected > .sorting_3, table.dataTable.order-column.hover tbody tr:hover.selected > .sorting_3 {
+	background-color: #CCD1D9;
+}
+table.dataTable.no-footer {
+	border-bottom: 1px solid #CCD1D9;
+}
+table.dataTable.nowrap th, table.dataTable.nowrap td {
+	white-space: nowrap;
+}
+table.dataTable.compact thead th,
+table.dataTable.compact thead td {
+	padding: 4px;
+}
+table.dataTable.compact tfoot th,
+table.dataTable.compact tfoot td {
+	padding: 4px;
+}
+table.dataTable.compact tbody th,
+table.dataTable.compact tbody td {
+	padding: 4px;
+}
+table.dataTable th.dt-left,
+table.dataTable td.dt-left {
+	text-align: left;
+}
+table.dataTable th.dt-center,
+table.dataTable td.dt-center,
+table.dataTable td.dataTables_empty {
+	text-align: center;
+}
+table.dataTable th.dt-right,
+table.dataTable td.dt-right {
+	text-align: right;
+}
+table.dataTable th.dt-justify,
+table.dataTable td.dt-justify {
+	text-align: justify;
+}
+table.dataTable th.dt-nowrap,
+table.dataTable td.dt-nowrap {
+	white-space: nowrap;
+}
+table.dataTable thead th.dt-head-left,
+table.dataTable thead td.dt-head-left,
+table.dataTable tfoot th.dt-head-left,
+table.dataTable tfoot td.dt-head-left {
+	text-align: left;
+}
+table.dataTable thead th.dt-head-center,
+table.dataTable thead td.dt-head-center,
+table.dataTable tfoot th.dt-head-center,
+table.dataTable tfoot td.dt-head-center {
+	text-align: center;
+}
+table.dataTable thead th.dt-head-right,
+table.dataTable thead td.dt-head-right,
+table.dataTable tfoot th.dt-head-right,
+table.dataTable tfoot td.dt-head-right {
+	text-align: right;
+}
+table.dataTable thead th.dt-head-justify,
+table.dataTable thead td.dt-head-justify,
+table.dataTable tfoot th.dt-head-justify,
+table.dataTable tfoot td.dt-head-justify {
+	text-align: justify;
+}
+table.dataTable thead th.dt-head-nowrap,
+table.dataTable thead td.dt-head-nowrap,
+table.dataTable tfoot th.dt-head-nowrap,
+table.dataTable tfoot td.dt-head-nowrap {
+	white-space: nowrap;
+}
+table.dataTable tbody th.dt-body-left,
+table.dataTable tbody td.dt-body-left {
+	text-align: left;
+}
+table.dataTable tbody th.dt-body-center,
+table.dataTable tbody td.dt-body-center {
+	text-align: center;
+}
+table.dataTable tbody th.dt-body-right,
+table.dataTable tbody td.dt-body-right {
+	text-align: right;
+}
+table.dataTable tbody th.dt-body-justify,
+table.dataTable tbody td.dt-body-justify {
+	text-align: justify;
+}
+table.dataTable tbody th.dt-body-nowrap,
+table.dataTable tbody td.dt-body-nowrap {
+	white-space: nowrap;
+}
+
+table.dataTable,
+table.dataTable th,
+table.dataTable td {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+/*
+ * Control feature layout
+ */
+.dataTables_wrapper {
+	position: relative;
+	clear: both;
+	*zoom: 1;
+	zoom: 1;
+}
+.dataTables_wrapper .dataTables_length {
+	text-align: right;
+	margin-top: 4px;
+    float: right;
+	select {
+        width: rem-calc(65);
+		height: rem-calc(30);
+		line-height: rem-calc(27);
+		vertical-align: middle;
+//		background-color: #F1F1F1;
+        background-color: #E6E9ED;
+		color: $fontColorApp;
+		font: $fontSize*0.9 $fontApp;
+		font-weight: 600;
+		border: none;
+		outline: none;
+		border-radius: $borderRadius;
+		-webkit-border-radius: $borderRadius;
+		-moz-border-radius: $borderRadius;
+		box-shadow: inset 2px 2px 2px #ddd;
+		-webkit-box-shadow: inset 2px 2px 2px #ddd;
+		-moz-box-shadow: inset 2px 2px 2px #ddd;
+		
+		margin-top: 4px;
+        
+	}
+}
+.dataTables_wrapper .dataTables_filter {
+	text-align: left;
+    float: left;
+}
+.dataTables_wrapper .dataTables_filter input {
+    width: rem-calc(110);
+	height: rem-calc(30);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+	background-color: #E6E9ED;
+	color: $fontColorApp;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    box-shadow: inset 2px 2px 2px #ddd;
+    -webkit-box-shadow: inset 2px 2px 2px #ddd;
+    -moz-box-shadow: inset 2px 2px 2px #ddd;
+	
+	margin-left: 0.5em;
+}
+.dataTables_wrapper .dataTables_info {
+	clear: both;
+	padding-top: 0.755em;
+}
+.dataTables_wrapper .dataTables_paginate {
+	text-align: left;
+	padding-top: 0.25em;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	width: auto;
+	height: 27px;
+	line-height: 11px;
+	vertical-align: middle;
+  
+	box-sizing: border-box;
+	display: inline-block;
+	min-width: 1.5em;
+	padding: 0.5em 1em;
+	margin-left: 2px;
+	text-align: center;
+	text-decoration: none !important;
+	cursor: pointer;
+	*cursor: hand;
+	color: #434A54 !important;
+	border: 1px solid transparent;
+	border-radius: 2px;
+    a, a:link, a:visited {
+        color: #434A54 !important;
+    }
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+	color: #FFF !important;
+	border: 1px solid #434A54;
+	background-color: #434A54;
+	a, a:link, a:visited, a:hover {
+	  color: #FFF !important;
+	}
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+	cursor: default;
+	color: #FFF !important;
+	border: 1px solid transparent;
+	background: transparent;
+	box-shadow: none;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+	color: #434A54 !important;
+	border: 1px solid #CCD1D9;
+	background-color: #CCD1D9;
+    a, a:link, a:visited {
+        color: #434A54 !important;
+    }
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+	outline: none;
+	background-color: #50AAD4;
+}
+.dataTables_wrapper .dataTables_paginate .ellipsis {
+	padding: 0 1em;
+}
+.dataTables_wrapper .dataTables_processing {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 40px;
+	margin-left: -50%;
+	margin-top: -25px;
+	padding-top: 20px;
+	text-align: center;
+	font-size: 1.2em;
+	background-color: white;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(25%, rgba(255, 255, 255, 0.9)), color-stop(75%, rgba(255, 255, 255, 0.9)), color-stop(100%, rgba(255, 255, 255, 0)));
+	background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+	background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+	background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+	background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+}
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+	height: 62px;
+	max-height: 62px;
+	line-height: 12px;
+	vertical-align: middle;
+	color: $fontColorApp;
+	label {
+	}
+}
+.dataTables_wrapper .dataTables_scroll {
+	clear: both;
+}
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody {
+	*margin-top: -1px;
+	-webkit-overflow-scrolling: touch;
+}
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody th > div.dataTables_sizing,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody td > div.dataTables_sizing {
+	height: 0;
+	overflow: hidden;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+	border-bottom: 2px solid #40A7DA;
+}
+.dataTables_wrapper.no-footer div.dataTables_scrollHead table,
+.dataTables_wrapper.no-footer div.dataTables_scrollBody table {
+	border-bottom: none;
+}
+.dataTables_wrapper:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .dataTables_wrapper .dataTables_info,
+  .dataTables_wrapper .dataTables_paginate {
+	float: none;
+	text-align: center;
+  }
+  .dataTables_wrapper .dataTables_paginate {
+    margin-top: 0.5em;
+  }
+}
+@media screen and (max-width: 640px) {
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: center;
+  }
+  .dataTables_wrapper .dataTables_filter {
+    margin-top: 0.5em;
+  }
+}
+
+
+
+

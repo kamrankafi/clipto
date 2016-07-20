@@ -1,0 +1,268 @@
+---
+name: panel
+url: /
+controller: panelCtrl
+---
+
+<div class="grid-block align-center">
+    <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+
+        <div class="grid-block blockPlace">
+        </div>
+
+        <div class="grid-block formPlace">
+
+            <div class="grid-block title">
+                <div class="small-12 medium-6 large-6 xlarge-6 grid-content pageTitle">
+                    <span class="">آپلود ویدیو ها</span>
+                </div>
+                <div class="small-12 medium-6 large-6 xlarge-6 grid-content">
+<!--
+                    <div class="grid-block formPlaceHeaderBtn">
+                        <a class="small-12 medium-6 large-2 xlarge-2 grid-content btnAdd">
+                            <span class="icon" data-icon="&#xe072;"></span>آپلود جدید
+                        </a>
+                        <a class="small-2 medium-1 large-1 xlarge-1 grid-content btnFormSmall">
+                            <span class="icon" data-icon="&#xe1e0;"></span>
+                        </a>
+                        <a class="small-2 medium-1 large-1 xlarge-1 grid-content btnFormSmall">
+                            <span class="icon" data-icon="&#xe1df;"></span>
+                        </a>
+                    </div>
+-->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="grid-block align-center">
+    <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+        <div class="grid-block formPlace">
+            
+            <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+                <div class="grid-block formPlaceAdd">
+                    
+                    <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+                        
+                        
+                        
+                        
+                        <div id="page">
+                            <section class="aliceblue">
+                                <div class="container page-container-third">
+                                    <div class="row">
+                                        <div class="col-md-10 col-md-offset-1 col-sm-12 col-sm-offset-0">
+                                            <div class="lp-border-radius-8 lp-border lp-form-container">
+                                                <form method="post">
+                                                    <div class="form-group clearfix">
+                                                        <div class="col-sm-12 padding-left-0 padding-right-0">
+                                                            
+                                                                <input type="file" name="files[]" id="filer_input2" multiple="multiple">
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    
+                    <div class="small-12 medium-12 large-12 xlarge-12 grid-content uploadPlace">
+                        <div class="grid-block align-center">
+                            <a class="small-12 medium-6 large-2 xlarge-2 grid-content btnAddFileXML">آپلود فایل دسته ای</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="grid-block cardPlace">
+                            
+                            <div class="small-6 medium-3 large-2 xlarge-2 grid-content cardDefault">
+                                <img src="../assets/images/imgBlank.jpg">
+                                <div class="cardDefaultDivider">
+                                    <a class="btnCardSmall"><span class="icon" data-icon="&#xe1cf;"></span></a>
+                                    <a class="btnCardSmall"><span class="icon" data-icon="&#xe0da;"></span></a>
+                                </div>
+                                <div class="cardDefaultSection">
+                                    <h4>نام فایل</h4>
+                                    <p>توضیحات</p>
+                                </div>
+                            </div>
+                            <div class="small-6 medium-3 large-2 xlarge-2 grid-content cardDefault">
+                                <img src="../assets/images/imgBlank.jpg">
+                                <div class="cardDefaultDivider">
+                                    <a class="btnCardSmall"><span class="icon" data-icon="&#xe1cf;"></span></a>
+                                    <a class="btnCardSmall"><span class="icon" data-icon="&#xe0da;"></span></a>
+                                </div>
+                                <div class="cardDefaultSection editMode">
+                                    <div class="inline-label">
+                                        <input class="formInputDefaultBlank" type="text" placeholder="نام فایل">
+                                    </div>
+                                    <div class="inline-label">
+<!--                                        <textarea class="formInputDefaultBlank" rows="10" cols="70" placeholder="توضیحات"></textarea>-->
+                                        <input class="formInputDefaultBlank" type="text" placeholder="توضیحات">
+                                    </div>
+                                    
+                                    <div class="">
+                                        <a class="btnCardAction ok"><span class="icon" data-icon="&#xe042;"></span></a>
+                                        <a class="btnCardAction nok"><span class="icon" data-icon="&#xe036;"></span></a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        
+                        </div>
+                        
+                    
+                    
+                    
+                </div>
+                
+                
+                
+                
+                <div class="grid-block align-center">
+                    <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+
+                        <div class="grid-block formPlace">
+
+                            <div class="grid-block title">
+                                <div class="small-12 medium-6 large-6 xlarge-6 grid-content pageTitle">
+                                    <span class="">تنظیمات ویدیو ها</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                
+                
+                <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+                    <div class="grid-block">
+                        
+                        <div class="small-12 medium-6 large-3 xlarge-3 grid-content">
+                            <div class="inline-label formInlineLabel">
+                                <select class="labelFormEnd">
+                                    <option value="">پیش فرض</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0ad;"></span>ترنسکدینگ</span>
+                            </div>
+                        </div>
+                        
+                        <div class="small-12 medium-6 large-3 xlarge-3 grid-content">
+                            <div class="inline-label formInlineLabel">
+                                <select class="labelFormEnd">
+                                    <option value="">انتخاب دسته</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0ad;"></span>دسته ها</span>
+                            </div>
+                        </div>
+                        
+                        <div class="small-12 medium-6 large-3 xlarge-3 grid-content">
+                            <div class="inline-label formInlineLabel">
+                                <select class="labelFormEnd">
+                                    <option value="">انتخاب تگ</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0ad;"></span>تگ ها</span>
+                            </div>
+                        </div>
+                        
+                        <div class="small-12 medium-6 large-3 xlarge-3 grid-content">
+                            <div class="inline-label formInlineLabel">
+                                <select class="labelFormEnd">
+                                    <option value="">انتخاب مجوز</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0ad;"></span>مجوز کاربری</span>
+                            </div>
+                        </div>
+                        
+                        <div class="small-12 medium-6 large-3 xlarge-3 grid-content">
+                            <div class="inline-label formInlineLabel">
+                                <select class="labelFormEnd">
+                                    <option value="">نوع وضعیت</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0ad;"></span>وضعیت</span>
+                            </div>
+                        </div>
+                        
+                        <div class="small-12 medium-6 large-3 xlarge-3 grid-content">
+                            <div class="inline-label formInlineLabel">
+                                <select class="labelFormEnd">
+                                    <option value="">انتخاب</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                                <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0ad;"></span>جریان کاری</span>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="grid-block align-center btnFormPlace">
+                
+                <span class="small-12 medium-3 large-2 xlarge-2 grid-content">
+                    <a class="btnAdd"><span class="icon" data-icon="&#xe05b;"></span>تایید</a>
+                </span>
+                <span class="small-12 medium-3 large-2 xlarge-2 grid-content">
+                    <a class="btnCancel"><span class="icon" data-icon="&#xe05b;"></span>انصراف</a>
+                </span>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

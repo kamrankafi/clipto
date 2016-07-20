@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" ng-app="application">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>کنترل پنل متمرکز</title>
+    <script src="assets/js/foundation.js"></script>
+    <script src="assets/js/templates.js"></script>
+    <script src="assets/js/routes.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/my.js"></script>
+    <script src="assets/controller/mainCtrl.js"></script>
+    <script src="assets/controller/loginCtrl.js"></script>
+    <link href="assets/css/app.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/uicon.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bkWrap bg-login">
+
+<zf-notification-set id="main-notifications" class="notificationsDefault"></zf-notification-set>
+
+<div class="grid-block align-center placeLoginContainer">
+<div class="small-12 medium-4 large-3 xlarge-3 grid-content placeLogin">
+
+	<div class="grid-block placeLoginImg">
+		<img src="assets/images/logo-C.png">
+    </div>
+    <div class="grid-block placeLoginFrm">
+        <div class="small-12 medium-12 large-12 xlarge-12 grid-content title">
+        	<span class="pageTitle">کنترل پنل متمرکز</span>&nbsp;<span class="pageDesc">ورود به سیستم</span>
+        </div>
+        <div class="small-12 medium-12 large-12 xlarge-12 grid-content title">
+        	<p>لطفا به منظور استفاده از سیستم با نام کاربری خود وارد شوید</p>
+        </div>
+    	<div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+        <form>
+        <div class="inline-label formInlineLabel">
+            <input class="formInputDefault formUsername" type="text" placeholder="نام کاربری" tabindex="1">
+            <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0a1;"></span>نام کاربری</span>
+        </div>
+        <div class="inline-label formInlineLabel">
+            <input class="formInputDefault formPassword" type="text" placeholder="کلمه عبور" tabindex="2">
+            <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe062;"></span>کلمه عبور</span>
+        </div>
+        <div class="small-12 medium-6 grid-content">
+			<input id="checkbox1" type="checkbox">
+			<label for="checkbox1"> <p class="remember-p">مرا به خاطر بسپار </p></label>
+		</div>
+
+
+
+
+        <div class="blockCustomBtnRow">
+            <div class="small-12 medium-6 large-6 xlarge-6 grid-content">
+                <a href="index.html" target="_self"><span class="btnEnterIcon">
+                	<input type="submit" class="btnAdd formReturn" value="ورود به سیستم" tabindex="3">
+                </span></a>
+            </div>
+        </div>
+        <!-- <div class="grid-block">
+        <div class="row txtErr"><span class="txtErrIcon icon-attention"></span> نمایش پیام خطا و یا خطاهای سیستم </div>
+    </div> -->
+
+                
+        </form>
+        </div>
+    
+    </div>
+        
+    
+</div>
+</div>
+
+<!-- <div class="grid-block align-center">
+	<div class="small-12 medium-6 large-4 xlarge-4 grid-content">
+		<div class="small-12 medium-12 large-12 align-left grid-block" style="margin-bottom: 8px;">
+        	<div class="small-12 medium-6 large-6 grid-content">
+            	<a class="btnDefault" zf-open="dialogAlarm">
+    پیام سیستم
+    </a>
+			</div>
+            <div class="small-12 medium-6 large-6 grid-content">
+            	<a zf-open="dialogModal" class="btnLock">
+                بله / خیر
+    </a>
+			</div>
+    	</div>
+		<div class="small-12 medium-12 large-12 align-left grid-block">
+        	<div class="medium-3 large-3 grid-content">
+<a class="btnEnter" href="#" title="عنوان پیام" content="متن پیام برای نمایش" autoclose="3000" color="success" zf-notify="main-notifications">
+ارسال پیام
+</a>
+			</div>
+            <div class="medium-3 large-3 grid-content">
+<a class="btnEnter" href="#" title="عنوان پیام" content="متن پیام برای نمایش" autoclose="3000" color="alert" zf-notify="main-notifications">
+ارسال پیام
+</a>
+			</div>
+            <div class="medium-3 large-3 grid-content">
+<a class="btnEnter" href="#" title="عنوان پیام" content="متن پیام برای نمایش" autoclose="3000" color="warning" zf-notify="main-notifications">
+ارسال پیام
+</a>
+			</div>
+            <div class="medium-3 large-3 grid-content">
+<a class="btnEnter" href="#" title="عنوان پیام" content="متن پیام برای نمایش" autoclose="3000" color="primary" zf-notify="main-notifications">
+ارسال پیام
+</a>
+			</div>
+    	</div>
+	</div>
+</div> -->
+
+<div zf-modal="" id="dialogAlarm" overlay="true" overlay-close="false" class="tiny dialog dialogAlarm" animation-in="slideInDown" animation-out="hingeOutFromMiddleY">
+            <div class="grid-block blockAlarm">
+                <div class="titleInner"><span class="icon" data-icon="&#xe015;"></span>&nbsp;پیام سیستم </div>
+            </div>
+            <div class="grid-block blockAlarmContent">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                </div>
+            <div class="grid-block align-center">
+                <div class="small-12 medium-12 large-12 xlarge-12 grid-content" style="padding: 4px 0;">
+                    <a zf-close="" class="btnAlarmExtend"><span class="icon" data-icon="&#xe036;"></span></a>
+                </div>
+            </div>
+        </div>
+<div zf-modal="" id="dialogModal" overlay="true" overlay-close="false" class="tiny dialog" animation-in="slideInDown" animation-out="hingeOutFromMiddleY">
+            	
+                <div class="grid-block wrap blockTitleModal"> <!-- row blockTitleSection -->
+                <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+                	آیا این کار انجام شود؟
+                </div>
+                </div> <!-- row blockTitleSection End -->
+            
+            	<div class="grid-block align-center" style="padding: 10px 0;">
+                    <div class="small-6 medium-6 large-6 xlarge-6 grid-content">
+                        <a zf-close="" class="btnUnLock"><span class="icon" data-icon="&#xe042;"></span> تایید </a>
+                    </div>
+                    <div class="small-6 medium-6 large-6 xlarge-6 grid-content">
+                        <a zf-close="" class="btnLock"><span class="icon" data-icon="&#xe036;"></span> انصراف </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+</body>
+</html>

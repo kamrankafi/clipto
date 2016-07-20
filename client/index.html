@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fa" dir="rtl" ng-app="application" ng-controller="mainCtrl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>کنترل پنل متمرکز</title>
+    <script src="./assets/js/foundation.js"></script>
+    <script src="./assets/js/templates.js"></script>
+    <script src="./assets/js/routes.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/my.js"></script>
+    
+    <link href="./assets/css/uicon.css" rel="stylesheet" type="text/css">
+    <link href="./assets/css/app.css" rel="stylesheet" type="text/css">
+
+    <!--uploader-->
+    <link href="./assets/css/jquery.filer.css" type="text/css" rel="stylesheet" />
+    <script src="./assets/script/jquery-lib.js"></script>
+    <script src="./assets/script/jquery.filer.min.js"></script>
+    <script src="./assets/script/uploader.js"></script>
+    <!--uploader-->
+    
+    <!-- controller-->
+    <script src="./assets/controller/mainCtrl.js"></script>
+    <script src="./assets/controller/loginCtrl.js"></script>
+    <script src="./assets/controller/panelCtrl.js"></script>
+    <script src="./assets/controller/videoListCtrl.js"></script>
+    <script src="./assets/controller/sprinttCtrl.js"></script>
+    <!-- controller-->
+    
+</head>
+
+<body class="bkWrap">
+   
+    <!--<div class="cssLoader" style="display: none;">-->
+    <div class="cssLoader" style="display: none;">
+        <div class="csscssload-load-frame">
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+            <div class="cssload-dot"></div>
+        </div>
+        <div class="loaderTxt">لطفا شکیبا باشید ...!</div>
+    </div>
+    <!--<section class="loader" style="display: none;">-->
+    <section class="loader" style="display: none;">
+        <!-- the component -->
+        <ul class="bokeh">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="loaderTxt">لطفا شکیبا باشید ...!</div>
+    </section>
+
+    <div class="grid-frame vertical">
+        <div class="grid-content shrink loadingModelTopContainer">
+            <!-- <div class="grid-content shrink" style="display: none;"> -->
+            <div class="grid-content shrink" style="">
+                <div class="medium-12 large-12 grid-content loadingModelTop">
+                    <div class="loadingModelTopBar">
+                        <div class="loadingModelTopBarSphere"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-content shrink menu-group menubarContainer">
+            <div class="menu-group-left">
+                <ul class="menubarTop menubarTopPlace">
+                    <li><a ui-sref="panel"><span class="icon" data-icon="&#xe099;"></span></a></li>
+                    <li><a ><span class="icon" data-icon="&#xe251;"></span></a></li>
+                    <li><a ><span class="icon" data-icon="&#xe07e;"></span></a></li>
+                    <li><a href="/login.html"><span class="icon" data-icon="&#xe254;"></span></a></li>
+                    <li class="menubarTopDate"> 1393/11/11 چهارشنبه</li>
+                    <li class="menubarTopUser">نام کاربر </li>
+                </ul>
+            </div>
+            <div class="menu-group-right">
+                <ul class="menubarTop menubarTopPlace">
+                    <li><a ui-sref="sprint"><span class="icon" data-icon="+"></span>اسپرینت</a></li>
+                	<li><a>کنترل پنل متمرکز مدیریت سیستم</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <zf-notification-set id="main-notifications" class="notificationsDefault"></zf-notification-set>
+        
+        <div class="grid-block align-center">
+            
+            <div class="grid-block">
+                <div class="small-12 medium-3 large-2 xlarge-2 grid-content panelRight">
+                
+                    <div class="grid-block panelRightLogoPlace">
+                        <img src="assets/images/logoClipto.svg" width="50%" height="auto">
+                    </div>
+                    <div class="grid-block panelRightLineSep"></div>
+                    <div class="grid-block align-center">
+                        <div class="small-12 medium-12 large-12 xlarge-12 grid-content panelRightUserBlock">
+                            <div class="grid-block align-center">
+                                <div class="panelRightUserPic"></div>
+                            </div>
+                            <div class="grid-block align-center">
+                                <div class="small-12 medium-12 large-12 xlarge-12 grid-content panelRightUserName">
+                                    نام کاربر
+                                </div>
+                            </div>
+                            <div class="grid-block align-center">
+                                <div class="small-12 medium-12 large-12 xlarge-12 grid-content panelRightUserGroup">
+                                    نقش ویا مسولیت
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-block panelRightLineSep"></div>
+                    <div class="grid-block panelRightMenu">
+                        <div class="small-12 medium-12 large-12 xlarge-12 grid-content panelRightLineSep">
+                            <div class="grid-block panelRightMenuItem">
+                            	<ul class="">
+                                	<li><a ui-sref="panel"><span class="icon" data-icon="&#xe099;"></span>صفحه نخست</a></li>
+                                    <div class="panelRightMenuTitleLineSep"></div>
+                                    <li class="panelRightMenuTitle"><span class="icon" data-icon="&#xe051;"></span>تنظیمات پروفایل</li>
+                                    <div class="panelRightMenuTitleLineSep"></div>
+                                    <li><a><span class="icon" data-icon="&#xe070;"></span>اطلاعات شخصی</a></li>
+                                    <li><a><span class="icon" data-icon="&#xe0b4;"></span>اطلاعات کانال</a></li>
+                                    <li><a><span class="icon" data-icon="&#xe07f;"></span>کانالهای محبوب</a></li>
+                                    <div class="panelRightMenuTitleLineSep"></div>
+                                    <li class="panelRightMenuTitle"><span class="icon" data-icon="&#xe051;"></span>مدیریت ویدیوها</li>
+                                    <div class="panelRightMenuTitleLineSep"></div>
+                                    <li><a ui-sref="videoList"><span class="icon" data-icon="&#xe0fc;"></span>لیست ویدیو ها</a></li>
+                                    <li><a><span class="icon" data-icon="&#xe030;"></span>گروه ها و دسته ها</a></li>
+                                    <li><a><span class="icon" data-icon="&#xe047;"></span>نظرات</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                
+                <div ui-view class="small-12 medium-11 large-10 xlarge-10 grid-content ui-view-content" style="overflow-x: hidden;" >
+                    
+                </div>
+                
+            </div>
+        
+        </div>
+        
+        <div zf-modal="" id="dialogAlarm" overlay="true" overlay-close="false" class="tiny dialog dialogAlarm" animation-in="slideInDown" animation-out="hingeOutFromMiddleY">
+            <div class="grid-block blockAlarm">
+                <div class="titleInner"><span class="icon" data-icon="&#xe015;"></span>&nbsp;پیام سیستم </div>
+            </div>
+            <div class="grid-block blockAlarmContent">
+                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                </div>
+            <div class="grid-block align-center">
+                <div class="small-12 medium-12 large-12 xlarge-12 grid-content" style="padding: 4px 0;">
+                    <a zf-close="" class="btnAlarmExtend"><span class="icon" data-icon="&#xe036;"></span></a>
+                </div>
+            </div>
+        </div>
+        <div zf-modal="" id="dialogModal" overlay="true" overlay-close="false" class="tiny dialog" animation-in="slideInDown" animation-out="hingeOutFromMiddleY">
+            <div class="grid-block wrap blockTitleModal"> <!-- row blockTitleSection -->
+            <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+                آیا این کار انجام شود؟
+            </div>
+            </div> <!-- row blockTitleSection End -->
+
+            <div class="grid-block align-center" style="padding: 10px 0;">
+                <div class="small-6 medium-6 large-6 xlarge-6 grid-content">
+                    <a zf-close="" class="btnUnLock"><span class="icon" data-icon="&#xe042;"></span> تایید </a>
+                </div>
+                <div class="small-6 medium-6 large-6 xlarge-6 grid-content">
+                    <a zf-close="" class="btnLock"><span class="icon" data-icon="&#xe036;"></span> انصراف </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

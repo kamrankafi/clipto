@@ -1,0 +1,3953 @@
+/* UI/UX: RohanIT.ir */
+/* طراحی رابط و تجربه کاربری فن آوری اطلاعات روهان */
+@charset "utf-8";
+@import "bower_components/compass-sass-mixins/lib/compass";
+//@import "compass/css3";
+/* Clearfix */
+.clear:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; overflow: hidden; }
+.clear { display: block; position: relative; }
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
+    -webkit-text-size-adjust: none;
+}
+/* Checkbox fix for android */
+body {
+	-webkit-animation: bugfix infinite 1s;
+}
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0; }
+  to {
+    padding: 0; }
+}
+.RohanIT.ir {
+	display: block;
+	visibility: visible;
+	/* UI/UX:RohanIT.ir */
+	/* طراحی رابط و تجربه کاربری فن آوری اطلاعات روهان */
+}
+html {
+	font-size: $fontSize;
+	direction: rtl;
+}
+body {
+	width: 100%;
+	height: auto;
+	background-color: $backgroundColor;
+	font: $fontSize*1 $fontApp;
+	font-weight: 400;
+	line-height: 1.3;
+	letter-spacing: 0;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.bkWrap:before {
+	width: 100%;
+    height: 100%;
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	
+	/*background-image: url($bkUrlDefault);*/
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	
+	-webkit-filter: blur(1px) grayscale(100%);
+	-moz-filter: blur(1px) grayscale(100%);
+	-o-filter: blur(1px) grayscale(100%);
+	-ms-filter: blur(1px) grayscale(100%);
+	filter: blur(1px) grayscale(100%);
+	
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)";
+	filter: alpha(opacity=5);
+	-moz-opacity: 0.05;
+	-khtml-opacity: 0.05;
+	opacity: 0.05;
+	z-index: -1;
+}
+h1 {
+    font: $fontSize*1.2 $fontApp;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    font: $fontSize*1.1 $fontApp;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:link, a:visited {
+    transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    &:hover {
+        
+    }
+}
+.loaderTxt {
+    position: absolute;
+    display: inline-block;
+    width: 100vw;
+    color: $white;
+    font: $fontSize*1.1 $fontApp;
+    font-weight: 600;
+    text-align: center;
+    margin: 0px auto;
+    padding-top: 60vh;
+}
+.notificationsDefault {
+    @extend %notification;
+    @include notification-layout( $x: left, $y: top, $size: 240px, $offset: 35px);
+    .close-button {
+        display: inline-block;
+        position: relative;
+        direction: rtl;
+        right: 365px;
+    }
+}
+.notificationsDefault .close-button {
+}
+
+
+
+
+
+.menubarContainer {
+//    @extend %menu-group;
+    background-color: $colorBarTop;
+    color: #E4E5E4;
+    direction: ltr;
+}
+.menubarTop {
+    @extend %menu-bar;
+    @include menu-bar-layout( $orientation: horizontal, $stretch: false);
+    @include menu-bar-style( $background: $colorBarTop, $background-hover: $colorBlack, $background-active: #656D78, $color: #E4E5E4, $color-hover: #FFF, $color-active: #FFF, $autocolor: true);
+    @include menu-bar-icons( $position: right, $size: 20px);
+}
+.menubarTopPlace {
+    li {
+        height: rem-calc(29);
+		line-height: rem-calc(29);
+		vertical-align: middle;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+        a {
+			height: rem-calc(29);
+			line-height: rem-calc(29);
+			vertical-align: middle;
+            color: #E4E5E4;
+            font: $fontSize*0.7 $fontYekan;
+            font-weight: 600;
+			padding: rem-calc(4);
+            .icon {
+                font: $fontSize*1.4 $fontIcon;
+                padding: rem-calc(0) rem-calc(4);
+            }
+			&:hover {
+				background-color: $colorBlack;
+			}
+        }
+		&:hover {
+			background-color: $colorBlack;
+		}
+    }
+    li.menubarTopDate,
+    li.menubarTopDate:hover,
+    li.menubarTopDate:visited {
+        height: rem-calc(29);
+        line-height: rem-calc(29);
+        vertical-align: middle;
+        color: #E4E5E4;
+        font: $fontSize*0.7 $fontYekan;
+		padding: rem-calc(8) rem-calc(4) 0;
+        font-weight: 400;
+        .icon {
+            font: $fontSize*1.4 $fontIcon;
+        }
+    }
+	li.menubarTopUser,
+    li.menubarTopUser:hover,
+    li.menubarTopUser:visited {
+        height: rem-calc(29);
+        line-height: rem-calc(29);
+        vertical-align: middle;
+        color: #E4E5E4;
+        font: $fontSize*0.7 $fontYekan;
+        font-weight: 600;
+		padding: rem-calc(8) rem-calc(4) 0;
+        .icon {
+            font: $fontSize*1.4 $fontIcon;
+        }
+    }
+	li.menubarTop.Select {
+		a {
+			background-color: $color1;
+			color: $color1Bk;
+			font: $fontSize*0.7 $fontYekan;
+        	font-weight: 600;
+			.icon {
+				font: $fontSize*1.4 $fontIcon;
+			}
+		}
+	}
+	li.menubarTopPin {
+		a, a:visited {
+			background-color: transparent;
+			color: $colorWhite;
+			font: $fontSize*0.8 $fontYekan;
+			font-weight: 400;
+			&:hover {
+				background-color: $colorAlert;
+				color: $fontColorApp;
+			}
+			.icon {
+				font: $fontSize*1.4 $fontIcon;
+			}
+		}
+	}
+	li.menubarTopPin.Select {
+		a, a:visited, a:hover {
+			background-color: $colorAlert;
+			color: $fontColorApp;
+			font: $fontSize*0.8 $fontYekan;
+			font-weight: 400;
+			.icon {
+				font: $fontSize*1.4 $fontIcon;
+			}
+		}
+	}
+}
+.loadingModelTopContainer {
+    background-color: $colorBarTop;
+}
+.loadingModelTop .loadingModelTopBar .loadingModelTopBarSphere {
+    background-color: $color1 !important;
+    box-shadow: 0 0 2em $color1;
+    -webkit-box-shadow: 0 0 2em $color1;
+    -moz-box-shadow: 0 0 2em $color1;
+}
+
+
+
+
+
+
+
+
+
+.panelRight {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+	background-color: $colorBarTop;
+	color: rgba(241,241,241,1.00);
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    
+    .panelRightLogoPlace {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: rem-calc(64);
+        min-height: rem-calc(64);
+        max-height: rem-calc(64);
+        background-color: transparent !important;
+        background-image: url();
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center center;
+        text-align: center;
+        margin: rem-calc(15) auto;
+    }
+    .panelRightUserBlock {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        background-color: $colorBlack;
+        margin: rem-calc(0);
+        padding: rem-calc(10) 0;
+    }
+    .panelRightUserPic {
+        width: rem-calc(84);
+        height: rem-calc(84);
+        min-height: rem-calc(84);
+        max-height: rem-calc(84);
+        background-color: transparent !important;
+        background-image: url(../images/userProfilePic.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        border: 1px $colorWhite solid;
+        border-radius: rem-calc(42);
+        -webkit-border-radius: rem-calc(42);
+        -moz-border-radius: rem-calc(42);
+        margin: rem-calc(5) auto;
+        padding: rem-calc(0);
+    }
+    .panelRightUserName {
+        width: 100%;
+        text-wrap: none;
+        overflow: hidden;
+        color: $colorWhite;
+        font: $fontSize*0.85 $fontYekan;
+        font-weight: 600;
+        margin: 0;
+        padding: rem-calc(5);
+        padding-right: rem-calc(38);
+    }
+    .panelRightUserGroup {
+        width: 100%;
+        text-wrap: none;
+        overflow: hidden;
+        color: $colorGrayDark;
+        font: $fontSize*0.85 $fontYekan;
+        font-weight: 400;
+        margin: 0;
+        padding: rem-calc(5);
+        padding-right: rem-calc(38);
+    }
+    .panelRightLineSep {
+        height: rem-calc(2);
+        max-height: rem-calc(2);
+        border-top: 1px rgba(0,0,0,0.35) solid;
+        border-bottom: 1px rgba(115,115,115,0.65) solid;
+    }
+    .panelRightMenu {
+    }
+    .panelRightMenuLineSep {
+    }
+    .panelRightMenuItem {
+        ul {
+            display: inline-block;
+            position: relative;
+            list-style: none;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            li {
+                width: 100%;
+                height: rem-calc(37);
+                line-height: rem-calc(37);
+                vertical-align: middle;
+                text-wrap: none;
+                overflow: hidden;
+                color: $colorWhite;
+                font: $fontSize*0.85 $fontYekan;
+                font-weight: 600;
+                margin: 0;
+                padding: rem-calc(10);
+
+                transition: all 0.2s ease-in;
+                -webkit-transition: all 0.2s ease-in;
+                -moz-transition: all 0.2s ease-in;
+                -o-transition: all 0.2s ease-in;
+                .icon {
+                    height: rem-calc(43);
+                    line-height: rem-calc(43);
+                    vertical-align: middle;
+                    font: $fontSize*1.45 $fontIcon;
+                    padding-left: rem-calc(10);
+                    padding-top: rem-calc(4);
+                }
+                a, a:link, a:visited, a:hover {
+                    display: inline-block;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    color: $colorWhite;
+                }
+                &:hover {
+                    background-color: $color1;
+                    color: $color1Bk;
+                    cursor: pointer;
+                }
+            }
+            li.panelRightMenuTitle, li.panelRightMenuTitle:hover {
+                display: inline-block;
+                position: relative;
+                height: rem-calc(33);
+                line-height: rem-calc(33);
+                vertical-align: middle;
+                background-color: $colorBlack;
+                color: darken($colorGrayDark, 4);
+    //			padding-right: rem-calc(38);
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                .icon {
+                    display: inline-block;
+                    position: relative;
+                    top: rem-calc(6);
+                }
+                a, a:link, a:visited, a:hover {
+                    background-color: transparent;
+                    color: $colorGrayDark;
+                }
+            }
+            li.panelRightMenuTitleLineSep, li.panelRightMenuTitleLineSep:hover {
+                height: rem-calc(2) !important;
+                max-height: rem-calc(2) !important;
+                background-color: transparent;
+                color: $colorGrayDark;
+                border-top: 1px rgba(0,0,0,0.35) solid;
+                border-bottom: 1px rgba(115,115,115,0.65) solid;
+                a, a:link, a:visited, a:hover {
+                    height: rem-calc(2);
+                    max-height: rem-calc(2);
+                    background-color: transparent;
+                    color: $colorGrayDark;
+                    border-top: 1px rgba(0,0,0,0.35) solid;
+                    border-bottom: 1px rgba(115,115,115,0.65) solid;
+                }
+            }
+
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+.ui-view-content {
+	padding: rem-calc(10) rem-calc(15) rem-calc(10) 0;
+	overflow-x: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.blockPlace {
+	margin: rem-calc(4) 0;
+}
+
+
+
+
+
+
+
+
+
+.contentPlace {
+//    border-color: $colorSuccess;
+//    border-bottom: 2px #E6E9ED dotted;
+    margin: rem-calc(5) 0;
+    padding: rem-calc(5) 0 rem-calc(10);
+    border-bottom: 0px $color1 solid;
+    color: $colorFont;
+    font: $fontSize*1 $fontApp;
+    font-weight: 400;
+    text-align: right;
+}
+.contentPlaceHeader {
+    border-bottom: 2px $color1 solid;
+    padding: rem-calc(12) 0;
+}
+.contentPlaceSub {
+    color: $color1;
+    font: $fontSize*1.25 $fontYekan;
+    font-weight: 600;
+}
+.contentPlaceDate {
+    color: rgba(0,0,0,0.25);
+    font: $fontSize*0.85 $fontApp;
+    font-weight: 400;
+    padding-right: rem-calc(12);
+}
+ul.contentPlaceUL {
+    display: block;
+    position: relative;
+    list-style: disc;
+    margin: rem-calc(12);
+    padding: rem-calc(4);
+    padding-right: rem-calc(32);
+    
+    li.contentPlaceULsub {
+        list-style: none;
+        ul {
+            display: block;
+            position: relative;
+            list-style: disc;
+            padding-right: rem-calc(32);
+            li {
+            }
+        }
+    }
+    li.contentPlaceULsub ul li {
+        color: rgba(0,0,0,0.25) !important;
+    }
+    li.info {
+        color: $colorInfo;
+    }
+    li.success {
+        color: $colorSuccess;
+    }
+    li.warning {
+        color: $colorWarning;
+    }
+}
+
+
+
+.pageHeader {
+    width: 100%;
+    height: auto;
+//	background-color: rgba(255,255,255,0.85);
+    background-color: transparent;
+    
+//    border: 1px #9FD561 solid;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	margin: 4px auto;
+	padding: 6px 0;
+    overflow: hidden;
+	&:hover {
+	}
+}
+.btnFormPlace {
+    width: 100%;
+    height: auto;
+//	background-color: rgba(255,255,255,0.85);
+    background-color: transparent;
+    
+//    border: 1px #9FD561 solid;
+    border-top: 2px $color1 solid;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	margin: 4px auto;
+	padding: 12px;
+    overflow: hidden;
+	&:hover {
+	}
+}
+.formFooterPlace {
+    width: 100%;
+    height: auto;
+//	background-color: rgba(255,255,255,0.85);
+    background-color: transparent;
+    
+//    border: 1px #9FD561 solid;
+    border-top: 0px $color1 solid;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	margin: 4px auto;
+	padding: 12px;
+    overflow: hidden;
+	&:hover {
+	}
+}
+.formPlace {
+    width: 100%;
+    height: auto;
+//	background-color: rgba(255,255,255,0.85);
+    background-color: $colorWhite;
+    
+//    border: 1px #9FD561 solid;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	margin: 4px auto;
+	padding: 0px;
+    overflow: hidden;
+	&:hover {
+	}
+}
+.formPlaceGuide {
+    border-bottom: 1px $color1 dotted;
+}
+.formPlaceAdd {
+//    border-color: $colorSuccess;
+//    border-bottom: 2px #E6E9ED dotted;
+    margin: rem-calc(5) 0;
+    padding: rem-calc(5) 0 rem-calc(10);
+    border-bottom: 2px $color1 solid;
+}
+.formPlacePanel {
+	@extend .formPlace;
+	padding: rem-calc(10);
+}
+.formPlaceHeaderBtn {
+    direction: ltr;
+    margin-left: rem-calc(4);
+    a {
+        margin: rem-calc(0) rem-calc(2);
+        float: left;
+    }
+}
+.formPlaceHeaderBtnRight {
+    direction: rtl;
+    margin-right: rem-calc(4);
+    a {
+        margin: rem-calc(0) rem-calc(2);
+        float: right;
+    }
+}
+.uploadPlace {
+	display: block;
+    padding: 25px 25px;
+    margin: 5px;
+    color: #97A1A8;
+    background: #F5F5F5;
+    border: 1px dotted #C8CBCE;
+    text-align: center;
+    
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	margin: rem-calc(8) 0;
+	padding: rem-calc(8);
+	&:hover {
+	}
+}
+.contentPlace {
+	background-color: rgba(255,255,255,0.85);
+    
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	margin: 8px 0;
+	padding: 4px 0 0 0;
+	&:hover {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+table.gridCustomSearch {
+    table-layout: fixed;
+    width: 100%;
+    height: rem-calc(37);
+    line-height: rem-calc(17);
+    vertical-align: middle;
+    background-color: $white;
+    border: none;
+    padding: 0;
+    margin: 0;
+    tbody {
+        tr {}
+    }
+    th {
+        margin: 0;
+        padding: 0;
+    }
+    td {
+        margin: 0;
+        padding: 0;
+    }
+    input[type="text"].txtInputSearch {
+        width: 100%;
+        height: rem-calc(24);
+        font-size: rem-calc(12);
+        background-color: #F7F7F7;
+        padding: 0;
+        margin: 0;
+        padding-right: 20px;
+        border: 1px #FFF solid;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+    }
+    .checkPlace {
+        width: rem-calc(26);
+    }
+    .rowNo {
+        width: rem-calc(26);
+        min-width: rem-calc(26);
+        max-width: rem-calc(26);
+        padding: 0 rem-calc(4);
+    }
+    .col10 {
+        width: 10%;
+        max-width: 10%;
+    }
+    .col20 {
+        width: 20%;
+        max-width: 20%;
+    }
+    .col25 {
+        width: 25%;
+        max-width: 25%;
+    }
+    .col30 {
+        width: 30%;
+        max-width: 30%;
+    }
+    .col40 {
+        width: 40%;
+        max-width: 40%;
+    }
+    .col50 {
+        width: 50%;
+        max-width: 50%;
+    }
+    .col70 {
+        width: 70%;
+        max-width: 70%;
+    }
+    .col100 {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .colBtn {
+        width: rem-calc(46);
+        min-width: rem-calc(46);
+        max-width: rem-calc(46);
+    }
+}
+table.gridCustom {
+    width: 100%;
+    table-layout: fixed;
+    white-space: nowrap;
+    line-height: rem-calc(21);
+    vertical-align: middle;
+    background-color: $white;
+    font: $fontSize*1 $fontApp;
+    font-weight: 400;
+    thead tr th,
+    thead tr td {
+        background-color: $color1;
+        color: $white;
+        white-space: nowrap;
+        overflow: hidden;
+        height: rem-calc(33);
+        line-height: rem-calc(33);
+        vertical-align: middle;
+        font: $fontSize*1 $fontYekan;
+        font-weight: 600;
+        text-align: right;
+        text-overflow: ellipsis;
+        border: 1px #FFFFFF solid;
+        margin: 0;
+        padding: rem-calc(2) rem-calc(4);
+        .icon {
+            line-height: rem-calc(21);
+            vertical-align: middle;
+            color: rgba(255, 255, 255, 0.5);
+            font: $fontSize*1.1 $fontDefault;
+            padding-top: rem-calc(-8);
+            text-align: left;
+            float: left;
+        }
+        a {
+            color: $white;
+            &:hover,
+            &:focus {
+                background-color: $color1;
+                color: rgba(255, 255, 255, 0.5);
+                cursor: pointer;
+            }
+        }
+    }
+    tbody tr {
+        height: rem-calc(21);
+        line-height: rem-calc(21);
+        vertical-align: middle;
+        font: $fontSize*0.85 $fontMirza;
+        &:nth-child(odd) {
+            background-color: #F7F7F7;
+            color: $fontColorApp;
+			transition: all 0.001s ease-in;
+			-webkit-transition: all 0.001s ease-in;
+			-moz-transition: all 0.001s ease-in;
+			-o-transition: all 0.001s ease-in;
+        }
+        &:nth-child(even) {
+            background-color: $white;
+            color: $fontColorApp;
+			transition: all 0.001s ease-in;
+			-webkit-transition: all 0.001s ease-in;
+			-moz-transition: all 0.001s ease-in;
+			-o-transition: all 0.001s ease-in;
+        }
+        &:hover,
+        &:focus {
+            background-color: $colorGray;
+            cursor: pointer;
+            a {
+                background-color: transparent;
+                &:hover,
+                &:focus {
+                    background-color: $color1;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .select {
+        width: 100%;
+        height: 100%;
+        background-color: darken($color1, 14);
+        color: $white;
+        cursor: pointer;
+        a,
+        a:hover,
+        a:visited,
+        a:focus {
+            background-color: darken($color1, 14);
+            color: $white;
+        }
+		.rowPlus {
+			background-color: #FFFFFF !important;
+			color: #888888 !important;
+		}
+		.rowPlus td {
+			background-color: #FFFFFF !important;
+			color: #888888 !important;
+		}
+		.rowPlus td.colPlus {
+			background-color: #FFFFFF !important;
+			color: #888888 !important;
+		}
+        td {
+            background-color: darken($color1, 14);
+            color: $white;
+        }
+        &:hover {
+            background-color: darken($color1, 14);
+            a,
+            a:hover,
+            a:visited,
+            a:focus {
+                background-color: darken($color1, 14);
+                color: $white;
+            }
+        }
+        .btnGridAction {
+            .icon {
+                color: $white;
+            }
+        }
+        .btnNoAction {
+            .icon {
+                color: $white;
+            }
+        }
+        .icon {
+            color: $white;
+        }
+        .colPlus .labelFormView {
+            /*color: $white;*/
+			color: $fontColorApp !important;
+        }
+        .colPlus .labelFormOut {
+            /*background-color: rgba(255, 255, 255, 0.2);
+            color: $white;*/
+			color: $fontColorApp !important;
+        }
+    }
+    tbody tr th,
+    tbody tr td {
+        color: $fontColorApp;
+        height: rem-calc(21);
+        line-height: rem-calc(21);
+        vertical-align: middle;
+        font: $fontSize*0.9 $fontApp;
+        font-weight: 600;
+        white-space: nowrap;
+        border: 1px #FFF solid;
+        padding: rem-calc(2);
+        overflow: hidden;
+        .icon {
+            line-height: rem-calc(21);
+            vertical-align: middle;
+            font: $fontSize*1.3 $fontDefault;
+            padding-top: rem-calc(-8);
+            text-align: center;
+        }
+        a {
+            color: #666666;
+            &:hover,
+            &:focus {
+                color: $white;
+                cursor: pointer;
+            }
+        }
+    }
+    .txtInputSearch {
+        width: 100%;
+        height: rem-calc(24);
+        font-size: rem-calc(12);
+        background-color: #F3F3F3;
+        padding: 0;
+        margin: rem-calc(2);
+        border-color: #F6F6F6;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+    }
+    input[type="text"].txtInput {
+        @extend .txtInputSearch;
+    }
+    .iconType {
+        font: $fontSize*1.5 $fontDefault;
+    }
+    .checkPlace {
+        width: rem-calc(26);
+        min-width: rem-calc(26);
+        max-width: rem-calc(26);
+    }
+    .rowNo {
+        width: rem-calc(26);
+        min-width: rem-calc(26);
+        max-width: rem-calc(26);
+    }
+    .col10 {
+        width: 10%;
+        max-width: 10%;
+    }
+    .col20 {
+        width: 20%;
+        max-width: 20%;
+    }
+    .col25 {
+        width: 25%;
+        max-width: 25%;
+    }
+    .col30 {
+        width: 30%;
+        max-width: 30%;
+    }
+    .col40 {
+        width: 40%;
+        max-width: 40%;
+    }
+    .col50 {
+        width: 50%;
+        max-width: 50%;
+    }
+    .col70 {
+        width: 70%;
+        max-width: 70%;
+    }
+    .col100 {
+        width: 100%;
+        max-width: 100%;
+    }
+    .colBtn {
+        width: rem-calc(46);
+        min-width: rem-calc(46);
+        max-width: rem-calc(46);
+    }
+    .fix70 {
+        width: rem-calc(70);
+        min-width: rem-calc(70);
+    }
+    .fix100 {
+        width: rem-calc(100);
+        min-width: rem-calc(100);
+    }
+    .fix140 {
+        width: rem-calc(140);
+        min-width: rem-calc(140);
+    }
+    .fix190 {
+        width: rem-calc(190);
+        min-width: rem-calc(190);
+    }
+}
+.gridCustomFooter {
+    background-color: rgba(255,255,255,1);
+    border-top: 2px $colorGray solid;
+    border-bottom: 0px $color1 solid;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    margin: 0 0 rem-calc(10) 0;
+	padding: rem-calc(10) rem-calc(5);
+}
+
+
+
+
+
+
+
+
+
+
+
+.paginationCustom {
+    display: block;
+    list-style: none;
+    > li {
+        color: #999999;
+        font: $fontSize*0.9 $fontApp;
+        float: right;
+        a {
+            color: #999999;
+            padding: rem-calc(6) rem-calc(8);
+            &:hover,
+            &:focus {
+                background-color: $colorGray;
+                color: #222;
+                cursor: pointer;
+            }
+        }
+        .select {}
+    }
+    > li.select {
+        background-color: $color1;
+        color: $white;
+        a {
+            color: $white;
+            padding: rem-calc(6) rem-calc(8);
+            &:hover,
+            &:focus {
+                background-color: $color1;
+                color: $white;
+            }
+        }
+    }
+    > li.current {
+        background-color: $color1;
+        color: $white;
+        a {
+            color: $white;
+            padding: rem-calc(6) rem-calc(8);
+            &:hover,
+            &:focus {
+                background-color: $color1;
+                color: $white;
+            }
+        }
+    }
+}
+
+.paginstionFormInlineLabel {
+    @extend .formInlineLabel;
+    direction: ltr;
+    margin: 0;
+    padding: 0;
+}
+.inline-label > .form-label.paginstionFormLabelDefault {
+    @include grid-block(4);
+    height: rem-calc(27);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    background-color: $colorGray;
+    color: #888888;
+    text-align: center;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+.paginstionFormLabelDefault {
+    @extend .formInput;
+    height: rem-calc(27);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    font: $fontSize*0.8 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+.paginstionFormInputDefault {
+    @extend .formInput;
+    @include grid-block(8);
+    height: rem-calc(27);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    background-color: #F7F7F7;
+    color: $fontColorApp;
+    font: $fontSize*0.8 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+}
+.paginstionFormInputDefault::-webkit-input-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.8 $fontApp;
+    font-weight: 600;
+}
+.paginstionFormInputDefault::-moz-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.8 $fontApp;
+    font-weight: 600;
+}
+.paginstionNum {
+    color: #999999;
+    font: $fontSize*0.8 $fontApp;
+    float: left;
+    direction: rtl;
+    padding-top: rem-calc(6);
+}
+.paginstionTxtRow {
+    color: #999999;
+    font: $fontSize*0.8 $fontApp;
+    direction: rtl;
+    padding-top: rem-calc(6);
+}
+.paginstionTxtRowTotal {
+    color: #999999;
+    font: $fontSize*0.8 $fontApp;
+    direction: rtl;
+    padding-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.title {
+    height: rem-calc(33);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    color: $colorFont;
+    font: $fontSize*1 $fontApp;
+    font-weight: 600;
+    text-align: right;
+    margin: rem-calc(4) 0;
+    padding: rem-calc(4) 0;
+    .pageTitle {
+        color: $color1;
+        font: $fontSize*1.25 $fontYekan;
+        font-weight: 600;
+        .icon {
+            padding: 0 rem-calc(12);
+        }
+    }
+	.pageDesc {
+        color: rgba(0,0,0,0.25);
+        font: $fontSize*1.15 $fontApp;
+        font-weight: 600;
+    }
+	.pageTxt {
+		color: rgba(0,0,0,0.45);
+        font: $fontSize*0.8 $fontYekan;
+        font-weight: 600;
+		margin: 0;
+		padding: 0;
+	}
+    .checkboxTitle {
+        height: rem-calc(27);
+        line-height: rem-calc(27);
+        vertical-align: middle;
+    }
+    .pageTxtFunction {
+        height: rem-calc(27);
+        line-height: rem-calc(27);
+        vertical-align: middle;
+        
+        color: rgba(0,0,0,0.45);
+        font: $fontSize*0.8 $fontYekan;
+        font-weight: 600;
+		margin: 0;
+		padding: 0;
+        
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        float: right;
+        overflow: hidden;
+        
+    }
+	p {
+		color: rgba(0,0,0,0.65);
+        font: $fontSize*0.8 $fontYekan;
+        font-weight: 600;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+.loginContainer {
+    background-color: beige;
+    margin-top: 27vh;
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	&:hover {
+	}
+}
+.loginPlace {
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	&:hover {
+		margin-top: 20vh;
+		transition: all 0.55s ease-in-out;
+		-webkit-transition: all 0.55s ease-in-out;
+		-moz-transition: all 0.55s ease-in-out;
+		-o-transition: all 0.55s ease-in-out;
+		.loginImage {
+			height: rem-calc(115);
+			min-height: rem-calc(115);
+			max-height: rem-calc(115);
+			background-color: rgba(0,0,0,0.45);
+			opacity: 1;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+			filter: alpha(opacity=100);
+			-moz-opacity: 1;
+			-khtml-opacity: 1;
+			transition: all 0.55s ease-in-out;
+			-webkit-transition: all 0.55s ease-in-out;
+			-moz-transition: all 0.55s ease-in-out;
+			-o-transition: all 0.55s ease-in-out;
+		}
+		.loginForm {
+			background-color: rgba(255,255,255,0.75);
+			border-radius: 0 0 $borderRadius $borderRadius;
+			-webkit-border-radius: 0 0 $borderRadius $borderRadius;
+			-moz-border-radius: 0 0 $borderRadius $borderRadius;
+			transition: all 0.55s ease-in-out;
+			-webkit-transition: all 0.55s ease-in-out;
+			-moz-transition: all 0.55s ease-in-out;
+			-o-transition: all 0.55s ease-in-out;
+		}
+	}
+}
+.loginImage {
+	height: rem-calc(0);
+	min-height: rem-calc(0);
+	max-height: rem-calc(0);
+	background-color: rgba(255,255,255,0.85);
+	background-image: url(../images/bkLogin.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	border-radius: $borderRadius $borderRadius 0 0;
+	-webkit-border-radius: $borderRadius $borderRadius 0 0;
+	-moz-border-radius: $borderRadius $borderRadius 0 0;
+	opacity: 0.35;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+	filter: alpha(opacity=35);
+	-moz-opacity: 0.35;
+	-khtml-opacity: 0.35;
+	/*transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;*/
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+    -moz-transition: all 0.55s ease-in-out;
+    -o-transition: all 0.55s ease-in-out;
+	&:hover {
+	}
+}
+.loginForm {
+	background-color: rgba(255,255,255,0.85);
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+	padding: rem-calc(15);
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	&:hover {
+	}
+}
+.expand {
+	@extend .loginPlace:hover;
+}
+input.formUsername:focus ~ .loginPlace,
+input.formPassword:focus ~ .loginPlace {
+	margin-top: 20vh;
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	.loginImage {
+		height: rem-calc(115);
+		min-height: rem-calc(115);
+		max-height: rem-calc(115);
+		background-color: rgba(255,255,255,0.15);
+		opacity: 1;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: alpha(opacity=100);
+		-moz-opacity: 1;
+		-khtml-opacity: 1;
+		transition: all 0.55s ease-in-out;
+		-webkit-transition: all 0.55s ease-in-out;
+		-moz-transition: all 0.55s ease-in-out;
+		-o-transition: all 0.55s ease-in-out;
+	}
+	.loginForm {
+		background-color: rgba(255,255,255,0.15);
+		border-radius: 0 0 $borderRadius $borderRadius;
+		-webkit-border-radius: 0 0 $borderRadius $borderRadius;
+		-moz-border-radius: 0 0 $borderRadius $borderRadius;
+		transition: all 0.55s ease-in-out;
+		-webkit-transition: all 0.55s ease-in-out;
+		-moz-transition: all 0.55s ease-in-out;
+		-o-transition: all 0.55s ease-in-out;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.formInlineLabel {
+    /*@include grid-layout(1);*/
+    /*@include grid-block(12);*/
+    direction: ltr;
+    margin: 0;
+    padding: 0;
+}
+.labelFormDropDown {
+    width: rem-calc(80);
+    height: rem-calc(27);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    font: $fontSize*0.8 $fontApp;
+    direction: ltr;
+    margin: 0;
+    padding: 0 rem-calc(8) 0 0;
+    background-color: #C8CBCE;
+    color: #666;
+    border: none;
+    border-color: $colorGray;
+    outline: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    cursor: pointer;
+    .txt {
+        display: inline-block;
+        height: rem-calc(34);
+        line-height: rem-calc(30);
+        vertical-align: middle;
+        color: #666;
+        font: $fontSize*0.7 $fontApp;
+        font-weight: 400;
+        padding: 0 rem-calc(5) 0 0;
+    }
+}
+ul.formInlineLabelCheckbox {
+    height: rem-calc(37);
+    line-height: rem-calc(37);
+    vertical-align: middle;
+    background-color: #F7F7F7;
+    display: block;
+    list-style: none;
+    direction: ltr;
+    border: 1px $color1 solid;
+    margin: rem-calc(6) 0 0 0;
+    padding: 0;
+    li {
+        display: inline-block;
+        float: right;
+        text-align: right;
+        margin: 0 rem-calc(14) 0 0;
+        padding: 0;
+        .title {
+            display: inline-block;
+            position: relative;
+            font: $fontSize*1.1 $fontNassim;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: rem-calc(6) 0 0 0;
+        }
+        .item {
+            display: inline-block;
+            position: relative;
+            font: $fontSize*1 $fontNassim;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: rem-calc(6) 0 0 0;
+            .txt {
+                display: inline-block;
+                position: relative;
+                margin: rem-calc(-12) 0 0 0;
+            }
+        }
+    }
+}
+.inline-label {
+    /*@include grid-block;*/
+    /*@include grid-size(shrink);*/
+    /*expand / shrink*/
+    height: rem-calc(38);
+    line-height: rem-calc(38);
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+.inline-label > .form-label {
+    @include grid-block(4);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    background-color: #E6E9ED;
+    color: #575a61;
+    text-align: center;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    border-radius: 0 $borderRadius $borderRadius 0;
+	-webkit-border-radius: 0 $borderRadius $borderRadius 0;
+	-moz-border-radius: 0 $borderRadius $borderRadius 0;
+}
+.inline-label > .form-label.formLabelDefaultDesc {
+    @include grid-block(2);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    background-color: $color1;
+    color: #444444;
+    text-align: center;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+.inline-label > .form-label.formLabelFix1 {
+    /*@include grid-block(2);*/
+    width: rem-calc(160);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    background-color: $color1;
+    color: #888888;
+    text-align: center;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+.formLabel {
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 400;
+    direction: rtl;
+    text-align: right;
+}
+.formLabelDefault {
+    @extend .formInput;
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    background-color: $color1;
+    color: #444444;
+    font: $fontSize*0.85 $fontYekan;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: 0 $borderRadius $borderRadius 0;
+	-webkit-border-radius: 0 $borderRadius $borderRadius 0;
+	-moz-border-radius: 0 $borderRadius $borderRadius 0;
+}
+.formLabelDefaultDesc {
+    @extend .formInput;
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    background-color: $color1;
+    color: #444444;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: 0 $borderRadius $borderRadius 0;
+-webkit-border-radius: 0 $borderRadius $borderRadius 0;
+-moz-border-radius: 0 $borderRadius $borderRadius 0;
+}
+.inline-label > .form-label.icon {
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: #444444;
+    text-align: center;
+    margin: rem-calc(0);
+    padding: rem-calc(7) rem-calc(9) 0 0;
+    overflow: hidden;
+}
+.inline-label > .form-label .icon {
+    margin: rem-calc(0);
+    padding: rem-calc(2) rem-calc(4) 0 rem-calc(8);
+    overflow: hidden;
+}
+.formLabelDefault.icon {
+    color: #444444;
+}
+.formInput {
+    direction: rtl;
+    text-align: right;
+}
+.formInputDefaultBlank {
+    @extend .formInput;
+    @include grid-block(12);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    background-color: #F5F5F5;
+    color: $fontColorApp;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    box-shadow: inset 2px 2px 2px #E6E9ED;
+    -webkit-box-shadow: inset 2px 2px 2px #E6E9ED;
+    -moz-box-shadow: inset 2px 2px 2px #E6E9ED;
+}
+.formInputDefault {
+    @extend .formInput;
+    @include grid-block(8);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    background-color: #F5F5F5;
+    color: $fontColorApp;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: $borderRadius 0 0 $borderRadius;
+	-webkit-border-radius: $borderRadius 0 0 $borderRadius;
+	-moz-border-radius: $borderRadius 0 0 $borderRadius;
+    box-shadow: inset 2px 2px 2px #E6E9ED;
+    -webkit-box-shadow: inset 2px 2px 2px #E6E9ED;
+    -moz-box-shadow: inset 2px 2px 2px #E6E9ED;
+}
+input.formUsername:focus ~ .placeLogin,
+input.formPassword:focus ~ .placeLogin {
+	margin-top: 20vh;
+	transition: all 0.55s ease-in-out;
+	-webkit-transition: all 0.55s ease-in-out;
+	-moz-transition: all 0.55s ease-in-out;
+	-o-transition: all 0.55s ease-in-out;
+	.placeLoginImg {
+		height: rem-calc(115);
+		min-height: rem-calc(115);
+		max-height: rem-calc(115);
+		background-color: rgba(255,255,255,0.15);
+		opacity: 1;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: alpha(opacity=100);
+		-moz-opacity: 1;
+		-khtml-opacity: 1;
+		transition: all 0.55s ease-in-out;
+		-webkit-transition: all 0.55s ease-in-out;
+		-moz-transition: all 0.55s ease-in-out;
+		-o-transition: all 0.55s ease-in-out;
+	}
+	.placeLoginFrm {
+        background: rgba(255, 255, 255, 0.89);
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+        padding: 10px 20px 20px 20px;
+		border-radius: 0 0 $borderRadius $borderRadius;
+		-webkit-border-radius: 0 0 $borderRadius $borderRadius;
+		-moz-border-radius: 0 0 $borderRadius $borderRadius;
+		transition: all 0.55s ease-in-out;
+		-webkit-transition: all 0.55s ease-in-out;
+		-moz-transition: all 0.55s ease-in-out;
+		-o-transition: all 0.55s ease-in-out;
+	}
+}
+
+.formInputDefaultDesc {
+    @extend .formInput;
+    @include grid-block(10);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    background-color: $colorGrayLight;
+    color: $fontColorApp;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+    border: none;
+    outline: none;
+	border-radius: $borderRadius 0 0 $borderRadius;
+	-webkit-border-radius: $borderRadius 0 0 $borderRadius;
+	-moz-border-radius: $borderRadius 0 0 $borderRadius;
+    box-shadow: inset 2px 2px 2px #ddd;
+    -webkit-box-shadow: inset 2px 2px 2px #ddd;
+    -moz-box-shadow: inset 2px 2px 2px #ddd;
+}
+.formInputSearch {
+    height: rem-calc(31) !important;
+    line-height: rem-calc(31);
+    font: $fontSize*0.8 $fontYekan !important;
+    font-weight: 400;
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+    padding: rem-calc(0);
+}
+.formSelect {
+    direction: rtl;
+    text-align: right;
+}
+.formInputDefaultBlank::-webkit-input-placeholder,
+.formInputDefault::-webkit-input-placeholder,
+.formInputDefaultDesc::-webkit-input-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+}
+.formInputDefaultBlank::-moz-placeholder,
+.formInputDefault::-moz-placeholder,
+.formInputDefaultDesc::-moz-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+}
+.formInputDefaultBlank::-ms-input-placeholder,
+.formInputDefault::-ms-input-placeholder,
+.formInputDefaultDesc::-ms-input-placeholder {
+    color: #C4C4C4;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+}
+input[type="text"].formInputDefaultBlank {
+    @extend .formInputDefaultBlank;
+}
+input[type="text"].formInputDefault {
+    @extend .formInputDefault;
+}
+
+input[type="text"].formInputDate {
+    @extend .formInputDefault;
+    text-align: left;
+    direction: ltr;
+    padding: 0 rem-calc(12);
+}
+input[type="password"].formInputDefault {
+    @extend .formInputDefault;
+}
+
+input[type="text"].formInputDefaultDesc {
+    @extend .formInputDefaultDesc;
+}
+
+input[type="password"].formInputDefaultDesc {
+    @extend .formInputDefaultDesc;
+}
+.inputSelectDefault {
+	@include grid-block(8);
+    height: rem-calc(34);
+    line-height: rem-calc(27);
+    vertical-align: middle;
+    background-color: $colorGrayLight;
+    color: $fontColorApp;
+    font: $fontSize*0.9 $fontApp;
+    font-weight: 600;
+	text-align: right;
+	direction: rtl;
+    border: none;
+    outline: none;
+	border-radius: $borderRadius 0 0 $borderRadius;
+	-webkit-border-radius: $borderRadius 0 0 $borderRadius;
+	-moz-border-radius: $borderRadius 0 0 $borderRadius;
+    box-shadow: inset 2px 2px 2px #ddd;
+    -webkit-box-shadow: inset 2px 2px 2px #ddd;
+    -moz-box-shadow: inset 2px 2px 2px #ddd;
+}
+select.inputSelectDefault {
+	@extend .inputSelectDefault;
+}
+
+
+
+
+
+
+
+
+
+
+.labelFormFull {
+    @include grid-block(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    font: $fontSize*0.85 $fontApp;
+    font-weight: 600;
+    direction: rtl;
+    margin: 0;
+    padding: rem-calc(8) rem-calc(27) 0 0;
+    background-color: #F5F5F5;
+    color: #666;
+    border: none;
+    border-radius: $borderRadius 0 0 $borderRadius;
+    -webkit-border-radius: $borderRadius 0 0 $borderRadius;
+    -moz-border-radius: $borderRadius 0 0 $borderRadius;
+    cursor: pointer;
+    option {
+        display: inline-block;
+        height: rem-calc(34);
+        line-height: rem-calc(34);
+        vertical-align: middle;
+        color: #666;
+        font: $fontSize*1 $fontApp;
+        padding: 0 rem-calc(5) 0 0;
+    }
+    .txt {
+        display: inline-block;
+        height: rem-calc(34);
+        line-height: rem-calc(34);
+        vertical-align: middle;
+        color: #666;
+        font: $fontSize*1 $fontApp;
+        padding: 0 rem-calc(5) 0 0;
+    }
+}
+.labelFormEnd {
+    @include grid-block(8);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    font: $fontSize*0.85 $fontApp;
+    font-weight: 600;
+    direction: rtl;
+    margin: 0;
+    padding: rem-calc(8) rem-calc(38) 0 0;
+    background-color: #F5F5F5;
+    color: #666;
+    border: none;
+    border-radius: $borderRadius 0 0 $borderRadius;
+    -webkit-border-radius: $borderRadius 0 0 $borderRadius;
+    -moz-border-radius: $borderRadius 0 0 $borderRadius;
+    cursor: pointer;
+    option {
+        display: inline-block;
+        height: rem-calc(34);
+        line-height: rem-calc(34);
+        vertical-align: middle;
+        color: #666;
+        font: $fontSize*1 $fontApp;
+        padding: 0 rem-calc(5) 0 0;
+    }
+    .txt {
+        display: inline-block;
+        height: rem-calc(34);
+        line-height: rem-calc(34);
+        vertical-align: middle;
+        color: #666;
+        font: $fontSize*1 $fontApp;
+        padding: 0 rem-calc(5) 0 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+
+
+
+
+
+
+
+
+
+.btnRow {
+    @include grid-block;
+    width: 100%;
+    height: rem-calc(40);
+    line-height: rem-calc(40);
+    vertical-align: middle;
+    background-color: transparent;
+    border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    margin: rem-calc(4) auto;
+    padding: 0;
+	overflow: hidden;
+    a, a:link, a:visited {
+    }
+}
+.btnDefaultEmpty {
+    @extend %button;
+    @include button-size ( $size: medium, $expand: true);
+    @include button-style ( $background: $color3, $background-hover: auto, $color: #FFF, $style: solid);
+    font: $fontSize*0.8 $fontYekan;
+    font-weight: 600;
+    text-align: center;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    margin: 0;
+    padding: 0;
+    &.custom-disabled {
+        @include button-disabled;
+    }
+    .icon {
+        display: inline-block;
+        font: $fontSize*1.5 $fontYekan;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+    }
+}
+.btnDefaultEmpty.icon {
+    display: inline-block;
+    font: $fontSize*1.5 $fontYekan;
+    margin: 0;
+    padding: 0;
+}
+.btnDefault {
+    @extend %button;
+    @include button-size ( $size: medium, $expand: true);
+    @include button-style ( $background: $color3, $background-hover: auto, $color: #FFF, $style: solid);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    font: $fontSize*0.8 $fontYekan;
+    font-weight: 600;
+    text-align: center;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    margin: 0;
+    padding: rem-calc(10) rem-calc(10) rem-calc(4) rem-calc(10);
+	&:hover {
+		box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px -2px rgba(0, 0, 0, 0.2);
+    	-webkit-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px -2px rgba(0, 0, 0, 0.2);
+    	-moz-box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 1px 2px -2px rgba(0, 0, 0, 0.2);
+		transition: all 0.15s ease;
+		-webkit-transition: all 0.15s ease;
+		-moz-transition: all 0.15s ease;
+		-o-transition: all 0.15s ease;
+		cursor: pointer;
+	}
+    &.custom-disabled {
+        @include button-disabled;
+    }
+    .icon {
+        display: inline-block;
+        font: $fontSize*1.5 $fontYekan;
+        height: rem-calc(34);
+        line-height: rem-calc(17);
+        vertical-align: middle;
+        margin: 0;
+        margin-top: rem-calc(-4);
+        padding: 0;
+        float: right;
+    }
+}
+.btnDefault.icon {
+    display: inline-block;
+    font: $fontSize*1.5 $fontYekan;
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    padding-top: rem-calc(8);
+    float: right;
+}
+span.btnDefaultIconPlace {
+    position: relative;
+}
+span.btnDefaultIconPlace:after {
+}
+input[type="submit"].btnDefault {
+    margin: 0;
+    padding: 0;
+    padding-right: 0;
+}
+.btnAlarm {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorAlert, $background-hover: auto, $color: #555, $style: solid);
+    width: rem-calc(30);
+    height: rem-calc(30);
+    line-height: rem-calc(30);
+    margin: rem-calc(6);
+    padding: rem-calc(9) rem-calc(6) 0 0;
+    overflow: hidden;
+}
+.btnAlarm.icon {
+    margin: 0;
+    padding: 0;
+}
+.btnAlarmExtend {
+    @extend .btnDefault;
+    @include button-style ($background: $colorAlert, $background-hover: auto, $color: #555, $style: solid);
+	text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+	.icon {
+		margin: 0px auto;
+		padding: rem-calc(6) 0 0 0;
+		float: none;
+	}
+}
+.btnAlarmExtend.icon {
+    margin: 0;
+    padding: 0;
+}
+.btnUnLock {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnUnLockIcon:after {
+    display: inline-block;
+    position: absolute;
+    top: rem-calc(4);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e1cb";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+.btnLock {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorWarning, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnLockIcon:after {
+    display: inline-block;
+    position: absolute;
+    top: rem-calc(4);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e1cb";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+.btnBackPlace {
+    padding-top: rem-calc(14);
+}
+.hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+a.btnEffect {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3), 0 3px 3px rgba(0, 0, 0, 0.15), 0 3px 2px -2px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    color: $white;
+    font-size: 1.25em;
+    text-shadow: 0 -0.5px 1px rgba(0, 0, 0, 0.15);
+}
+.btnEffect {
+    padding: 1.5em 3em;
+    margin: 0;
+    position: relative;
+    min-width: 250px;
+    display: inline-block;
+}
+.btnEffect.styl-material {
+	transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	-moz-transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+	-o-transition: background 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    background: #E91E63;
+}
+.btnEffect.styl-material:hover,
+.btnEffect.styl-material:focus {
+    outline: none;
+    background: #EC407A;
+}
+.ripple-obj {
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    /*fill: #AD1457;*/
+    fill: #AD1457;
+}
+.ripple-obj use {
+    opacity: 0;
+}
+.btnOk {
+    @extend .btnDefault;
+    @include button-style ( $background: $color11, $background-hover: auto, $color: #FFF, $style: solid);
+}
+.btnRe {
+    @extend .btnDefault;
+    @include button-style ( $background: $color1, $background-hover: auto, $color: #FFF, $style: solid);
+}
+.btnCancel {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorWarning, $background-hover: auto, $color: #FFF, $style: solid);
+}
+.btnEnter {
+    @extend .btnDefault;
+    @include button-style ( $background: $color1, $background-hover: auto, $color: #FFF, $style: solid);
+}
+.btnAdd {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+}
+.btnAddFile {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+    font: $fontSize*1.15 $fontYekan;
+    font-weight: 600;
+}
+.btnAddFileXML {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+    font: $fontSize*1 $fontYekan;
+    font-weight: 600;
+}
+.btnReturn {
+    @extend .btnDefault;
+    @include button-style ( $background: #E6E9ED, $background-hover: auto, $color: #888888, $style: solid);
+}
+.btnFormUp {
+    @extend .btnDefault;
+    @include button-style ( $background: #E6E9ED, $background-hover: auto, $color: #888888, $style: solid);
+}
+.btnFormDefault {
+    @extend .btnDefault;
+    @include button-style ( $background: #E6E9ED, $background-hover: auto, $color: #888888, $style: solid);
+}
+.btnFormSmall {
+    @extend .btnFormDefault;
+    width: rem-calc(37);
+    max-width: rem-calc(37);
+}
+.btnCardSmall {
+    @extend .btnFormDefault;
+    width: rem-calc(32);
+    max-width: rem-calc(32);
+    height: rem-calc(32);
+    max-height: rem-calc(32);
+    vertical-align: middle;
+}
+a.btnCardSmall {
+    @extend .btnCardSmall;
+    background-color: transparent;
+    color: $colorWhiteBK1;
+    margin: rem-calc(2);
+    padding: rem-calc(2);
+    float: left;
+    &:hover {
+        background-color: $color1D1 !important;
+        color: $colorWhiteBK1 !important;
+		box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0), 0 0px 0px rgba(0, 0, 0, 0);
+    	-webkit-box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0), 0 0px 0px rgba(0, 0, 0, 0);
+    	-moz-box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0), 0 0px 0px rgba(0, 0, 0, 0);
+		transition: all 0.15s ease;
+		-webkit-transition: all 0.15s ease;
+		-moz-transition: all 0.15s ease;
+		-o-transition: all 0.15s ease;
+		cursor: pointer;
+	}
+    .icon {
+        margin: 0;
+        padding: rem-calc(6) rem-calc(3);
+    }
+}
+a.btnCardAction {
+    @extend .btnCardSmall;
+    background-color: #E6E9ED;
+    color: $colorGrayDark;
+    margin: rem-calc(2);
+    padding: rem-calc(2);
+    float: right;
+    &:hover {
+        background-color: $colorFont1 !important;
+        color: #E6E9ED !important;
+		box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0), 0 0px 0px rgba(0, 0, 0, 0);
+    	-webkit-box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0), 0 0px 0px rgba(0, 0, 0, 0);
+    	-moz-box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0), 0 0px 0px rgba(0, 0, 0, 0);
+		transition: all 0.15s ease;
+		-webkit-transition: all 0.15s ease;
+		-moz-transition: all 0.15s ease;
+		-o-transition: all 0.15s ease;
+		cursor: pointer;
+	}
+    .icon {
+        margin: 0;
+        padding: rem-calc(6) rem-calc(3);
+    }
+}
+a.btnCardAction.ok {
+    @extend .btnCardAction;
+    background-color: #E6E9ED;
+    color: $colorGrayDark;
+    &:hover {
+        background-color: $colorSuccess !important;
+        color: $colorWhiteBK1 !important;
+	}
+}
+a.btnCardAction.nok {
+    @extend .btnCardAction;
+    background-color: #E6E9ED;
+    color: $colorGrayDark;
+    &:hover {
+        background-color: $colorWarning !important;
+        color: $colorWhiteBK1 !important;
+	}
+}
+span.btnEnterIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e052";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+span.btnAddIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e05b";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+span.btnReturnIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(34);
+    vertical-align: middle;
+    color: #888888;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e00b";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+}
+.btnSearchForm {
+    @extend .btnDefault;
+    @include button-style ( $background: $color1, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnSearchFormIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.1 $fontYekan;
+    font-weight: 400;
+    content: "\e0b7";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+    overflow: hidden;
+}
+.btnSearchFormG {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnSearchFormGIcon:after {
+    display: inline-block;
+    position: relative;
+    top: rem-calc(-30);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.1 $fontYekan;
+    font-weight: 400;
+    content: "\e0b7";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+    overflow: hidden;
+}
+.btnUnLock {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorSuccess, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnUnLockIcon:after {
+    display: inline-block;
+    position: absolute;
+    top: rem-calc(4);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e1cb";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+    overflow: hidden;
+}
+.btnLock {
+    @extend .btnDefault;
+    @include button-style ( $background: $colorWarning, $background-hover: auto, $color: #FFF, $style: solid);
+}
+span.btnLockIcon:after {
+    display: inline-block;
+    position: absolute;
+    top: rem-calc(4);
+    right: rem-calc(12);
+    height: rem-calc(34);
+    line-height: rem-calc(30);
+    vertical-align: middle;
+    color: $white;
+    font: $fontSize*1.4 $fontYekan;
+    font-weight: 400;
+    content: "\e1cb";
+    margin: 0;
+    padding: 0;
+    float: right;
+    pointer-events: none;
+    overflow: hidden;
+}
+.btnBackPlace {
+    padding-top: rem-calc(14);
+}
+.btnSearch {
+    @extend .btnDefault;
+    @include button-size ( $size: medium, $expand: false);
+    width: rem-calc(31);
+    height: rem-calc(31);
+    line-height: rem-calc(31);
+    @include button-style ( $background: $color1, $background-hover: auto, /*$color: #FFF,*/
+    $style: solid);
+    .icon {
+        display: inline-block;
+        font: $fontSize*1.1 $fontDefault;
+        line-height: rem-calc(25);
+        vertical-align: central;
+        margin: 0;
+        padding: 0;
+        margin-top: rem-calc(0);
+        float: right;
+    }
+}
+.btnUploadPic {
+    @extend .btnDefault;
+}
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.btnDefaultFile {
+    @extend .btnUploadPic;
+}
+form input[type="file"].btnDefaultFile,
+input[type="file"].btnDefaultFile {
+    @extend .btnUploadPic;
+    /* font: $fontSize*0.6 $fontDefault;
+	padding: rem-calc(6);
+	padding-top: rem-calc(12); */
+    cursor: pointer;
+}
+.txtError {
+    color: $colorWarning;
+    font: $fontSize*0.85 $fontYekan;
+}
+.txtErr {
+    height: rem-calc(34);
+    line-height: rem-calc(17);
+    vertical-align: middle;
+    color: $colorWarning;
+    font: $fontSize*0.8 $fontYekan;
+    text-align: right;
+    letter-spacing: 0px;
+	border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+	margin: rem-calc(8) 0px;
+    padding: rem-calc(8);
+}
+.txtErrInner {
+    height: rem-calc(34);
+    line-height: rem-calc(17);
+    vertical-align: middle;
+    color: $colorWarning;
+    font: $fontSize*0.8 $fontYekan;
+    text-align: center;
+    letter-spacing: 0px;
+    padding: rem-calc(10);
+}
+.txtErrIcon {
+    color: $colorWarning;
+    font: $fontSize*1.1 $fontDefault;
+    line-height: rem-calc(18);
+    vertical-align: middle;
+    padding-top: rem-calc(4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*!
+ * CSS jQuery.filer
+ * Theme: DragDropBox
+ * Copyright (c) 2015 CreativeDream
+ * Version: 1.0.4 (03-Nov-2015)
+*/
+
+/*-------------------------
+	Input
+-------------------------*/
+.jFiler-input-dragDrop {
+    display: block;
+    padding: 25px 25px;
+    margin: 5px;
+    color: #97A1A8;
+    background: #F5F5F5;
+    border: 1px dotted #C8CBCE;
+    text-align: center;
+    -webkit-transition: box-shadow 0.3s,
+                        border-color 0.3s;
+    -moz-transition: box-shadow 0.3s,
+                        border-color 0.3s;
+    transition: box-shadow 0.3s,
+                        border-color 0.3s;
+}
+
+.jFiler.dragged .jFiler-input-dragDrop {
+    border-color: #aaa;
+    box-shadow: inset 0 0 20px rgba(0,0,0,.08);
+}
+
+.jFiler.dragged .jFiler-input-dragDrop * {
+    pointer-events: none;
+}
+
+.jFiler.dragged .jFiler-input-icon {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.jFiler.dragged .jFiler-input-text,
+.jFiler.dragged .jFiler-input-choose-btn {
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
+.jFiler-input-dragDrop .jFiler-input-icon {
+    display: block;
+    position: relative;
+    font-size: 55px;
+    margin-bottom: 6px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    clear: both;
+}
+
+.jFiler-input-text h3 {
+    margin: 0;
+    font: $fontSize*1.25 $fontYekan;
+    font-weight: 600;
+	color: #bcbcbc;
+    margin: 5px auto;
+}
+
+.jFiler-input-text div {
+    font: $fontSize*1.05 $fontYekan;
+    font-weight: 600;
+    margin: 5px auto;
+}
+
+.jFiler-input-choose-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8d9496;
+    border-radius: 3px;
+    border: 1px solid #c6c6c6;
+    vertical-align: middle;
+    background-color: #fff;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.05);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.jFiler-input-choose-btn:hover,
+.jFiler-input-choose-btn:active {
+    color: inherit;
+}
+
+.jFiler-input-choose-btn:active {
+    background-color: #f5f5f5;
+}
+
+/* gray */
+.jFiler-input-choose-btn.gray {
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fcfcfc),to(#f5f5f5));
+    background-image: -webkit-linear-gradient(top,#fcfcfc,#f5f5f5);
+    background-image: -o-linear-gradient(top,#fcfcfc,#f5f5f5);
+    background-image: linear-gradient(to bottom,#fcfcfc,#f5f5f5);
+    background-image: -moz-linear-gradient(top,#fcfcfc,#f5f5f5);
+}
+
+.jFiler-input-choose-btn.gray:hover {
+    filter: alpha(opacity=87);
+    opacity: 0.87;
+}
+
+.jFiler-input-choose-btn.gray:active {
+    background-color: #f5f5f5;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#f5f5f5),to(#fcfcfc));
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#fcfcfc);
+    background-image: -o-linear-gradient(top,#f5f5f5,#fcfcfc);
+    background-image: linear-gradient(to bottom,#f5f5f5,#fcfcfc);
+    background-image: -moz-linear-gradient(top,#f5f5f5,#fcfcfc);
+}
+
+/* blue */
+.jFiler-input-choose-btn.blue {
+    color: #008BFF;
+    border: 1px solid #008BFF;
+}
+
+.jFiler-input-choose-btn.blue:hover {
+    background: #008BFF;
+}
+
+.jFiler-input-choose-btn.blue:active {
+    background: #008BFF;
+}
+
+/* green */
+.jFiler-input-choose-btn.green {
+    color: #27ae60;
+    border: 1px solid #27ae60;
+}
+
+.jFiler-input-choose-btn.green:hover {
+    background: #27ae60;
+}
+
+.jFiler-input-choose-btn.green:active {
+    background: #27ae60;
+}
+
+/* red */
+.jFiler-input-choose-btn.red {
+    color: #ed5a5a;
+    border: 1px solid #ed5a5a;
+}
+
+.jFiler-input-choose-btn.red:hover {
+    background: #ed5a5a;
+}
+
+.jFiler-input-choose-btn.red:active {
+    background: #E05252;
+}
+
+/* black */
+.jFiler-input-choose-btn.black {
+    color: #555;
+    border: 1px solid #555;
+}
+
+.jFiler-input-choose-btn.black:hover {
+    background: #555;
+}
+
+.jFiler-input-choose-btn.black:active {
+    background: #333;
+}
+
+.jFiler-input-choose-btn.blue:hover,
+.jFiler-input-choose-btn.green:hover,
+.jFiler-input-choose-btn.red:hover,
+.jFiler-input-choose-btn.black:hover {
+    border-color: transparent;
+    color: #fff;
+}
+
+.jFiler-input-choose-btn.blue:active,
+.jFiler-input-choose-btn.green:active,
+.jFiler-input-choose-btn.red:active,
+.jFiler-input-choose-btn.black:active {
+    border-color: transparent;
+    color: #fff;
+    filter: alpha(opacity=87);
+    opacity: 0.87;
+}
+
+
+
+
+
+
+
+
+
+
+
+.cardPlace {
+    margin: rem-calc(6);
+}
+// This is a card container
+.cardDefault {
+    @include card-container($background: #fff, $color: $colorFont1, $border: 1px solid $colorGray, $radius: $borderRadius, $shadow: 0 0px 0px black, $padding: 1rem, $margin: 1rem);
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: rem-calc(4);
+    padding: 0px;
+    overflow: hidden;
+    
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    
+    img {
+        border-bottom: 2px $color1 solid;
+    }
+    &:hover {
+        cursor: pointer;
+        .cardDefaultDivider {
+            display: inline-block;
+            height: auto;
+            top: 0;
+            z-index: 99;
+            
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: alpha(opacity=100);
+            -moz-opacity: 1;
+            -khtml-opacity: 1;
+            opacity: 1;
+            
+            transition: all 0.25s ease;
+            -webkit-transition: all 0.25s ease;
+            -moz-transition: all 0.25s ease;
+            -o-transition: all 0.25s ease;
+        }
+    }
+}
+.cardDefault.select {
+    @extend .cardDefault;
+    @include card-container($background: $color1, $color: $colorWhiteBK1, $border: 1px solid $color1, $radius: $borderRadius, $shadow: 0 0px 0px black, $padding: 1rem, $margin: 1rem);
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: rem-calc(4);
+    padding: 0px;
+    overflow: hidden;
+    .cardDefaultSection {
+        color: $colorWhiteBK1 !important;
+    }
+}
+// This is a card divider
+.cardDefaultDivider {
+    @include card-divider($background: $color1, $padding: 0);
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    color: $color1Bk;
+    
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    
+    overflow: hidden;
+    a {
+        margin: rem-calc(2);
+    }
+}
+// This is a card section
+.cardDefaultSection {
+    @include card-section($padding: rem-calc(6));
+    height: auto;
+    color: $colorFont1 !important;
+    font: $fontSize*1 $fontYekan;
+    font-weight: 600;
+    h4 {
+        font: $fontSize*1 $fontYekan;
+        font-weight: 600;
+    }
+    p {
+        font: $fontSize*0.85 $fontYekan;
+        font-weight: 400;
+    }
+}
+.cardDefaultSection.editMode {
+    @extend .cardDefaultSection;
+    font: $fontSize*1 $fontYekan;
+    font-weight: 400;
+    margin: rem-calc(4);
+    padding: 0px;
+    * > div {
+        
+        clear: both;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gridComp {
+	width: 100%;
+	background-color: $colorWhite;
+	color: $fontColorApp;
+    
+    font-size: $fontSize;
+    font: 0.625em/1em $fontApp;
+	font-weight: normal;
+	line-height: 1.75 !important;
+	letter-spacing: 0;
+    direction: rtl;
+	margin: 0;
+	padding: 0;
+//	overflow-x: hidden;
+//	overflow-y: auto;
+    
+	a {
+		background-color: transparent;
+		color: $color1;
+		text-decoration: none;
+		@include transition(all 0.15s ease);
+		&:hover {
+			background-color: transparent;
+			color: darken($color1, 15);
+			cursor: pointer;
+		}
+	}
+}
+.gridCompHeader {
+	width: 100%;
+	background-color: transparent;
+	color: $fontColorApp;
+	.txt {
+		font: 1.5em/1em $fontYekan;
+		font-weight: 600;
+		line-height: 1.85;
+	}
+	.ver {
+		font: 1em/1em $fontApp;
+		font-weight: 400;
+		line-height: 1.55;
+	}
+}
+.gridCompBlock {
+	background-color: transparent;
+	color: $fontColorApp;
+	line-height: 1.55;
+}
+
+
+
+
+
+
+
+.gridBtnDefault {
+    display: block;
+	position: relative;
+	width: 100%;
+    height: 17px;
+    line-height: 17px;
+    vertical-align: middle;
+	background-color: $colorGrayLight;
+	color: $fontColorApp;
+	font: 1em/1em $fontYekan;
+    font-weight: 600;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+	@include border-radius($borderRadius);
+    margin: 0;
+    padding: 0;
+	padding-top: 6px;
+	cursor: pointer;
+    .icon {
+        display: inline-block;
+        font: 1.35em/1em $fontIcon;
+        height: 15px;
+        line-height: 15px;
+        vertical-align: middle;
+        margin: 0;
+        margin-top: -4px;
+        padding: 0;
+		padding-right: 4px;
+        float: right;
+    }
+	&:hover {
+		background-color: $color1;
+		color: lighten($color1, 35);
+		cursor: pointer;
+	}
+}
+.btnToggleTop {
+    @extend .gridBtnDefault;
+    width: 240px;
+    background-color: transparent !important;
+	color: $color1;
+    &:hover {
+		background-color: $colorInfo !important;
+		color: $colorWhite !important;
+		cursor: pointer;
+	}
+}
+.btnSave {
+    @extend .gridBtnDefault;
+    width: 130px;
+    background-color: $colorSuccess !important;
+	color: $colorWhite;
+    margin: 0px auto;
+    &:hover {
+		background-color: darken($colorSuccess, 5) !important;
+		color: $colorWhite !important;
+		cursor: pointer;
+	}
+}
+a.btnSave, a.btnSave:visited {
+	@extend .btnSave;
+	&:hover {
+		background-color: darken($colorSuccess, 5);
+		color: $colorWhite;
+		cursor: pointer;
+	}
+}
+.btnActionDetails {
+	@extend .gridBtnDefault;
+	width: 19px;
+	height: 19px;
+    line-height: 19px;
+	vertical-align: middle;
+	background-color: transparent;
+	color: $colorFont;
+    text-align: center;
+	margin: 0px auto;
+	padding: 0;
+	@include border-radius($borderRadius);
+	.icon {
+        display: inline-block;
+        font: 1.15em/1em $fontIcon;
+        font-weight: 400;
+        height: 15px;
+        line-height: 15px;
+        vertical-align: middle;
+        margin: 0;
+        margin-top: 0px;
+        padding: 0;
+		padding-right: 2px;
+        padding-top: 1px;
+    }
+	&:hover {
+		background-color: darken($colorInfo, 5);
+		color: $colorWhite;
+		cursor: pointer;
+	}
+}
+a.btnActionDetails, a.btnActionDetails:visited {
+	@extend .btnActionDetails;
+	&:hover {
+		background-color: darken($colorInfo, 5);
+		color: $colorWhite;
+		cursor: pointer;
+	}
+}
+.btnActionDelete {
+	@extend .gridBtnDefault;
+	width: 19px;
+	height: 19px;
+    line-height: 19px;
+	vertical-align: middle;
+	background-color: transparent;
+	color: $colorFont;
+    text-align: center;
+	margin: 0px auto;
+	padding: 0;
+	@include border-radius($borderRadius);
+	.icon {
+        display: inline-block;
+        font: 1.15em/1em $fontIcon;
+        font-weight: 400;
+        height: 15px;
+        line-height: 15px;
+        vertical-align: middle;
+        margin: 0;
+        margin-top: 0px;
+        padding: 0;
+		padding-right: 2px;
+        padding-top: 1px;
+    }
+	&:hover {
+		background-color: darken($colorWarning, 5);
+		color: $colorWhite;
+		cursor: pointer;
+	}
+}
+a.btnActionDelete, a.btnActionDelete:visited {
+	@extend .btnActionDelete;
+	&:hover {
+		background-color: darken($colorWarning, 5);
+		color: $colorWhite;
+		cursor: pointer;
+	}
+}
+
+
+
+
+
+
+
+
+.gridInputDefault {
+    display: block;
+	position: relative;
+	width: 100%;
+    height: 19px;
+    line-height: 19px;
+    vertical-align: middle;
+    background-color: $colorGrayD1;
+    color: $fontColorApp;
+    font: 1em/1em $fontApp;
+    font-weight: 600;
+    border: 1px $colorGrayD1 solid;
+    outline: none;
+//  @include border-radius($borderRadius);
+//	@include box-shadow(inset 2px 2px 4px #ddd);
+    
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.6);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.6);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.6);
+
+	background: -webkit-linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	background: -moz-linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	background: -o-linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	background: -ms-linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	background: linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorGrayD1', endColorstr='$colorWhite',GradientType=0 );
+    
+    margin: 2px;
+	padding: 2px 2px 0 2px;
+}
+.gridInputDefault::-webkit-input-placeholder {
+    color: $colorGrayD3;
+    font-weight: 400;
+}
+.gridInputDefault::-moz-placeholder {
+    color: $colorGrayD3;
+    font-weight: 400;
+}
+.gridInputDefault::-ms-input-placeholder {
+    color: $colorGrayD3;
+    font-weight: 400;
+}
+input[type="text"].gridInputDefault {
+	@extend .gridInputDefault;
+}
+.gridSelectDragBox {
+    @extend .gridInputDefault;
+    background-color: $colorGrayD1;
+    color: $colorGrayD4;
+    
+    -webkit-box-shadow: inset 0px 0px 0px rgba(0,0,0,0);
+	-moz-box-shadow: inset 0px 0px 0px rgba(0,0,0,0);
+	box-shadow: inset 0px 0px 0px rgba(0,0,0,0);
+
+	background: -webkit-linear-gradient(top, $colorWhite 0%, $colorGrayD1 100%);
+	background: -moz-linear-gradient(top, $colorWhite 0%, $colorGrayD1 100%);
+	background: -o-linear-gradient(top, $colorWhite 0%, $colorGrayD1 100%);
+	background: -ms-linear-gradient(top, $colorWhite 0%, $colorGrayD1 100%);
+	background: linear-gradient(top, $colorWhite 0%, $colorGrayD1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorWhite', endColorstr='$colorGrayD1',GradientType=0 );
+}
+
+
+
+
+.gridInputDefaultSearch {
+    @extend .gridInputDefault;
+    background-color: $colorGrayD1;
+    color: $colorGrayD4;
+    
+    border: 1px $colorGrayD1 solid;
+    
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.6);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.6);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,.6);
+
+	background: -webkit-linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	background: -moz-linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	background: -o-linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	background: -ms-linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	background: linear-gradient(top, $colorGrayD1 0%, $colorWhite 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorGrayD1', endColorstr='$colorWhite',GradientType=0 );
+    &:focus {
+        background-color: $colorGray;
+        color: $fontColorApp;
+
+        border: 1px $colorGray solid;
+        
+        background: -webkit-linear-gradient(top, $colorGray 0%, $colorWhite 100%);
+        background: -moz-linear-gradient(top, $colorGray 0%, $colorWhite 100%);
+        background: -o-linear-gradient(top, $colorGray 0%, $colorWhite 100%);
+        background: -ms-linear-gradient(top, $colorGray 0%, $colorWhite 100%);
+        background: linear-gradient(top, $colorGray 0%, $colorWhite 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$colorGray', endColorstr='$colorWhite',GradientType=0 );
+    }
+}
+.gridInputDefaultSearch::-webkit-input-placeholder {
+    color: $colorGrayD4;
+    font-weight: 400;
+}
+.gridInputDefaultSearch::-moz-placeholder {
+    color: $colorGrayD4;
+    font-weight: 400;
+}
+.gridInputDefaultSearch::-ms-input-placeholder {
+    color: $colorGrayD4;
+    font-weight: 400;
+}
+input[type="search"].gridInputDefaultSearch {
+	@extend .gridInputDefaultSearch;
+}
+
+
+
+
+.gridCheckTagPlace {
+	display: none;
+	position: absolute;
+	width: 140px;
+	height: 29px;
+	line-height: 29px;
+	vertical-align: middle;
+	background-color: transparent;
+	background-image: url(../images/tagBk.png);
+	background-position: center top;
+	background-repeat: no-repeat;
+	text-align: center;
+	margin: -29px -145px 0 0;
+	padding: 0 4px;
+}
+.gridInputTagPlace {
+	@extend .gridCheckTagPlace;
+    z-index: 99;
+}
+.gridInputTag {
+	height: 18px;
+	line-height: 18px;
+	vertical-align: middle;
+}
+.gridInputTagDefault {
+	width: 100px;
+	height: 18px;
+	line-height: 18px;
+	vertical-align: middle;
+	font: $fontSize*1.15 $fontApp;
+	font-weight: 600;
+	background-color: #EBEBEB;
+	padding: 0;
+	margin: 5px auto;
+	border: none;
+	background-color: #FFD33D;
+	color: #555;
+	&:focus{
+		outline: none;
+		box-shadow: none;
+		border-color: transparent;
+	}
+}
+input[type="text"].gridInputTag {
+	@extend .gridInputTagDefault;
+}
+
+
+
+
+
+
+.gridCompFilter {
+    display: block;
+    position: relative;
+    height: auto;
+    vertical-align: middle;
+    background-color: lighten($color1Bk, 6);
+    color: $color1;
+    font: 1em/1em $fontApp;
+    font-weight: 600;
+    margin: 1px 0;
+    padding: 4px;
+    overflow: hidden;
+    @include border-radius($borderRadius);
+    .filterTitle {
+        height: 23px;
+        max-height: 23px;
+        line-height: 23px;
+        vertical-align: middle;
+        font: 0.85em/1em $fontYekan;
+        font-weight: 600;
+        padding: 4px;
+    }
+    .filterPlace {
+        height: auto;
+        padding: 6px 4px;
+        .filterPlaceTitle {
+            width: 100%;
+            color: $color2;
+            font: 0.85em/1em $fontApp;
+            text-align: center;
+            padding: 6px;
+        }
+        .filterPlaceBtn {
+            width: 100%;
+            text-align: center;
+            padding: 6px;
+        }
+    }
+    a.btnToggleTop, a.btnToggleTop:visited, a.btnToggleTop:link {
+        @extend .btnToggleTop;
+        &:hover {
+            background-color: $color1;
+            color: lighten($color1, 35);
+            cursor: pointer;
+        }
+    }
+    a.btnSave, a.btnSave:visited, a.btnSave:link {
+        @extend .btnSave;
+        &:hover {
+            background-color: $colorSuccess;
+            color: $colorWhite;
+            cursor: pointer;
+        }
+    }
+    a.btnToggleTop > span {
+    }
+}
+
+
+
+ul.gridCompList {
+	display: table;
+	position: relative;
+    list-style: none;
+	width: 100%;
+    height: auto;
+    font: 1em/1em $fontApp;
+    margin: 0;
+    padding: 0;
+    z-index: 9;
+    li {
+        display: table-row;
+		position: relative;
+		width: 100%;
+        height: 25px !important;
+        line-height: 25px !important;
+        vertical-align: middle;
+    }
+    li.row {
+        display: table-row;
+		position: relative;
+		width: 100%;
+        height: 25px !important;
+        line-height: 25px !important;
+        vertical-align: middle;
+        background-color: $colorWhite;
+        color: $fontColorApp;
+        font: 0.85em/1em $fontApp;
+        font-weight: 600;
+        line-height: 1.65;
+        clear: both;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        .cell {
+            height: 25px !important;
+            line-height: 25px !important;
+            vertical-align: middle;
+            margin: 1px;
+            padding: 4px 2px 0 0;
+            overflow: hidden;
+        }
+        .colCheck {
+            height: 25px !important;
+            min-height: 25px !important;
+            line-height: 25px !important;
+            vertical-align: middle;
+            text-align: center;
+            margin: 1px auto 0px;
+            padding-top: 4px;
+            padding-right: 2px;
+            overflow: hidden;
+            > * {
+                margin: 0;
+                padding: 0;
+            }
+            input[type="checkbox"] {
+            }
+            label {
+                width: 15px;
+                height: 15px;
+                margin-right: 0px !important;
+            }
+        }
+        &:nth-child(odd) {
+            .cell {
+                background-color: $colorGrayD1;
+            }
+        }
+        &:nth-child(even) {
+            .cell {
+                background-color: $colorGray;
+            }
+        }
+        &:hover {
+            cursor: pointer;
+            @include transition(all 0.15s ease);
+            a {
+                @include transition(all 0.15s ease);
+                &:hover,
+                &:focus {
+                    @include transition(all 0.15s ease);
+                }
+            }
+            .cell {
+                background-color: $colorGrayD3;
+                color: $fontColorApp;
+                @include transition(all 0.15s ease);
+            }
+            .btnActionDetails, a.btnActionDetails {
+                background-color: $colorGrayD3;
+                color: $fontColorApp;
+                &:hover {
+                    @extend a.btnActionDetails:hover;
+                }
+            }
+            .btnActionDelete, a.btnActionDelete {
+                background-color: $colorGrayD3;
+                color: $fontColorApp;
+                &:hover {
+                    @extend a.btnActionDelete:hover;
+                }
+            }
+        }
+        &:focus {
+            cursor: pointer;
+            @include transition(all 0.15s ease);
+            a {
+                @include transition(all 0.15s ease);
+                &:hover,
+                &:focus {
+                    @include transition(all 0.15s ease);
+                }
+            }
+            .cell {
+                background-color: $colorBarTop;
+                color: $colorWhiteBK1;
+                @include transition(all 0.15s ease);
+            }
+        }
+    }
+    li.row.select {
+        height: 25px !important;
+        line-height: 25px !important;
+        vertical-align: middle;
+        cursor: pointer;
+        @include transition(all 0.15s ease);
+        .checkboxCustom label:after {
+            color: $colorWhiteBK1 !important;
+            border: 2px solid $colorWhiteBK1;
+        }
+        .checkboxCustom label:hover::after {
+            color: $colorWhiteBK1 !important;
+            border: 2px solid $colorWhiteBK1;
+        }
+        .checkboxCustom input[type=checkbox]:checked + label:after {
+            color: $colorWhiteBK1 !important;
+            border: 2px solid $colorWhiteBK1;
+        }
+        a {
+            @include transition(all 0.15s ease);
+            &:hover,
+            &:focus {
+                @include transition(all 0.15s ease);
+            }
+        }
+        .cell {
+            background-color: $colorBarTop;
+            color: $colorWhiteBK1;
+            @include transition(all 0.15s ease);
+        }
+        .btnActionDetails, a.btnActionDetails {
+            background-color: $colorBarTop;
+            color: $colorWhiteBK1;
+            &:hover {
+                @extend a.btnActionDetails:hover;
+            }
+        }
+        .btnActionDelete, a.btnActionDelete {
+            background-color: $colorBarTop;
+            color: $colorWhiteBK1;
+            &:hover {
+                @extend a.btnActionDelete:hover;
+            }
+        }
+    }
+    li.search {
+        display: table-row;
+		position: relative;
+		width: 100%;
+        height: 27px !important;
+        line-height: 27px !important;
+        vertical-align: middle;
+        background-color: $colorWhite;
+        color: $color1;
+        font: 0.75em/1em $fontYekan;
+        font-weight: 600;
+        line-height: 1.75;
+        clear: both;
+        margin: 0;
+        padding: 0;
+        @include border-radius($borderRadius $borderRadius 0 0);
+        .cell {
+            background-color: transparent;
+            color: $color1;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .colSearchClear {
+            height: 21px !important;
+            line-height: 21px !important;
+            vertical-align: middle;
+            padding: 6px 8px 0 0;
+            .icon {
+                font: 1.45em/1em $fontIcon;
+                font-weight: 600;
+            }
+        }
+    }
+    li.header {
+        display: table-row;
+		position: relative;
+		width: 100%;
+        height: 37px !important;
+        line-height: 37px !important;
+        vertical-align: middle;
+        background-color: $colorWhite;
+        color: $colorWhiteBK1;
+        font: 0.95em/1em $fontYekan;
+        font-weight: 600;
+        line-height: 1.75;
+        clear: both;
+        margin: 0;
+        padding: 0;
+        @include border-radius($borderRadius $borderRadius 0 0);
+        .cell {
+            height: 37px !important;
+            line-height: 37px !important;
+            vertical-align: middle;
+            background-color: $color1;
+            color: $colorWhiteBK1;
+            margin: 1px;
+            padding: 4px 2px 0 0;
+            overflow: hidden;
+        }
+        .colCheck {
+//            height: 37px !important;
+//            min-height: 37px !important;
+//            line-height: 37px !important;
+            vertical-align: middle;
+            text-align: center;
+            margin: 1px auto 0px;
+            padding-top: 4px;
+            padding-right: 2px;
+            overflow: hidden;
+            > * {
+                margin: 0;
+                padding: 0;
+            }
+            input[type="checkbox"] {
+            }
+            label {
+                width: 15px;
+                height: 15px;
+                margin-top: 8px !important;
+                margin-right: 0px !important;
+            }
+        }
+        a.sortIcon {
+            color: rgba(255, 255, 255, 0.45);
+            font: 1.25em/1em $fontIcon;
+            float: left;
+            padding-top: 10px;
+            padding-left: 3px;
+            
+            @include transition(all 0.15s ease);
+            &:hover,
+            &:focus {
+                color: rgba(255, 255, 255, 0.75);
+                @include transition(all 0.15s ease);
+            }
+        }
+    }
+    li.header > div:first-child div.cell {
+        @include border-radius(0 $borderRadius 0 0);
+    }
+    li.header > div:last-child div.cell {
+        @include border-radius($borderRadius 0 0 0);
+    }
+    li.dragHeader {
+        display: table-row;
+		position: relative;
+		width: 100%;
+        height: 136px !important;
+//        line-height: 37px !important;
+//        vertical-align: middle;
+        background-color: $colorWhiteBK1;
+        color: $color2Bk;
+        font: 1.15em/1em $fontApp;
+        font-weight: 600;
+        line-height: 1.75;
+        clear: both;
+        margin: 0;
+        padding: 0;
+        @include border-radius($borderRadius $borderRadius 0 0);
+        .cell {
+            background-color: $color2;
+            height: 136px !important;
+//            line-height: 57px !important;
+//            vertical-align: middle;
+            margin: 1px;
+            padding: 4px;
+            overflow: hidden;
+            cursor: move;
+            .title {
+                font: 1.05em/1em $fontYekan;
+                font-weight: 600;
+                padding: 2px 0;
+            }
+            .titleSmall {
+                font: 0.9em/1em $fontApp;
+                font-weight: 400;
+                padding: 2px 0;
+            }
+            .titleRadio {
+                font: 0.9em/1em $fontApp;
+                font-weight: 400;
+            }
+            .titleSelect {
+                font: 0.9em/1em $fontApp;
+                font-weight: 400;
+            }
+            .gridSelectDragBoxPlace {
+                width: 100%;
+                padding: 2px 0;
+                margin: 2px 0;
+            }
+            .gridSelectDragBox {
+                background-color: $color2Bk;
+                color: $color2;
+                width: 100%;
+                font: 0.9em/1em $fontApp;
+                font-weight: 400;
+                margin: 0;
+                padding: 0;
+                padding-right: 3px;
+                cursor: pointer;
+            }
+        }
+        .cell > span {
+            float: right;
+            clear: both;
+        }
+    }
+    li.dragHeader > div:first-child div.cell {
+        @include border-radius(0 $borderRadius $borderRadius 0);
+    }
+    li.dragHeader > div:last-child div.cell {
+        @include border-radius($borderRadius 0 0 $borderRadius);
+    }
+    li.row:last-child > div:first-child div.cell {
+        @include border-radius(0 0 $borderRadius 0);
+    }
+    li.row:last-child > div:last-child div.cell {
+        @include border-radius(0 0 0 $borderRadius);
+    }
+    li > div {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        float: right;
+        overflow: hidden;
+    }
+    .colCheck {
+        white-space: normal !important;
+    }
+    .colNo {
+        white-space: normal;
+    }
+    .cellBtnAction {
+        height: 27px;
+        line-height: 27px;
+        vertical-align: middle;
+        text-align: center;
+        margin: 0px auto;
+    }
+    .col1 {
+        width: 1%;
+        max-width: 1%;
+    }
+    .col2 {
+        width: 2%;
+        max-width: 2%;
+    }
+    .col3 {
+        width: 3%;
+        max-width: 3%;
+    }
+    .col4 {
+        width: 4%;
+        max-width: 4%;
+    }
+    .col5 {
+        width: 5%;
+        max-width: 5%;
+    }
+    .col6 {
+        width: 6%;
+        max-width: 6%;
+    }
+    .col7 {
+        width: 7%;
+        max-width: 7%;
+    }
+    .col8 {
+        width: 8%;
+        max-width: 8%;
+    }
+    .col9 {
+        width: 9%;
+        max-width: 9%;
+    }
+    .col10 {
+        width: 10%;
+        max-width: 10%;
+    }
+    .col15 {
+        width: 15%;
+        max-width: 15%;
+    }
+    .col20 {
+        width: 20%;
+        max-width: 20%;
+    }
+    .col25 {
+        width: 25%;
+        max-width: 25%;
+    }
+    .col30 {
+        width: 30%;
+        max-width: 30%;
+    }
+	.col35 {
+        width: 35%;
+        max-width: 35%;
+    }
+    .col40 {
+        width: 40%;
+        max-width: 40%;
+    }
+    .col45 {
+        width: 45%;
+        max-width: 45%;
+    }
+    .col50 {
+        width: 50%;
+        max-width: 50%;
+    }
+    .col55 {
+        width: 55%;
+        max-width: 55%;
+    }
+    .col60 {
+        width: 60%;
+        max-width: 60%;
+    }
+    .col65 {
+        width: 65%;
+        max-width: 65%;
+    }
+	.col70 {
+        width: 70%;
+        max-width: 70%;
+    }
+    .col75 {
+        width: 75%;
+        max-width: 75%;
+    }
+	.col80 {
+        width: 80%;
+        max-width: 80%;
+    }
+	.col85 {
+        width: 85%;
+        max-width: 85%;
+    }
+	.col90 {
+        width: 90%;
+        max-width: 90%;
+    }
+    .col95 {
+        width: 95%;
+        max-width: 95%;
+    }
+    .col100 {
+        width: 100%;
+        max-width: 100%;
+    }
+    .colBtnFix {
+        width: 25px;
+        max-width: 25px;
+        min-width: 25px;
+    }
+}
+.gridCompFooter > div {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: right;
+    overflow: hidden;
+}
+.gridCompFooter {
+    display: block;
+    position: relative;
+    height: 25px;
+//    max-height: 25px;
+    line-height: 25px;
+    vertical-align: middle;
+    background-color: lighten($colorGrayLight, 6);
+    font: 1em/1em $fontApp;
+    margin: 2px 0;
+    padding: 4px;
+    overflow: hidden;
+    @include border-radius($borderRadius);
+    .pagingNoRecPlace {
+        display: inline-block;
+        position: relative;
+        width: 10%;
+        max-width: 10%;
+        font: 0.85em/1em $fontApp;
+        font-weight: 600;
+        padding: 4px 0 0 0;
+        .noRecTxt {
+            color: $colorGrayDark;
+            margin: 0;
+            padding: 0;
+        }
+        .noRecAll {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .pagingPagesPlace {
+        display: inline-block;
+        position: relative;
+        width: 50%;
+        max-width: 50%;
+        ul.paging {
+            display: table;
+            position: relative;
+            list-style: none;
+            width: 100%;
+            height: auto;
+            font: 0.85em/1em $fontApp;
+            margin: 0;
+            padding: 0;
+            li {
+                height: 19px;
+                line-height: 19px;
+                vertical-align: middle;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                float: right;
+                overflow: hidden;
+                margin: 1px;
+                padding: 1px;
+                &:hover {
+                    background-color: $colorGrayD3;
+                    @include transition(all 0.15s ease);
+                }
+                a {
+                    background-color: transparent;
+                    color: $fontColorApp;
+                    padding: 8px;
+                    @include transition(all 0.15s ease);
+                    &:hover,
+                    &:focus {
+                        background-color: colorGrayD3;
+                        @include transition(all 0.15s ease);
+                    }
+                }
+            }
+            li.select {
+                a {
+                    background-color: $colorBarTop;
+                    color: $colorWhiteBK1;
+                    padding: 8px;
+                    @include transition(all 0.15s ease);
+                    &:hover,
+                    &:focus {
+                        background-color: $colorBarTop;
+                        color: $colorWhiteBK1;
+                        @include transition(all 0.15s ease);
+                    }
+                }
+            }
+        }
+    }
+    .pagingBlockLeftPlace {
+        display: inline-block;
+        position: relative;
+        width: 40%;
+        max-width: 40%;
+//        height: 35px;
+//        line-height: 35px;
+//        vertical-align: middle;
+        text-align: left;
+        float: left;
+    }
+    .pagingNoPlace {
+        display: inline-block;
+        position: relative;
+//        width: 25%;
+//        max-width: 25%;
+        font-weight: 600;
+        .noAll {
+            padding: 4px 0 0 2px;
+        }
+        .noSep {
+            padding: 4px 0 0 2px;
+        }
+        .no {
+            width: 55px;
+            height: 21px;
+            line-height: 21px;
+            vertical-align: middle;
+            padding-top: -4px;
+        }
+    }
+    .pagingNoPlace > span {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        float: right;
+        overflow: hidden;
+    }
+    .pagingRowNoPlace {
+        display: inline-block;
+        position: relative;
+//        width: 15%;
+//        max-width: 15%;
+        margin: 0;
+        padding: 0;
+        top: -4px;
+        .rowNo {
+            width: 55px;
+            height: 21px;
+            line-height: 19px;
+            vertical-align: middle;
+            padding-top: -12px;
+            padding-right: 25px;
+        }
+    }
+}
+
+
+
+/*css me*/
+
+.bg-login{
+    background: url(../images/KO-background-header.jpg) no-repeat;
+    background-size: cover;
+}
+.placeLoginFrm {
+        background: rgba(255, 255, 255, 0.57);
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+        padding: 20px 20px 0px 20px;
+        border-radius: 0 0 $borderRadius $borderRadius;
+        -webkit-border-radius: 0 0 $borderRadius $borderRadius;
+        -moz-border-radius: 0 0 $borderRadius $borderRadius;
+        transition: all 0.55s ease-in-out;
+        -webkit-transition: all 0.55s ease-in-out;
+        -moz-transition: all 0.55s ease-in-out;
+        -o-transition: all 0.55s ease-in-out;
+        .title .pageDesc{
+            color: #575a61;
+
+        }
+        input[type=checkbox] {
+            visibility: visible !important;
+            margin-top: 5px;
+        }
+        input[type="checkbox"] + label, input[type="radio"] + label {
+        display: inline-block;
+        margin-right: 0.5rem;
+        margin-left: 1rem;
+        margin-bottom: 0;
+        vertical-align: baseline;
+        }
+        .remember-p{
+            color: rgba(0, 0, 0, 0.65);
+            font: 80% "BYekan", Tahoma, "Arial", Gadget, sans-serif, "uicon";
+            font-weight: 600;
+        }
+    }
+    
+.placeLoginImg{
+    margin:30% 0 2% 0!important;
+    img{
+        margin:auto;
+    }
+}    
+
+.blockCustomBtnRow{
+    .grid-content{
+        margin: auto;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
