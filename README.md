@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Foundation for Apps Template
 
 [![devDependency Status](https://david-dm.org/zurb/foundation-apps-template/dev-status.svg)](https://david-dm.org/zurb/foundation-apps-template#info=devDependencies)
@@ -50,3 +51,6 @@ To run the compiling process once, without watching any files, use the `build` c
 ```bash
 npm start build
 ```
+=======
+# clipto
+>>>>>>> origin/master
