@@ -8536,6 +8536,9 @@ ul.contentPlaceUL {
   padding: 0px;
   overflow: hidden; }
 
+.formPlaceBlockInfo {
+  margin-top: 1.875rem; }
+
 .formPlaceBlockIso {
   padding: 0.9375rem;
   background-color: rgba(0, 0, 0, 0.015); }
@@ -8597,6 +8600,97 @@ ul.contentPlaceUL {
   -o-transition: all 0.55s ease-in-out;
   margin: 8px 0;
   padding: 4px 0 0 0; }
+
+.channelImg {
+  width: 6.875rem;
+  max-width: 6.875rem;
+  height: 6.875rem;
+  max-height: 6.875rem;
+  background-image: url(../images/imgBlank.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: none;
+  clear: both; }
+  .channelImg .blockRowEdit {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0px;
+    top: 0;
+    right: 0;
+    background-color: #E9AB20;
+    color: #555555;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    overflow: hidden; }
+    .channelImg .blockRowEdit a {
+      margin: 0.125rem; }
+  .channelImg:hover {
+    cursor: pointer; }
+    .channelImg:hover .blockRowEdit {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 34px;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      -khtml-opacity: 1;
+      opacity: 1; }
+
+.channelHeaderImg {
+  width: 100%;
+  height: 11.25rem;
+  max-height: 11.25rem;
+  background-image: url(../images/imgBlank.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  margin: 0.3125rem 0;
+  padding: 0;
+  overflow: hidden; }
+  .channelHeaderImg .blockRowEdit {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0px;
+    top: 0;
+    right: 0;
+    background-color: #E9AB20;
+    color: #555555;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    overflow: hidden; }
+    .channelHeaderImg .blockRowEdit a {
+      margin: 0.125rem; }
+  .channelHeaderImg:hover {
+    cursor: pointer; }
+    .channelHeaderImg:hover .blockRowEdit {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 34px;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      -moz-opacity: 1;
+      -khtml-opacity: 1;
+      opacity: 1; }
 
 fieldset legend {
   color: rgba(0, 0, 0, 0.25);
@@ -9690,7 +9784,7 @@ input.formPassword:focus ~ .placeLogin {
   height: 2.125rem;
   line-height: 1.875rem;
   vertical-align: middle;
-  background-color: #E6E9ED;
+  background-color: #F5F5F5;
   color: #555555;
   font: 90% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
   font-weight: 600;
@@ -9699,9 +9793,60 @@ input.formPassword:focus ~ .placeLogin {
   border-radius: 4px 0 0 4px;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
-  box-shadow: inset 2px 2px 2px #ddd;
-  -webkit-box-shadow: inset 2px 2px 2px #ddd;
-  -moz-box-shadow: inset 2px 2px 2px #ddd; }
+  box-shadow: inset 2px 2px 2px #E6E9ED;
+  -webkit-box-shadow: inset 2px 2px 2px #E6E9ED;
+  -moz-box-shadow: inset 2px 2px 2px #E6E9ED; }
+
+.formInputDefaultDescFull, input[type="text"].formInputDefaultDescFull, textarea[type="text"].formInputDefaultDescFull {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-order: 0;
+      -ms-flex-order: 0;
+          order: 0;
+  height: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  width: 100%;
+  height: 8.125rem !important;
+  line-height: 1.875rem;
+  vertical-align: middle;
+  background-color: #F5F5F5;
+  color: #555555;
+  font: 90% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
+  font-weight: 600;
+  text-align: right;
+  direction: rtl;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  box-shadow: inset 2px 2px 2px #E6E9ED;
+  -webkit-box-shadow: inset 2px 2px 2px #E6E9ED;
+  -moz-box-shadow: inset 2px 2px 2px #E6E9ED; }
 
 .formInputSearch {
   height: 1.9375rem !important;
@@ -9723,7 +9868,10 @@ input[type="text"].formInputDefaultBlank::-webkit-input-placeholder,
 input[type="text"].formInputDefault::-webkit-input-placeholder,
 input[type="text"].formInputDate::-webkit-input-placeholder,
 input[type="password"].formInputDefault::-webkit-input-placeholder,
-.formInputDefaultDesc::-webkit-input-placeholder, input[type="text"].formInputDefaultDesc::-webkit-input-placeholder, input[type="password"].formInputDefaultDesc::-webkit-input-placeholder {
+.formInputDefaultDesc::-webkit-input-placeholder,
+input[type="text"].formInputDefaultDesc::-webkit-input-placeholder,
+input[type="password"].formInputDefaultDesc::-webkit-input-placeholder,
+.formInputDefaultDescFull::-webkit-input-placeholder, input[type="text"].formInputDefaultDescFull::-webkit-input-placeholder, textarea[type="text"].formInputDefaultDescFull::-webkit-input-placeholder {
   color: #C4C4C4;
   font: 90% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
   font-weight: 600; }
@@ -9734,7 +9882,10 @@ input[type="text"].formInputDefaultBlank::-moz-placeholder,
 input[type="text"].formInputDefault::-moz-placeholder,
 input[type="text"].formInputDate::-moz-placeholder,
 input[type="password"].formInputDefault::-moz-placeholder,
-.formInputDefaultDesc::-moz-placeholder, input[type="text"].formInputDefaultDesc::-moz-placeholder, input[type="password"].formInputDefaultDesc::-moz-placeholder {
+.formInputDefaultDesc::-moz-placeholder,
+input[type="text"].formInputDefaultDesc::-moz-placeholder,
+input[type="password"].formInputDefaultDesc::-moz-placeholder,
+.formInputDefaultDescFull::-moz-placeholder, input[type="text"].formInputDefaultDescFull::-moz-placeholder, textarea[type="text"].formInputDefaultDescFull::-moz-placeholder {
   color: #C4C4C4;
   font: 90% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
   font-weight: 600; }
@@ -9745,7 +9896,10 @@ input[type="text"].formInputDefaultBlank::-ms-input-placeholder,
 input[type="text"].formInputDefault::-ms-input-placeholder,
 input[type="text"].formInputDate::-ms-input-placeholder,
 input[type="password"].formInputDefault::-ms-input-placeholder,
-.formInputDefaultDesc::-ms-input-placeholder, input[type="text"].formInputDefaultDesc::-ms-input-placeholder, input[type="password"].formInputDefaultDesc::-ms-input-placeholder {
+.formInputDefaultDesc::-ms-input-placeholder,
+input[type="text"].formInputDefaultDesc::-ms-input-placeholder,
+input[type="password"].formInputDefaultDesc::-ms-input-placeholder,
+.formInputDefaultDescFull::-ms-input-placeholder, input[type="text"].formInputDefaultDescFull::-ms-input-placeholder, textarea[type="text"].formInputDefaultDescFull::-ms-input-placeholder {
   color: #C4C4C4;
   font: 90% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
   font-weight: 600; }
