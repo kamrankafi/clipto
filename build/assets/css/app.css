@@ -8536,6 +8536,13 @@ ul.contentPlaceUL {
   padding: 0px;
   overflow: hidden; }
 
+.formPlaceBlockIso {
+  padding: 0.9375rem;
+  background-color: rgba(0, 0, 0, 0.015); }
+
+.formPlaceBlock {
+  margin: 0.9375rem 0; }
+
 .formPlaceGuide {
   border-bottom: 1px #E9AB20 dotted; }
 
@@ -8590,6 +8597,12 @@ ul.contentPlaceUL {
   -o-transition: all 0.55s ease-in-out;
   margin: 8px 0;
   padding: 4px 0 0 0; }
+
+fieldset legend {
+  color: rgba(0, 0, 0, 0.25);
+  font: 85% "BYekan", Tahoma, "Arial", Gadget, sans-serif, "uicon";
+  font-weight: 400;
+  padding-right: 0 0.375rem; }
 
 table.gridCustomSearch {
   table-layout: fixed;
@@ -9209,6 +9222,70 @@ input.formPassword:focus ~ .loginPlace {
     -webkit-transition: all 0.55s ease-in-out;
     -moz-transition: all 0.55s ease-in-out;
     -o-transition: all 0.55s ease-in-out; }
+
+.labelFormView {
+  display: block;
+  padding: 0 0.25rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-flex: 0 0 33.33333%;
+      -ms-flex: 0 0 33.33333%;
+          flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+  height: 1.8125rem;
+  line-height: 1.8125rem;
+  vertical-align: middle;
+  font: 100% "BYekan", Tahoma, "Arial", Gadget, sans-serif, "uicon";
+  color: #A9A9A9;
+  padding-right: 0.375rem; }
+  .labelFormView .txt {
+    display: inline-block;
+    height: 1.8125rem;
+    line-height: 1.8125rem;
+    vertical-align: middle;
+    color: #A9A9A9;
+    font: 90% "BYekan", Tahoma, "Arial", Gadget, sans-serif, "uicon";
+    font-weight: 600; }
+
+.labelFormOut {
+  display: block;
+  padding: 0 0.25rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-flex: 0 0 66.66667%;
+      -ms-flex: 0 0 66.66667%;
+          flex: 0 0 66.66667%;
+  max-width: 66.66667%;
+  height: 1.8125rem;
+  line-height: 1.8125rem;
+  vertical-align: middle;
+  font: 100% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
+  background-color: transparent;
+  color: #222;
+  padding-right: 0.375rem; }
+  .labelFormOut .icon {
+    color: #888888;
+    font: 100% "uicon", Tahoma, Verdana, Geneva, sans-serif; }
+  .labelFormOut .txt {
+    display: inline-block;
+    height: 1.8125rem;
+    line-height: 1.8125rem;
+    vertical-align: middle;
+    color: #222;
+    font: 90% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
+    font-weight: 600; }
+  .labelFormOut .ng-binding,
+  .labelFormOut .ng-pristine,
+  .labelFormOut .ng-valid {
+    display: inline-block;
+    height: 1.8125rem;
+    line-height: 1.8125rem;
+    vertical-align: middle;
+    color: #222;
+    font: 90% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
+    font-weight: 600; }
 
 .formInlineLabel, .paginstionFormInlineLabel {
   /*@include grid-layout(1);*/

@@ -612,6 +612,13 @@ ul.contentPlaceUL {
 	&:hover {
 	}
 }
+.formPlaceBlockIso {
+    padding: rem-calc(15);
+    background-color: rgba(0, 0, 0, 0.015);
+}
+.formPlaceBlock {
+    margin: rem-calc(15) 0;
+}
 .formPlaceGuide {
     border-bottom: 1px $color1 dotted;
 }
@@ -685,6 +692,17 @@ ul.contentPlaceUL {
 
 
 
+
+
+
+fieldset {
+    legend {
+        color: rgba(0,0,0,0.25);
+        font: $fontSize*0.85 $fontYekan;
+        font-weight: 400;
+        padding-right: 0 rem-calc(6);
+    }
+}
 
 
 
@@ -1386,9 +1404,61 @@ input.formPassword:focus ~ .loginPlace {
 
 
 
-
-
-
+.labelFormRow {
+    
+}
+.labelFormView {
+    @include grid-content($size: 4);
+    height: rem-calc(29);
+    line-height: rem-calc(29);
+    vertical-align: middle;
+    font: $fontSize*1 $fontYekan;
+    color: #A9A9A9;
+    padding-right: rem-calc(6);
+    .txt {
+        display: inline-block;
+        height: rem-calc(29);
+        line-height: rem-calc(29);
+        vertical-align: middle;
+        color: #A9A9A9;
+        font: $fontSize*0.9 $fontYekan;
+        font-weight: 600;
+    }
+}
+.labelFormOut {
+    @include grid-content($size: 8);
+    height: rem-calc(29);
+    line-height: rem-calc(29);
+    vertical-align: middle;
+    font: $fontSize*1 $fontApp;
+    background-color: transparent;
+    color: #222;
+    padding-right: rem-calc(6);
+    .icon {
+        color: #888888;
+        font: $fontSize*1 $fontIcon;
+    }
+    .txt {
+        display: inline-block;
+        height: rem-calc(29);
+        line-height: rem-calc(29);
+        vertical-align: middle;
+        color: #222;
+        font: $fontSize*0.9 $fontApp;
+        font-weight: 600;
+    }
+    .ng-binding,
+    .ng-pristine,
+    .ng-valid {
+        display: inline-block;
+        height: rem-calc(29);
+        line-height: rem-calc(29);
+        vertical-align: middle;
+        color: #222;
+        font: $fontSize*0.9 $fontApp;
+        font-weight: 600;
+    }
+}
 
 
 
