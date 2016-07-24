@@ -3029,7 +3029,7 @@ input[type="file"].btnDefaultFile {
 	color: $fontColorApp;
     
     font-size: $fontSize;
-    font: 0.625em/1em $fontApp;
+    font: 1em/1em $fontApp;
 	font-weight: normal;
 	line-height: 1.75 !important;
 	letter-spacing: 0;
@@ -4151,6 +4151,45 @@ ul.gridCompList {
 
 
 
+
+
+
+
+
+
+
+
+.blockTitleModal {
+    color: $colorWhiteBK1 !important;
+    font: $fontSize*1 $fontYekan;
+    font-weight: 600;
+    margin: rem-calc(10);
+    padding: rem-calc(5);
+}
+.blockContentModalBTN {
+//    background-color: $colorWhiteBK1;
+    color: $colorFont1 !important;
+    font: $fontSize*0.85 $fontApp;
+    font-weight: 400;
+    padding: rem-calc(5);
+    a {
+        margin: 0 rem-calc(4) !important;
+    }
+}
+.blockContentModal {
+//    background-color: $colorWhiteBK1;
+    color: $colorFont1 !important;
+    font: $fontSize*0.85 $fontApp;
+    font-weight: 400;
+    padding: rem-calc(5);
+    .blockContentModalRow {
+        margin: 0 auto !important;
+        clear: both;
+    }
+    a {
+        margin: 0 rem-calc(4) !important;
+    }
+}
 
 
 

@@ -11178,7 +11178,7 @@ input[type="file"].btnDefaultFile {
   background-color: #FFFFFF;
   color: #555555;
   font-size: 100%;
-  font: 0.625em/1em Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
+  font: 1em/1em Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
   font-weight: normal;
   line-height: 1.75 !important;
   letter-spacing: 0;
@@ -12017,3 +12017,29 @@ ul.gridCompList {
 .blockCustomBtnRow .grid-content {
   margin: auto;
   margin-top: 20px; }
+
+.blockTitleModal {
+  color: #f2f2f2 !important;
+  font: 100% "BYekan", Tahoma, "Arial", Gadget, sans-serif, "uicon";
+  font-weight: 600;
+  margin: 0.625rem;
+  padding: 0.3125rem; }
+
+.blockContentModalBTN {
+  color: #666666 !important;
+  font: 85% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
+  font-weight: 400;
+  padding: 0.3125rem; }
+  .blockContentModalBTN a {
+    margin: 0 0.25rem !important; }
+
+.blockContentModal {
+  color: #666666 !important;
+  font: 85% Mirza, Tahoma, Verdana, Geneva, sans-serif, uicon;
+  font-weight: 400;
+  padding: 0.3125rem; }
+  .blockContentModal .blockContentModalRow {
+    margin: 0 auto !important;
+    clear: both; }
+  .blockContentModal a {
+    margin: 0 0.25rem !important; }

@@ -69,10 +69,6 @@
                         
                     </div>
                     
-                    
-                    
-                    
-                    
                 </div>
                 <div class="small-12 medium-12 large-4 xlarge-4 grid-content">
                     <div class="grid-block formPlaceHeaderBtn">
@@ -85,23 +81,25 @@
                         <a class="small-2 medium-1 large-1 xlarge-1 grid-content btnFormSmall">
                             <span class="icon" data-icon="&#xe00a;"></span>
                         </a>
+                        
+                        <a zf-open="modalSetting" class="small-2 medium-1 large-1 xlarge-1 grid-content btnFormSmall">
+                            <span class="icon" data-icon="&#xe1f1;"></span>
+                        </a>
+                        
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
-        <div class="grid-block formPlaceAdd">
-            <div class="small-12 medium-12 large-12 xlarge-12 grid-content">                
-                
-                <div class="grid-block">
-                    
-                    
-                    
-                    </div> <!-- /gridCompHeader -->
-                        <div class="gridCompBlock">  <!-- gridCompBlock -->
-                            
-                        <ul id="gridSearch" class="gridCompList"> <!-- gridCompList search -->
+            <div class="grid-block formPlaceAdd">
+                <div class="small-12 medium-12 large-12 xlarge-12 grid-content">                
+
+                    <div class="grid-block gridComp"> <!-- gridComp -->
+
+                        <div class="small-12 medium-12 large-12 xlarge-12 grid-content gridCompBlock"> <!-- gridCompBlock -->
+
+                            <ul id="gridSearch" class="gridCompList"> <!-- gridCompList search -->
                             <li class="search">
                                 <div class="col4"><div class="cell colSearchClear">
                                     <a class="" href="#"><span class="icon" data-icon="&#xe20d;"></span></a>
@@ -128,7 +126,7 @@
                                 <div class="col3"><div class="cell">&nbsp;</div></div>
                             </li>
                         </ul> <!-- /gridCompList search -->
-                            
+
                             <ul id="gridComponent" class="gridCompList"> <!-- gridCompList -->
                                 <li class="header">
                                     <div class="col4">
@@ -296,7 +294,7 @@
                                     </div></div>
                                 </li>
                             </ul> <!-- /gridCompList -->
-                            
+
                             <div class="gridCompFooter"> <!-- gridCompFooter -->
                                 <div class="pagingNoRecPlace">
                                     <span class="noRecTxt">تعداد کل: </span>
@@ -339,24 +337,115 @@
                             </div> <!-- /gridCompFooter -->
 
                         </div> <!-- /gridCompBlock -->
-                
+
                     </div> <!-- /gridComp -->
-                    
-                    
-                    
-                
+
                 </div>
-                
+
             </div>
-            
-            
-            
-            
         </div>
-        </div>
-    
     
     </div>
         
     </div>
 </div>
+
+<div zf-modal="" id="modalSetting" overlay="true" overlay-close="false" class="medium dialog" animation-in="slideInDown" animation-out="hingeOutFromMiddleY">
+            	
+    <div class="grid-block wrap blockTitleModal"> <!-- row blockTitleSection -->
+        <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+            تنظیمات عمومی ویدئوها
+        </div>
+    </div> <!-- row blockTitleSection End -->
+
+    
+    
+    
+    <div class="grid-block align-center blockContentModalBTN"> <!-- row blockContentModal -->
+            
+            <a class="small-12 medium-6 large-3 xlarge-3 grid-content btnFormDefault">
+                <span class="icon" data-icon="&#xe025;"></span>کپـــی
+            </a>
+            <a class="small-12 medium-6 large-3 xlarge-3 grid-content btnFormDefault">
+                <span class="icon" data-icon="&#xe0da;"></span>حــذف
+            </a>
+            
+    </div> <!-- /blockContentModal -->
+    
+    
+    
+    
+    <div class="grid-block align-center blockContentModal"> <!-- row blockContentModal -->
+            
+        <div class="small-12 medium-12 large-12 xlarge-12 grid-content">
+            
+            <div class="small-12 medium-10 large-10 xlarge-10 grid-content blockContentModalRow">
+                <div class="inline-label formInlineLabel">
+                    <select class="labelFormEnd">
+                        <option value="">انتخاب دسته</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0ad;"></span>دسته ها</span>
+                </div>
+            </div>
+
+            <div class="small-12 medium-10 large-10 xlarge-10 grid-content blockContentModalRow">
+                <div class="inline-label formInlineLabel">
+                    <select class="labelFormEnd">
+                        <option value="">انتخاب تگ</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0ad;"></span>تگ ها</span>
+                </div>
+            </div>
+
+            <div class="small-12 medium-10 large-10 xlarge-10 grid-content blockContentModalRow">
+                <div class="inline-label formInlineLabel">
+                    <select class="labelFormEnd">
+                        <option value="">انتخاب مجوز</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <span class="form-label formLabelDefault"><span class="icon" data-icon="&#xe0ad;"></span>مجوز کاربری</span>
+                </div>
+            </div>
+            
+        </div>
+            
+    </div> <!-- /blockContentModal -->
+    
+    
+    
+    
+    <div class="grid-block align-center" style="padding: 10px 0;">
+        
+        <div class="small-6 medium-6 large-6 xlarge-6 grid-content">
+            <div class="grid-block align-center">
+            
+                <div class="small-6 medium-6 large-6 xlarge-6 grid-content">
+                    <a zf-close="" class="btnUnLock"><span class="icon" data-icon="&#xe042;"></span> تایید </a>
+                </div>
+                <div class="small-6 medium-6 large-6 xlarge-6 grid-content">
+                    <a zf-close="" class="btnLock"><span class="icon" data-icon="&#xe036;"></span> انصراف </a>
+                </div>
+            
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+
+
