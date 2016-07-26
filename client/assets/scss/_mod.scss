@@ -694,7 +694,16 @@ ul.contentPlaceUL {
 
 
 
-
+.channelImgPlace {
+    display: block;
+    position: absolute;
+    top: 160px;
+    right: 40px;
+    border-radius: $borderRadius;
+	-webkit-border-radius: $borderRadius;
+	-moz-border-radius: $borderRadius;
+    z-index: 10;
+}
 .channelImg {
     width: rem-calc(110);
     max-width: rem-calc(110);
@@ -704,6 +713,9 @@ ul.contentPlaceUL {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+    
+    border: 3px $colorWhiteBK1 solid;
+    
     border-radius: $borderRadius;
 	-webkit-border-radius: $borderRadius;
 	-moz-border-radius: $borderRadius;
@@ -751,8 +763,8 @@ ul.contentPlaceUL {
 }
 .channelHeaderImg {
     width: 100%;
-    height: rem-calc(180);;
-    max-height: rem-calc(180);
+    height: rem-calc(240);;
+    max-height: rem-calc(240);
     background-image: url(../images/imgBlank.jpg);
     background-position: center center;
     background-size: cover;
@@ -763,6 +775,7 @@ ul.contentPlaceUL {
     margin: rem-calc(5) 0;
     padding: 0;
     overflow: hidden;
+    z-index: 9;
     .blockRowEdit {
         display: block;
         position: relative;
